@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="27dp"
     tools:context=".LoginActivity">
-
+<!-- haaaalo -->
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
