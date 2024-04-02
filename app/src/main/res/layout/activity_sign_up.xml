@@ -27,6 +27,6 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_sign_up"/>
+    <include layout="@layout/content_sign_up" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
