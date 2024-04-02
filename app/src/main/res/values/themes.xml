@@ -2,18 +2,44 @@
     <!-- Base application theme. -->
     <style name="Theme.GamersParadise" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#FFFFFF</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/black</item>
     </style>
 
     <style name="title_login">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
+    <style name="subtitle_login">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray70</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
 
-<!--    jnfdjnjfdncdsdjc-->
-<!--    bdhcbhbcdhcb-->
+    <style name="label_large_prominent">
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="label_regular">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="label_medium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="body_medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
 
 </resources>
