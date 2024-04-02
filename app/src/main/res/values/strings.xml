@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GamersParadise</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="lengkapi_detail_anda_untuk_masuk">Lengkapi detail Anda untuk masuk</string>
+    <string name="nama_pengguna_atau_alamat_email">Nama Pengguna atau Alamat Email</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="masuk">Masuk</string>
+    <string name="masuk_dengan_google">Masuk dengan Google</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="daftar">Daftar</string>
 </resources>
