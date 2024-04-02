@@ -1,6 +1,5 @@
 package com.example.gamersparadise;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,7 +17,5 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onRegisterClick(View view) {
-        Intent register = new Intent(LoginActivity.this,SignUpActivity.class);
-        startActivity(register);
     }
 }
