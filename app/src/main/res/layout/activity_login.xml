@@ -9,10 +9,6 @@
     android:backgroundTint="@color/white"
     tools:context=".LoginActivity">
 
-<!-- haaaalo -->
-
-<!-- nggreh -->
-
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
