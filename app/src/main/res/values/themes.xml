@@ -44,6 +44,11 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <style name="label_small">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
     <style name="body_medium">
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.02</item>
@@ -79,6 +84,13 @@
         <item name="android:textAppearance">@style/label_medium</item>
         <item name="android:textColor">@color/gray150</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="card_list">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">112dp</item>
+        <item name="android:padding">9dp</item>
+        <item name="android:background">@drawable/rectangle_list</item>
     </style>
 
 </resources>
