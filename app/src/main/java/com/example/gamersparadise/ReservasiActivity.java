@@ -21,11 +21,6 @@ public class ReservasiActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
 
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        backButton.setOnClickListener(v -> onBackPressed());
     }
 }
