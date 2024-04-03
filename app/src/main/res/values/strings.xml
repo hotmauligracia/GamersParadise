@@ -31,5 +31,5 @@
     <string name="pilih_tanggal">Pilih Tanggal *</string>
     <string name="dd_mm_yyy">DD-MM-YYY</string>
     <string name="pilih_sesi_jam">Pilih Sesi Jam *</string>
-    <string name="_10_00_11_00">10.00-11.00</string>
+    <string name="_10_00_11_00">10.00–11.00</string>
 </resources>
