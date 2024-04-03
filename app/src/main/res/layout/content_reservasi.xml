@@ -2,12 +2,26 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_facilities"
+    <RelativeLayout
+        android:id="@+id/card_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp" />
+        android:layout_height="112dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="67dp"
+        android:padding="9dp"
+        android:background="@drawable/rectangle_list" >
+
+        <ImageView
+            android:id="@+id/rectangle_1"
+            android:layout_width="108dp"
+            android:layout_height="94dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_room1" />
+
+    </RelativeLayout>
 
 </ScrollView>

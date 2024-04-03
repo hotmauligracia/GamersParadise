@@ -45,6 +45,7 @@
             android:layout_height="match_parent"
             android:hint="@string/nama_pengguna_atau_alamat_email"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="text" />
 
@@ -64,6 +65,7 @@
             android:layout_height="match_parent"
             android:hint="@string/kata_sandi"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
 
@@ -100,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16.5dp"
             android:text="@string/masuk_dengan_google"
-            android:textColor="@color/gray_normal"
+            android:textColor="@color/gray150"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
@@ -129,7 +131,7 @@
             android:layout_height="wrap_content"
             android:text="@string/belum_punya_akun"
             android:textAppearance="@style/body_medium"
-            android:textColor="@color/gray_normal"
+            android:textColor="@color/gray70"
             android:lineSpacingExtra="4sp" />
 
         <TextView

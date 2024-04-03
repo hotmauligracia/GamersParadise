@@ -42,6 +42,7 @@
             android:layout_height="match_parent"
             android:hint="@string/nama_lengkap"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="text" />
 
@@ -61,6 +62,7 @@
             android:layout_height="match_parent"
             android:hint="@string/nama_pengguna"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="text" />
 
@@ -80,6 +82,7 @@
             android:layout_height="match_parent"
             android:hint="@string/alamat_email"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textEmailAddress" />
 
@@ -99,6 +102,7 @@
             android:layout_height="match_parent"
             android:hint="@string/kata_sandi"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
 
@@ -118,6 +122,7 @@
             android:layout_height="match_parent"
             android:hint="@string/konfirmasi_kata_sandi"
             style="@style/label_regular"
+            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
 
@@ -132,6 +137,7 @@
         android:layout_marginTop="13dp"
         android:text="@string/saya_telah_membaca"
         android:textAppearance="@style/label_regular"
+        android:textColor="@color/black"
         android:buttonTint="@color/orange"
         android:gravity="center_vertical"/>
 
@@ -164,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16.5dp"
             android:text="@string/daftar_dengan_google"
-            android:textColor="@color/gray_normal"
+            android:textColor="@color/gray150"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
