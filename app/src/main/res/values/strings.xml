@@ -17,21 +17,6 @@
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
-    <string name="pc_gaming_arena">PC Gaming Arena</string>
-    <string name="_1_orang">1 orang</string>
-    <string name="monitor_keyboard_mouse_headset">Monitor, Keyboard, Mouse, Headset</string>
-    <string name="rp15_000_jam">Rp15.000/jam</string>
-    <string name="cabang">CABANG</string>
-    <string name="kebayoran_baru">Kebayoran Baru</string>
-    <string name="reservasi">Reservasi</string>
-    <string name="nama">Nama *</string>
-    <string name="no_telepon">No. Telepon *</string>
-    <string name="nomor_telepon_whatsapp">Nomor Telepon/WhatsApp</string>
-    <string name="fasilitas_yang_dipilih">Fasilitas yang Dipilih</string>
-    <string name="pilih_tanggal">Pilih Tanggal *</string>
-    <string name="dd_mm_yyy">DD-MM-YYY</string>
-    <string name="pilih_sesi_jam">Pilih Sesi Jam *</string>
-    <string name="_10_00_11_00">10.00–11.00</string>
     <string name="pakai_promo">Pakai Sekarang</string>
     <string-array name="location_array">
         <item>Kebayoran Baru</item>

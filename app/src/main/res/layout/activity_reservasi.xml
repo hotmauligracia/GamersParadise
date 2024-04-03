@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -32,25 +32,36 @@
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:id="@+id/tv_cabang"
+                    android:id="@+id/toolbar_title_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cabang"
-                    style="@style/body_small" />
+                    android:text="CABANG"
+                    style="@style/body_small"
+                    android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/tv_facilities"
+                <LinearLayout
+                    android:id="@+id/toolbar_title_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/kebayoran_baru"
-                    style="@style/title_medium"
-                    app:drawableEndCompat="@drawable/ic_dropdown_toolbar"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kebayoran Baru"
+                        style="@style/title_medium" />
+
+                    <ImageView
+                        android:id="@+id/toolbar_dropdown_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_dropdown" />
+
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_reservasi" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
