@@ -7,4 +7,7 @@
     <color name="gray_active">#D8D8D8</color>
     <color name="black">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="orange500">#F47B0C</color>
+    <color name="dark_blue">#212B5F</color>
+    <color name="stroke">#F2F2F2</color>
 </resources>
