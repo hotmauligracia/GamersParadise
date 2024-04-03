@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="305dp"
-    android:height="40dp"
-    android:viewportWidth="305"
-    android:viewportHeight="40" >
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
 
-    <group>
+    <solid android:color="@color/orange" />
+    <corners android:radius="100dp" />
 
-        <clip-path android:pathData="M20 0H285C296.046 0 305 8.95431 305 20C305 31.0457 296.046 40 285 40H20C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0Z" />
-
-        <path
-            android:pathData="M0 0V40H305V0"
-            android:fillColor="@color/orange" />
-
-    </group>
-</vector>
+</shape>
