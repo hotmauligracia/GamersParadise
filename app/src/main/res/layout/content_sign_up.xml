@@ -32,6 +32,8 @@
         style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome_desc"
         app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="73dp">
 
         <EditText
@@ -50,7 +52,9 @@
         android:id="@+id/tf_username"
         style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_name"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_username"
@@ -68,7 +72,9 @@
         android:id="@+id/tf_email"
         style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_username"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_email"
@@ -86,7 +92,9 @@
         android:id="@+id/tf_password"
         style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_email"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_password"
@@ -104,7 +112,9 @@
         android:id="@+id/tf_confirm_password"
         style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_password"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_confirm_password"
