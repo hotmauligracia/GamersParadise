@@ -32,33 +32,16 @@
 
     <RelativeLayout
         android:id="@+id/tf_username"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome_desc"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="76dp">
 
-        <View
-            android:id="@+id/rect_tf_username"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
-
         <EditText
             android:id="@+id/edt_username"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_username"
-            android:layout_alignEnd="@id/rect_tf_username"
-            android:layout_alignTop="@id/rect_tf_username"
-            android:layout_alignBottom="@id/rect_tf_username"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/nama_pengguna_atau_alamat_email"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
             android:textColor="@color/gray70"
             android:background="@android:color/transparent"
@@ -68,33 +51,15 @@
 
     <RelativeLayout
         android:id="@+id/tf_password"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_username"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="11dp">
-
-        <View
-            android:id="@+id/rect_tf_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/edt_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_password"
-            android:layout_alignEnd="@id/rect_tf_password"
-            android:layout_alignTop="@id/rect_tf_password"
-            android:layout_alignBottom="@id/rect_tf_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/kata_sandi"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
             android:textColor="@color/gray70"
             android:background="@android:color/transparent"
@@ -104,25 +69,19 @@
 
     <Button
         android:id="@+id/btn_login"
-        style="@style/label_medium"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        style="@style/button"
         android:layout_marginTop="44dp"
         android:background="@drawable/button"
         android:text="@string/masuk"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tf_password" />
 
     <LinearLayout
         android:id="@+id/btn_google_login"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        style="@style/button_outline"
         app:layout_constraintTop_toBottomOf="@id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="15dp"
-        android:background="@drawable/button_outline"
-        android:gravity="center"
         android:orientation="horizontal"
         android:clickable="true"
         android:focusable="true"
