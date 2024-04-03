@@ -91,7 +91,7 @@
                 android:layout_marginTop="24dp">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/img_banner"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="fitXY"
@@ -102,6 +102,10 @@
                     app:srcCompat="@drawable/img_banner_promo" />
 
                 <Button
+                    app:layout_constraintBottom_toBottomOf="@id/img_banner"
+                    app:layout_constraintEnd_toEndOf="@id/img_banner"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
                     android:id="@+id/btn_promo"
                     style="@style/label_medium"
                     android:layout_width="120dp"
