@@ -59,7 +59,7 @@
                             android:layout_height="wrap_content"
                             android:entries="@array/location_array"
                             android:prompt="@string/pilih_lokasi"
-                            android:textColor="@color/gray150" />
+                            android:textColor="@color/gray_normal" />
                     </LinearLayout>
 
                 </LinearLayout>
