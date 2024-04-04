@@ -1,4 +1,4 @@
-package com.example.gamersparadise.reservasi;
+package com.example.gamersparadise.customer.reservasi;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;

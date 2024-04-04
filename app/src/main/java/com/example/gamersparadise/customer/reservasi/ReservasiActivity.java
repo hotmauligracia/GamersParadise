@@ -1,4 +1,4 @@
-package com.example.gamersparadise.reservasi;
+package com.example.gamersparadise.customer.reservasi;
 
 import android.os.Bundle;
 import android.widget.ImageView;
