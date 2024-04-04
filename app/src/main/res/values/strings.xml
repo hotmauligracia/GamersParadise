@@ -17,4 +17,18 @@
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
+
+    <!-- dropdown Form Booking -->
+    <string-array name="dropdown_options">
+        <item>Tidak hadir tanpa konfirmasi keterlambatan</item>
+        <item>Lainnya</item>
+    </string-array>
+
+    <style name="buttonhapus">
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <!-- strings.xml -->
+    <string name="button">Hapus</string>
 </resources>
