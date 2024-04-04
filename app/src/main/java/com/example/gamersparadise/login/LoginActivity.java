@@ -1,10 +1,12 @@
-package com.example.gamersparadise;
+package com.example.gamersparadise.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gamersparadise.R;
 
 public class LoginActivity extends AppCompatActivity {
 

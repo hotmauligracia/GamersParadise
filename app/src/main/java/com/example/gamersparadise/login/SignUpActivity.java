@@ -1,4 +1,4 @@
-package com.example.gamersparadise;
+package com.example.gamersparadise.login;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gamersparadise.R;
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class SignUpActivity extends AppCompatActivity {
