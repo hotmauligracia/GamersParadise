@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_bar_reservasi"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="bottom">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:background="@color/orange100"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10.5dp">
+
+        <ImageView
+            android:id="@+id/img_discount"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:src="@drawable/ic_discount"
+            app:tint="@color/orange600"/>
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/img_discount"
+            android:text="Tambahkan kode promosi atau voucher di sini"
+            android:textColor="@color/black"
+            style="@style/label_small"
+            android:layout_marginStart="11dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_delete_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HAPUS"
+            style="@style/delete_promotion"
+            android:focusable="true"
+            android:clickable="true"
+            android:onClick="onDeletePromotionClick"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_total_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Pembayaran"
+        android:textColor="#FF6D00"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_payment_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rp150.000"
+        android:textColor="#FF6D00"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btn_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pesan"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:background="#FF6D00"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
