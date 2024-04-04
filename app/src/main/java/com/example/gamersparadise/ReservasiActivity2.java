@@ -2,6 +2,7 @@ package com.example.gamersparadise;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -42,5 +43,8 @@ public class ReservasiActivity2 extends AppCompatActivity {
                 (view, year1, month1, dayOfMonth1) -> edtDate.setText(dayOfMonth1 + "-" + (month1 + 1) + "-" + year1), year, month, dayOfMonth);
 
         datePickerDialog.show();
+    }
+
+    public void onDeletePromotionClick(View view) {
     }
 }
