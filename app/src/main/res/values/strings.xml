@@ -18,7 +18,7 @@
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
 
-<!--    Dropdown Home-->
+    <!--    Dropdown Home-->
     <string name="pakai_promo">Pakai Sekarang</string>
     <string-array name="location_array">
         <item>Kebayoran Baru</item>
@@ -26,7 +26,7 @@
     </string-array>
     <string name="pilih_lokasi">Pilih Lokasi</string>
 
-<!--    Promotion View Content-->
+    <!--    Promotion View Content-->
     <string name="promo_title">4 Cara Mudah Menggunakan Kode Promo di Aplikasi Games’s Paradise</string>
     <string name="tnc">Syarat dan Ketentuan</string>
     <string name="tnc_content">
@@ -36,4 +36,20 @@
     </string>
     <string name="btn_promo_view">Pakai Voucher</string>
 
+    <string name="uname">"@aml.balkis"</string>
+
+    <string name="facility_content">
+        * PS5\n
+        * Nintendo Switch\n
+        * Netflix\n
+        * Smart TV\n
+        * Hand Sanitizer
+    </string>
+
+    <!--    Dropdown Riwayat-->
+    <string-array name="history_array">
+        <item>Reservasi</item>
+        <item>Food Drinks</item>
+    </string-array>
+    <string name="pilih_riwayat">All</string>
 </resources>
