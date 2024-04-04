@@ -100,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/date_time"
                         android:layout_toRightOf="@+id/person1"
-                        android:text="Amalia Balqis"
+                        android:text="Aulia"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -338,7 +338,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/date_time2"
                         android:layout_toRightOf="@+id/person3"
-                        android:text="Legend Cheese Burger"
+                        android:text="Gracia"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -358,7 +358,7 @@
                         android:layout_below="@+id/patient_name2"
                         android:layout_toEndOf="@+id/bell_icon2"
                         android:layout_toRightOf="@+id/bell_icon2"
-                        android:text="VIP 1"
+                        android:text="Legend Cheese Burger"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -457,7 +457,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/date_time3"
                         android:layout_toRightOf="@+id/person4"
-                        android:text="Legend Cheese Burger"
+                        android:text="Tania"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -477,7 +477,7 @@
                         android:layout_below="@+id/patient_name3"
                         android:layout_toEndOf="@+id/bell_icon3"
                         android:layout_toRightOf="@+id/bell_icon3"
-                        android:text="VIP 1"
+                        android:text="Legend Cheese Burger"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -576,7 +576,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/date_time4"
                         android:layout_toRightOf="@+id/person5"
-                        android:text="Legend Cheese Burger"
+                        android:text="Khaliza"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -597,7 +597,7 @@
                         android:layout_below="@+id/patient_name4"
                         android:layout_toEndOf="@+id/bell_icon4"
                         android:layout_toRightOf="@+id/bell_icon4"
-                        android:text="VIP 1"
+                        android:text="Legend Cheese Burger"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -696,7 +696,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/date_time5"
                         android:layout_toRightOf="@+id/person6"
-                        android:text="Legend Cheese Burger"
+                        android:text="Zahra"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
@@ -717,7 +717,7 @@
                         android:layout_below="@+id/patient_name5"
                         android:layout_toEndOf="@+id/bell_icon5"
                         android:layout_toRightOf="@+id/bell_icon5"
-                        android:text="VIP 1"
+                        android:text="Legend Cheese Burger"
                         android:textColor="#868686"
                         android:textSize="10sp" />
 
