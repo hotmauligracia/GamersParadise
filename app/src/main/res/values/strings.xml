@@ -17,10 +17,23 @@
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
+
+<!--    Dropdown Home-->
     <string name="pakai_promo">Pakai Sekarang</string>
     <string-array name="location_array">
         <item>Kebayoran Baru</item>
         <item>Blok M</item>
     </string-array>
     <string name="pilih_lokasi">Pilih Lokasi</string>
+
+<!--    Promotion View Content-->
+    <string name="promo_title">4 Cara Mudah Menggunakan Kode Promo di Aplikasi Games’s Paradise</string>
+    <string name="tnc">Syarat dan Ketentuan</string>
+    <string name="tnc_content">
+        1. Minimal order 100 ribu\n
+        2. Berlaku dari 28 Maret 2024 - 05 April 2024\n
+        3. Voucher hanya dapat digunakan satu kali
+    </string>
+    <string name="btn_promo_view">Pakai Voucher</string>
+
 </resources>

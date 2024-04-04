@@ -150,9 +150,11 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
+<!--                tools:listitem="@layout/cardholder"/>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
