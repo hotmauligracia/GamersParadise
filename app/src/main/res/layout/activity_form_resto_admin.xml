@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2"
-    tools:context=".formResto_admin">
+    tools:context=".admin.home.menu.formResto_admin">
 
     <!--top bar-->
     <androidx.cardview.widget.CardView
@@ -163,7 +163,7 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
-                    android:textColor="@color/gray70"
+                    android:textColor="@color/gray_normal"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
 
@@ -239,7 +239,7 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
-                    android:textColor="@color/gray70"
+                    android:textColor="@color/gray_normal"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
 
@@ -365,7 +365,7 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
-                    android:textColor="@color/gray70"
+                    android:textColor="@color/gray_normal"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
 

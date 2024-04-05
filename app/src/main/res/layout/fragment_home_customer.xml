@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.HomeCustomerFragment">
+    tools:context=".customer.home.HomeCustomerFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-<!--                tools:listitem="@layout/cardholder"/>-->
+                tools:listitem="@layout/cardholder"
                 android:layout_weight="1"/>
 
             <LinearLayout
@@ -177,7 +177,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tv_lable2"
+                    android:id="@+id/tv_label2"
                     style="@style/label_small"
                     android:layout_width="128dp"
                     android:layout_height="wrap_content"

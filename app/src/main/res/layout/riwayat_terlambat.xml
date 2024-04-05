@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="3 April 2024"
                     style="@style/label_small"
-                    android:textColor="@color/gray150"
+                    android:textColor="@color/gray_normal"
                     android:layout_marginRight="12dp"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,7 +59,7 @@
                             android:layout_height="wrap_content"
                             android:text="13:00 - 15:00 WIB"
                             style="@style/label_small"
-                            android:textColor="@color/gray150"/>
+                            android:textColor="@color/gray_normal"/>
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>

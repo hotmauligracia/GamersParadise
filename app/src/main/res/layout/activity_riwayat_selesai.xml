@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RiwayatSelesaiActivity"
+    tools:context=".customer.history.RiwayatSelesaiActivity"
     android:background="@color/white">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:entries="@array/history_array"
                 android:prompt="@string/pilih_riwayat"
-                android:textColor="@color/gray150" />
+                android:textColor="@color/gray_normal" />
         </LinearLayout>
 
         <LinearLayout

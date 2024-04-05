@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
 
-    tools:context=".promosi_admin2">
+    tools:context=".admin.home.promotion.promosi_admin2">
 
 
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PromotionViewActivity">
+    tools:context=".customer.home.PromotionViewActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -72,13 +72,12 @@
             android:layout_marginTop="12dp"
             android:layout_weight="1"
             android:text="@string/tnc_content"
-            android:textColor="@color/gray150" />
+            android:textColor="@color/gray_normal" />
 
         <Button
             android:id="@+id/btn_sign_up"
             style="@style/button"
-            android:text="@string/btn_promo_view"
-            app:layout_constraintEnd_toEndtOf="parent" />
+            android:text="@string/btn_promo_view" />
     </LinearLayout>
 
 
