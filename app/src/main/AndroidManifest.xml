@@ -28,7 +28,67 @@
             android:name=".activity_bookinglist"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".customer.home.menu.OrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.history.DetailRiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.history.RiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.home.menu.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.history.DetailRiwayatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.home.promotion.PromotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.facility.FacilityViewFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.facility.FacilityViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.menu.MenuViewFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.menu.MenuViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.location.LocationViewFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.location.LocationViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.promotion.PromotionViewFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.home.promotion.PromotionViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.home.facility.ViewFacilityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.home.facility.ReserveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.home.facility.FacilityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.CustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -39,9 +99,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

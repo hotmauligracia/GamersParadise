@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="56dp"
+        android:text="@string/nama"
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory" />
+
+    <RelativeLayout
+        android:id="@+id/tf_name"
+        style="@style/text_field"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp"
+        android:layout_marginTop="12dp">
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/nama_lengkap"
+            style="@style/label_regular"
+            android:background="@android:color/transparent"
+            android:inputType="text" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tf_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:text="@string/no_telepon"
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+    <RelativeLayout
+        android:id="@+id/tf_phone"
+        style="@style/text_field"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp"
+        android:layout_marginTop="12dp">
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/nomor_telepon_whatsapp"
+            style="@style/label_regular"
+            android:background="@android:color/transparent"
+            android:inputType="phone" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_facility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tf_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:text="@string/fasilitas_yang_dipilih"
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+    <RelativeLayout
+        android:id="@+id/field_facility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_facility"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp">
+
+        <include layout="@layout/facility_item" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/field_facility"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:text="@string/pilih_tanggal"
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+    <RelativeLayout
+        android:id="@+id/tf_date"
+        style="@style/text_field"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="9dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="12dp">
+
+        <EditText
+            android:id="@+id/edt_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_date_picker"
+            style="@style/label_regular"
+            android:background="@android:color/transparent"
+            android:hint="@string/dd_mm_yyy"
+            android:gravity="center"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tf_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:text="@string/pilih_sesi_jam"
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_time"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/time_slot_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

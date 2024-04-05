@@ -29,6 +29,65 @@
         <item name="android:letterSpacing">0.01</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
-    <!-- strings.xml -->
     <string name="button">Hapus</string>
+  
+    <!--    Dropdown Home-->
+    <string-array name="tipeMenu">
+        <item>Makanan</item>
+        <item>Minuman</item>
+    </string-array>
+    <string-array name="Lokasi">
+        <item>Kebayoran Baru</item>
+        <item>Gandaria City</item>
+    </string-array>
+    <string name="pc_gaming_arena">PC Gaming Arena</string>
+    <string name="_1_orang">1 orang</string>
+    <string name="monitor_keyboard_mouse_headset">Monitor, Keyboard, Mouse, Headset</string>
+    <string name="rp15_000_jam">Rp15.000/jam</string>
+    <string name="cabang">CABANG</string>
+    <string name="kebayoran_baru">Kebayoran Baru</string>
+    <string name="reservasi">Reservasi</string>
+    <string name="nama">Nama</string>
+    <string name="no_telepon">No. Telepon</string>
+    <string name="nomor_telepon_whatsapp">Nomor Telepon/WhatsApp</string>
+    <string name="fasilitas_yang_dipilih">Fasilitas yang Dipilih</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="dd_mm_yyy">DD-MM-YYY</string>
+    <string name="pilih_sesi_jam">Pilih Sesi Jam</string>
+    <string name="_10_00_11_00">10.00–11.00</string>
+    <string name="pakai_promo">Pakai Sekarang</string>
+    <string-array name="location_array">
+        <item>Kebayoran Baru</item>
+        <item>Blok M</item>
+    </string-array>
+    <string name="pilih_lokasi">Pilih Lokasi</string>
+
+    <!--    Promotion View Content-->
+    <string name="promo_title">4 Cara Mudah Menggunakan Kode Promo di Aplikasi Games’s Paradise</string>
+    <string name="tnc">Syarat dan Ketentuan</string>
+    <string name="tnc_content">
+        1. Minimal order 100 ribu\n
+        2. Berlaku dari 28 Maret 2024 - 05 April 2024\n
+        3. Voucher hanya dapat digunakan satu kali
+    </string>
+    <string name="btn_promo_view">Pakai Voucher</string>
+
+    <string name="uname">"@aml.balkis"</string>
+
+    <string name="facility_content">
+        * PS5\n
+        * Nintendo Switch\n
+        * Netflix\n
+        * Smart TV\n
+        * Hand Sanitizer
+    </string>
+
+    <!--    Dropdown Riwayat-->
+    <string-array name="history_array">
+        <item>Reservasi</item>
+        <item>Food Drinks</item>
+    </string-array>
+    <string name="pilih_riwayat">All</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
