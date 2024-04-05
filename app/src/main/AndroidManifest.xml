@@ -67,6 +67,12 @@
             android:name=".customer.reservasi.ReservasiActivity2"
             android:exported="false" />
         <activity
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.reservasi.ReservasiActivity2"
+            android:exported="false" />
+        <activity
             android:name=".customer.reservasi.ReservasiActivity"
             android:exported="false" />
         <activity
