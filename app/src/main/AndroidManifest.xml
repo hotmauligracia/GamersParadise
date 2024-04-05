@@ -13,19 +13,10 @@
         android:theme="@style/Theme.GamersParadise"
         tools:targetApi="31">
         <activity
-            android:name=".menuOrderList"
+            android:name=".admin.orders.OrderDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".detailMenuOrder"
-            android:exported="false" />
-        <activity
-            android:name=".formbooking"
-            android:exported="false" />
-        <activity
-            android:name=".custome_shape"
-            android:exported="false" />
-        <activity
-            android:name=".activity_bookinglist"
+            android:name=".admin.reservations.ReservationDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".customer.home.menu.OrderActivity"

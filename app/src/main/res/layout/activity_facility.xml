@@ -51,6 +51,6 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_reservasi" />
+    <include layout="@layout/content_facility" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -18,17 +18,6 @@
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
 
-    <!-- dropdown Form Booking -->
-    <string-array name="dropdown_options">
-        <item>Tidak hadir tanpa konfirmasi keterlambatan</item>
-        <item>Lainnya</item>
-    </string-array>
-
-    <style name="buttonhapus">
-        <item name="android:textSize">15sp</item>
-        <item name="android:letterSpacing">0.01</item>
-        <item name="android:textColor">#FFFFFF</item>
-    </style>
     <string name="button">Hapus</string>
   
     <!--    Dropdown Home-->
@@ -36,7 +25,7 @@
         <item>Makanan</item>
         <item>Minuman</item>
     </string-array>
-    <string-array name="Lokasi">
+    <string-array name="lokasi">
         <item>Kebayoran Baru</item>
         <item>Gandaria City</item>
     </string-array>
@@ -71,9 +60,7 @@
         3. Voucher hanya dapat digunakan satu kali
     </string>
     <string name="btn_promo_view">Pakai Voucher</string>
-
     <string name="uname">"@aml.balkis"</string>
-
     <string name="facility_content">
         * PS5\n
         * Nintendo Switch\n

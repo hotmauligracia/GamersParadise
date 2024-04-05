@@ -37,7 +37,7 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_reservasi2" />
+    <include layout="@layout/content_reserve" />
 
     <include layout="@layout/bottom_bar_reserve"/>
 
