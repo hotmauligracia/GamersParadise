@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2"
-    tools:context=".formResto_admin">
+    tools:context=".form_fasilitas_admin">
 
     <!--top bar-->
     <androidx.cardview.widget.CardView
@@ -46,7 +46,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!--card pertama-->
+    <!--card unggah-->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_foto"
         android:layout_width="match_parent"
@@ -95,9 +95,9 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!--nama menu-->
+    <!--nama fasilitas-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_nama_menu"
+        android:id="@+id/card_nama_fasilitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/card_foto"
@@ -122,19 +122,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama Menu"
+                    android:text="Nama Fasilitas"
                     style="@style/label_regular"
                     android:textColor="@color/black"
                     android:layout_marginRight="4dp"/>
                 <ImageView
-                    android:id="@+id/mandatory_nm_menu"
+                    android:id="@+id/mandatory_nm_fasilitas"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     android:src="@drawable/mandatory"
                     />
             </LinearLayout>
             <RelativeLayout
-                android:id="@+id/tf_nm_menu"
+                android:id="@+id/tf_nm_fasilitas"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
                 app:layout_constraintTop_toBottomOf="@id/judul_nama"
@@ -142,7 +142,7 @@
                 android:layout_marginTop="11dp">
 
                 <View
-                    android:id="@+id/rect_tf_nm_menu"
+                    android:id="@+id/rect_tf_nm_fasilitas"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_alignParentStart="true"
@@ -155,34 +155,33 @@
                     android:id="@+id/edt_nm_menu"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_alignStart="@id/rect_tf_nm_menu"
-                    android:layout_alignEnd="@id/rect_tf_nm_menu"
-                    android:layout_alignTop="@id/rect_tf_nm_menu"
-                    android:layout_alignBottom="@id/rect_tf_nm_menu"
-                    android:hint="masukan nama menu disini"
+                    android:layout_alignStart="@id/rect_tf_nm_fasilitas"
+                    android:layout_alignEnd="@id/rect_tf_nm_fasilitas"
+                    android:layout_alignTop="@id/rect_tf_nm_fasilitas"
+                    android:layout_alignBottom="@id/rect_tf_nm_fasilitas"
+                    android:hint="masukan nama fasilitas disini"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
                     android:textColor="@color/gray70"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
-
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!--deskripsi menu-->
+    <!--nama kapasitas-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_nama_resto"
+        android:id="@+id/card_kapasitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/card_nama_menu"
+        app:layout_constraintTop_toBottomOf="@id/card_nama_fasilitas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="7dp">
 
         <LinearLayout
-            android:id="@+id/judul_desc"
+            android:id="@+id/judul_kapasitas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -198,27 +197,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Deskripsi"
+                    android:text="Kapasitas"
                     style="@style/label_regular"
                     android:textColor="@color/black"
                     android:layout_marginRight="4dp"/>
                 <ImageView
-                    android:id="@+id/vector"
+                    android:id="@+id/mandatory_kapasitas"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     android:src="@drawable/mandatory"
                     />
             </LinearLayout>
             <RelativeLayout
-                android:id="@+id/tf_nm_desc"
+                android:id="@+id/tf_kapasitas"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
-                app:layout_constraintTop_toBottomOf="@id/judul_desc"
+                app:layout_constraintTop_toBottomOf="@id/judul_nama"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="11dp">
 
                 <View
-                    android:id="@+id/rect_tf_nm_promo"
+                    android:id="@+id/rect_tf_kapasitas"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_alignParentStart="true"
@@ -228,87 +227,36 @@
                     android:background="@drawable/rectangle_tf" />
 
                 <EditText
-                    android:id="@+id/edt_username"
+                    android:id="@+id/edt_kapasitas"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_alignStart="@id/rect_tf_nm_promo"
-                    android:layout_alignEnd="@id/rect_tf_nm_promo"
-                    android:layout_alignTop="@id/rect_tf_nm_promo"
-                    android:layout_alignBottom="@id/rect_tf_nm_promo"
-                    android:hint="isi nama promo disini"
+                    android:layout_alignStart="@id/rect_tf_kapasitas"
+                    android:layout_alignEnd="@id/rect_tf_kapasitas"
+                    android:layout_alignTop="@id/rect_tf_kapasitas"
+                    android:layout_alignBottom="@id/rect_tf_kapasitas"
+                    android:hint="masukan nama kapasitas disini"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
                     android:textColor="@color/gray70"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
-
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- tipe menu-->
+    <!--nama detail-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_tipe_menu"
+        android:id="@+id/card_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/card_nama_resto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="7dp"
-        >
-
-        <LinearLayout
-            android:id="@+id/judul_tipe_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pilih Tipe Menu"
-                    style="@style/label_regular"
-                    android:textColor="@color/black"
-                    android:layout_marginRight="4dp"/>
-                <ImageView
-                    android:id="@+id/mandatory_tipe_menu"
-                    android:layout_width="6dp"
-                    android:layout_height="6dp"
-                    android:src="@drawable/mandatory"
-                    />
-            </LinearLayout>
-            <Spinner
-                android:id="@+id/spinnerTipeMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"/>
-        </LinearLayout>
-</androidx.cardview.widget.CardView> 
-
-    <!--harga menu-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_harga_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/card_tipe_menu"
+        app:layout_constraintTop_toBottomOf="@id/card_kapasitas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="7dp">
 
         <LinearLayout
-            android:id="@+id/judul_harga"
+            android:id="@+id/judul_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -324,27 +272,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Harga"
+                    android:text="Detail"
                     style="@style/label_regular"
                     android:textColor="@color/black"
                     android:layout_marginRight="4dp"/>
                 <ImageView
-                    android:id="@+id/mandatory_harga"
+                    android:id="@+id/mandatory_detail"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     android:src="@drawable/mandatory"
                     />
             </LinearLayout>
             <RelativeLayout
-                android:id="@+id/tf_nm_harga"
+                android:id="@+id/tf_detail"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
-                app:layout_constraintTop_toBottomOf="@id/judul_desc"
+                app:layout_constraintTop_toBottomOf="@id/judul_nama"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="11dp">
 
                 <View
-                    android:id="@+id/rect_tf_nm_harga"
+                    android:id="@+id/rect_tf_detail"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_alignParentStart="true"
@@ -354,133 +302,23 @@
                     android:background="@drawable/rectangle_tf" />
 
                 <EditText
-                    android:id="@+id/edt_harga"
+                    android:id="@+id/edt_detail"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_alignStart="@id/rect_tf_nm_harga"
-                    android:layout_alignEnd="@id/rect_tf_nm_harga"
-                    android:layout_alignTop="@id/rect_tf_nm_harga"
-                    android:layout_alignBottom="@id/rect_tf_nm_harga"
-                    android:hint="isi harga disini"
+                    android:layout_alignStart="@id/rect_tf_detail"
+                    android:layout_alignEnd="@id/rect_tf_detail"
+                    android:layout_alignTop="@id/rect_tf_detail"
+                    android:layout_alignBottom="@id/rect_tf_detail"
+                    android:hint="masukan nama detail disini"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
                     android:textColor="@color/gray70"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
-
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <!--
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card2_promo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/card_nama_promo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="7dp">
-
-        <LinearLayout
-            android:id="@+id/judul_waktu_mulai"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="18dp"
-            android:paddingBottom="18dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Waktu Mulai"
-                    style="@style/label_regular"
-                    android:textColor="@color/black"
-                    android:layout_marginRight="4dp"/>
-                <ImageView
-                    android:id="@+id/mandatory_wm"
-                    android:layout_width="6dp"
-                    android:layout_height="6dp"
-                    android:src="@drawable/mandatory"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="31-03-2024 08:00"
-                    style="@style/label_regular"
-                    android:layout_weight="1"
-                    android:textAlignment="textEnd"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/arrow_right"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_waktu_promo_berakhir"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/card2_promo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="1dp"
-        >
-
-        <LinearLayout
-            android:id="@+id/judul_waktu_berakhir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="18dp"
-            android:paddingBottom="18dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Waktu Berakhir"
-                    style="@style/label_regular"
-                    android:textColor="@color/black"
-                    android:layout_marginRight="4dp"/>
-                <ImageView
-                    android:id="@+id/mandatory_wb"
-                    android:layout_width="6dp"
-                    android:layout_height="6dp"
-                    android:src="@drawable/mandatory"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="31-03-2024 09:00"
-                    style="@style/label_regular"
-                    android:layout_weight="1"
-                    android:textAlignment="textEnd"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/arrow_right"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView> -->
 
     <!--button-->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -507,7 +345,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/button"
-                android:text="Simpan"
+                android:text="Tambahkan"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
 
@@ -516,7 +354,5 @@
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
