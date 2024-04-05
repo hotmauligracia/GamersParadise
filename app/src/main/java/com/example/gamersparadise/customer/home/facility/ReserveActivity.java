@@ -13,14 +13,14 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.Calendar;
 
-public class ReservasiActivity2 extends AppCompatActivity {
+public class ReserveActivity extends AppCompatActivity {
 
     private EditText edtDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservasi2);
+        setContentView(R.layout.activity_reserve);
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);

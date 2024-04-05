@@ -14,7 +14,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="56dp"
         android:text="@string/nama"
-        style="@style/label_medium"/>
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory" />
 
     <RelativeLayout
         android:id="@+id/tf_name"
@@ -44,7 +46,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="22dp"
         android:text="@string/no_telepon"
-        style="@style/label_medium"/>
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
 
     <RelativeLayout
         android:id="@+id/tf_phone"
@@ -74,7 +78,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="22dp"
         android:text="@string/fasilitas_yang_dipilih"
-        style="@style/label_medium"/>
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
 
     <RelativeLayout
         android:id="@+id/field_facility"
@@ -96,7 +102,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="22dp"
         android:text="@string/pilih_tanggal"
-        style="@style/label_medium"/>
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
 
     <RelativeLayout
         android:id="@+id/tf_date"
@@ -130,7 +138,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="22dp"
         android:text="@string/pilih_sesi_jam"
-        style="@style/label_medium"/>
+        style="@style/label_medium"
+        android:drawablePadding="4dp"
+        app:drawableEndCompat="@drawable/ic_mandatory"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_time"

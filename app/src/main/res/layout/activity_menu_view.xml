@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.home.menu.menuResto_admin">
+    tools:context=".admin.home.menu.MenuViewActivity">
 
     <LinearLayout
         android:id="@+id/topbar_resto"
@@ -29,7 +29,7 @@
             android:layout_marginStart="16dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
             android:text="Makanan &amp; Minuman"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/button_lokasi_baru"
+            android:id="@+id/btn_menu_baru"
             style="@style/label_medium"
             android:layout_width="match_parent"
             android:layout_height="40dp"

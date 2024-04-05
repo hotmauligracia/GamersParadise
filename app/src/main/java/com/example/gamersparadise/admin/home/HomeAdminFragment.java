@@ -1,5 +1,6 @@
 package com.example.gamersparadise.admin.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -10,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.admin.home.facility.FacilityViewActivity;
+import com.example.gamersparadise.admin.home.location.LocationViewActivity;
+import com.example.gamersparadise.admin.home.menu.MenuViewActivity;
+import com.example.gamersparadise.admin.home.promotion.PromotionViewActivity;
 
 public class HomeAdminFragment extends Fragment {
 
@@ -23,18 +28,38 @@ public class HomeAdminFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home_admin, container, false);
 
+        CardView cvPromotion = view.findViewById(R.id.cv_promotion);
+        cvPromotion.setOnClickListener(this::onPromotionViewClick);
+
+        CardView cvLocation = view.findViewById(R.id.cv_location);
+        cvLocation.setOnClickListener(this::onLocationViewClick);
+
+        CardView cvFacility = view.findViewById(R.id.cv_facility);
+        cvFacility.setOnClickListener(this::onFacilityViewClick);
+
+        CardView cvMenu = view.findViewById(R.id.cv_menu);
+        cvMenu.setOnClickListener(this::onMenuViewClick);
+
         return view;
     }
 
     public void onPromotionViewClick(View view) {
+        Intent promotionActivity = new Intent(requireContext(), PromotionViewActivity.class);
+        startActivity(promotionActivity);
     }
 
     public void onLocationViewClick(View view) {
+        Intent locationActivity = new Intent(requireContext(), LocationViewActivity.class);
+        startActivity(locationActivity);
     }
 
     public void onFacilityViewClick(View view) {
+        Intent facilityActivity = new Intent(requireContext(), FacilityViewActivity.class);
+        startActivity(facilityActivity);
     }
 
     public void onMenuViewClick(View view) {
+        Intent menuActivity = new Intent(requireContext(), MenuViewActivity.class);
+        startActivity(menuActivity);
     }
 }

@@ -17,7 +17,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
 
         Button btnPesanFasilitas = findViewById(R.id.btn_pesan_fasilitas);
         btnPesanFasilitas.setOnClickListener(v -> {
-            Intent reservasi2Activity = new Intent(ViewFacilityActivity.this, ReservasiActivity2.class);
+            Intent reservasi2Activity = new Intent(ViewFacilityActivity.this, ReserveActivity.class);
             startActivity(reservasi2Activity);
         });
     }

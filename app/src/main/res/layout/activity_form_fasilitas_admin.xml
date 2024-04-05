@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2"
-    tools:context=".admin.home.facility.form_fasilitas_admin">
+    tools:context=".admin.home.facility.FacilityViewFormActivity">
 
     <!--top bar-->
     <androidx.cardview.widget.CardView
@@ -336,7 +336,7 @@
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints">
             <Button
-                android:id="@+id/button_promo_baru"
+                android:id="@+id/btn_promo_baru"
                 style="@style/label_medium"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

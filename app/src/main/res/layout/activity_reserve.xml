@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.home.facility.ReservasiActivity2">
+    tools:context=".customer.home.facility.ReserveActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -39,6 +39,6 @@
 
     <include layout="@layout/content_reservasi2" />
 
-    <include layout="@layout/bottom_bar_reservasi"/>
+    <include layout="@layout/bottom_bar_reserve"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

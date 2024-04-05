@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.gamersparadise.R;
-import com.example.gamersparadise.customer.home.facility.ReservasiActivity;
+import com.example.gamersparadise.customer.home.facility.FacilityActivity;
 import com.example.gamersparadise.customer.home.menu.MenuActivity;
 
 public class HomeCustomerFragment extends Fragment {
@@ -34,7 +34,7 @@ public class HomeCustomerFragment extends Fragment {
     }
 
     public void onFacilitiesClick(View view) {
-        Intent reservasi = new Intent(requireContext(), ReservasiActivity.class);
+        Intent reservasi = new Intent(requireContext(), FacilityActivity.class);
         startActivity(reservasi);
     }
 

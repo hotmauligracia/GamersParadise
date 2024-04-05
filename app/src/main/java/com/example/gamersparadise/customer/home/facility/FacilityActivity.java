@@ -10,12 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.gamersparadise.R;
 import com.google.android.material.appbar.MaterialToolbar;
 
-public class ReservasiActivity extends AppCompatActivity {
+public class FacilityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservasi);
+        setContentView(R.layout.activity_facility);
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
@@ -27,7 +27,7 @@ public class ReservasiActivity extends AppCompatActivity {
     }
 
     public void onFacilityItemClick(View view) {
-        Intent detailFacility = new Intent(ReservasiActivity.this, ViewFacilityActivity.class);
+        Intent detailFacility = new Intent(FacilityActivity.this, ViewFacilityActivity.class);
         startActivity(detailFacility);
     }
 }
