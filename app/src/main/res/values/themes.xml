@@ -20,6 +20,18 @@
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
+    <style name="regular_prominent">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+  
+    <style name="title_large">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
     <style name="title_medium">
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.01</item>
@@ -40,7 +52,7 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="label_small">
+        <style name="label_small">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/black</item>
@@ -50,6 +62,14 @@
         <item name="android:textSize">13sp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="label_medium_prominent">
+        <item name="android:textSize">13sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
@@ -113,23 +133,25 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="secondary_button">
+        <item name="android:background">@drawable/secondary_button</item>
+        <item name="android:textAppearance">@style/label_medium</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="safe_area">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">64dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+        
     <style name="card_list">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">112dp</item>
         <item name="android:padding">9dp</item>
         <item name="android:background">@drawable/rectangle_list</item>
-    </style>
-
-    <style name="title_large">
-        <item name="android:textSize">22sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
-
-    <style name="title_medium">
-        <item name="android:textSize">22sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
 </resources>

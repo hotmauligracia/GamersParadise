@@ -233,6 +233,5 @@
     </GridLayout>
 
     <include layout="@layout/activity_admin"/>
-
-
+  
 </RelativeLayout>

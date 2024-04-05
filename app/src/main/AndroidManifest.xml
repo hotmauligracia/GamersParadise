@@ -31,6 +31,30 @@
             android:name=".fasilitas_admin2"
             android:exported="false" />
         <activity
+            android:name=".customer.pesanmenu.MenuActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DetailRiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.pesanmenu.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailRiwayatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PromotionViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".form_fasilitas_admin"
             android:exported="false" />
         <activity
