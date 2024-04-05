@@ -10,7 +10,8 @@
         android:id="@+id/cardriwayat"
         android:layout_width="match_parent"
         android:layout_height="118dp"
-        app:cardElevation="@dimen/material_emphasis_medium">
+        app:cardElevation="@dimen/material_emphasis_medium"
+        tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
