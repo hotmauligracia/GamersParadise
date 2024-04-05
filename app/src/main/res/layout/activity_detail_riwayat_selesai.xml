@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailRiwayatActivity">
+    tools:context=".DetailRiwayatSelesaiActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -280,6 +280,16 @@
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
                         android:text="Diskon Voucher"/>
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        style="@style/label_regular"
+                        android:textStyle="bold"
+                        android:text="Total"
+                        android:layout_weight="1"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -313,6 +323,16 @@
                         android:textColor="@color/gray150"
                         android:text="- Rp2.000"
                         android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/content_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        style="@style/label_regular"
+                        android:textStyle="bold"
+                        android:text="Rp218.000"
+                        android:textAlignment="textEnd"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -329,22 +349,20 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/total"
+                    android:id="@+id/metode_bayar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/gray150"
                     style="@style/label_regular"
-                    android:textStyle="bold"
-                    android:text="Total"
+                    android:text="Bayar tunai"
                     android:layout_weight="1"/>
 
                 <TextView
                     android:id="@+id/content_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/gray150"
                     style="@style/label_regular"
-                    android:textStyle="bold"
                     android:text="Rp218.000"
                     android:textAlignment="textEnd"/>
             </LinearLayout>
@@ -361,20 +379,11 @@
             android:gravity="center_vertical">
 
             <Button
-                android:id="@+id/btn_batal_pesan"
-                style="@style/secondary_button"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:text="Batalkan Pesanan"
-                android:layout_weight="1"
-                android:layout_marginRight="12dp"/>
-
-            <Button
                 android:id="@+id/btn_unduh_tiket"
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:text="Unduh E-tiket"
+                android:text="Pesan Kembali"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
