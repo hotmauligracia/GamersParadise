@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailRiwayatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail Riwayat"
+                style="@style/title_medium" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="264dp">
+
+        <ImageView
+            android:id="@+id/img_detail_riwayat"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/img_room1"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/img_detail_riwayat"
+            android:gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/history_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 April 2024"
+                    style="@style/label_small"
+                    android:textColor="@color/gray150"
+                    android:layout_marginRight="12dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ic_time"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="4dp"
+                            app:srcCompat="@drawable/ic_time" />
+
+                        <TextView
+                            android:id="@+id/history_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15:00 - 17:00 WIB"
+                            style="@style/label_small"
+                            android:textColor="@color/gray150"/>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/label_large_prominent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VIP 1"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="4dp"
+                            android:backgroundTint="@color/gray150"
+                            android:src="@drawable/ic_person" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            style="@style/label_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6 orang"
+                            android:textColor="@color/gray150" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/label_large_prominent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Rp80.000/jam"
+                    android:textColor="@color/orange" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                style="@style/label_large_prominent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="Fasilitas"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_arrow"
+                android:layout_width="21dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_dropdown_orange"
+                android:backgroundTint="@color/orange"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/label_large_prominent"
+                android:textColor="@color/black"
+                android:text="Detail Pemesan"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/nama_pemesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/label_regular"
+                android:textColor="@color/black"
+                android:text="Amalia Balqis"/>
+
+            <TextView
+                android:id="@+id/no_pemesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/label_regular"
+                android:textColor="@color/black"
+                android:text="082134512395"/>
+
+            <TextView
+                android:id="@+id/email_pemesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/label_regular"
+                android:textColor="@color/black"
+                android:text="qiqis.balqis@gmail.com"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_divider_solid"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/label_large_prominent"
+                android:textColor="@color/black"
+                android:text="Detail Pembayaran"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/CO_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="PC Gaming Arena x 2 jam"/>
+
+                    <TextView
+                        android:id="@+id/CO_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="Legend Cheese Burger x 1"/>
+
+                    <TextView
+                        android:id="@+id/disc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="Diskon Voucher"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/content_CO_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="Rp60.000"
+                        android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/content_CO_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="Rp60.000"
+                        android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/content_disc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/label_regular"
+                        android:textColor="@color/gray150"
+                        android:text="- Rp60.000"
+                        android:textAlignment="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_divider_dash"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    style="@style/label_regular"
+                    android:textStyle="bold"
+                    android:text="Total"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/content_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    style="@style/label_regular"
+                    android:textStyle="bold"
+                    android:text="Rp118.000"
+                    android:textAlignment="textEnd"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_batal_pesan"
+                style="@style/secondary_button"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Pesan Sekarang"
+                android:layout_weight="1"
+                android:layout_marginRight="12dp"/>
+
+            <Button
+                android:id="@+id/btn_unduh_tiket"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Pesan Sekarang"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
