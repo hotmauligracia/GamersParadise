@@ -34,10 +34,49 @@
             android:name=".ReservasiActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".form_fasilitas_admin"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".fasilitas_admin"
+            android:exported="false" />
+        <activity
+            android:name=".formResto_admin"
+            android:exported="false" />
+        <activity
+            android:name=".menuResto_admin"
+            android:exported="false" />
+        <activity
+            android:name=".form_lokasi"
+            android:exported="false" />
+        <activity
+            android:name=".lokasi_admin"
+            android:exported="false" />
+        <activity
+            android:name=".promosi_admin2"
+            android:exported="false" />
+        <activity
+            android:name=".BuatPromoBaru"
+            android:exported="false" />
+        <activity
+            android:name=".promosi_admin"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.reservasi.ReservasiActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".customer.reservasi.ReservasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.CustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".homeAdmin"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -49,7 +88,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false" />
 
         <meta-data

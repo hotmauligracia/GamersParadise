@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gamersparadise.login.LoginActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
