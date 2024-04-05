@@ -6,4 +6,6 @@
     <color name="gray150">#79747E</color>
     <color name="black">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="semi_transparent_background">#2C2C2C1A</color>
+
 </resources>

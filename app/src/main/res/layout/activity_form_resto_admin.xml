@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -5,12 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2"
-    tools:context=".BuatPromoBaru">
+    tools:context=".formResto_admin">
 
+    <!--top bar-->
     <androidx.cardview.widget.CardView
+        android:id="@+id/topbar_resto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/topbar_promo"
         tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
-                android:text="Buat Promo Baru"
+                android:text="Tambah Menu"
                 style="@style/title_medium"
                 android:textColor="@color/black"
                 android:layout_marginStart="16dp"
@@ -44,17 +46,67 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--card pertama-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_nama_promo"
+        android:id="@+id/card_foto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/topbar_promo"
+        app:layout_constraintTop_toBottomOf="@id/topbar_resto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="7dp"
         android:layout_marginTop="-1dp">
 
         <LinearLayout
-            android:id="@+id/judul_nm_promo"
+            android:id="@+id/layout_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unggah Foto"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_uf"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="103dp"
+                android:layout_height="84dp"
+                android:src="@drawable/unggah_foto"
+                android:layout_marginTop="15dp">
+
+            </ImageView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--nama menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_nama_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_foto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/judul_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -70,7 +122,83 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama Promo"
+                    android:text="Nama Menu"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_nm_menu"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_nm_menu"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/judul_nama"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_nm_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_nm_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@id/rect_tf_nm_menu"
+                    android:layout_alignEnd="@id/rect_tf_nm_menu"
+                    android:layout_alignTop="@id/rect_tf_nm_menu"
+                    android:layout_alignBottom="@id/rect_tf_nm_menu"
+                    android:hint="masukan nama menu disini"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--deskripsi menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_nama_resto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_nama_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/judul_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi"
                     style="@style/label_regular"
                     android:textColor="@color/black"
                     android:layout_marginRight="4dp"/>
@@ -82,10 +210,10 @@
                     />
             </LinearLayout>
             <RelativeLayout
-                android:id="@+id/tf_nm_promo"
+                android:id="@+id/tf_nm_desc"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
-                app:layout_constraintTop_toBottomOf="@id/judul_nm_promo"
+                app:layout_constraintTop_toBottomOf="@id/judul_desc"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="11dp">
 
@@ -119,6 +247,109 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- tipe menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_tipe_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_nama_resto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp"
+        >
+
+    <Spinner
+        android:id="@+id/spinnerTipeMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
+</androidx.cardview.widget.CardView> 
+
+
+
+
+
+
+    <!--harga menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_harga_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_tipe_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/judul_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harga"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_harga"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_nm_harga"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/judul_desc"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_nm_harga"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_harga"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@id/rect_tf_nm_harga"
+                    android:layout_alignEnd="@id/rect_tf_nm_harga"
+                    android:layout_alignTop="@id/rect_tf_nm_harga"
+                    android:layout_alignBottom="@id/rect_tf_nm_harga"
+                    android:hint="isi harga disini"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--
     <androidx.cardview.widget.CardView
         android:id="@+id/card2_promo"
         android:layout_width="match_parent"
@@ -225,59 +456,13 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card4_promo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/card_waktu_promo_berakhir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="7dp">
-
-        <LinearLayout
-            android:id="@+id/layout_upload"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:paddingStart="16dp"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Unggah Foto"
-                    style="@style/label_regular"
-                    android:textColor="@color/black"
-                    android:layout_marginRight="4dp"/>
-                <ImageView
-                    android:id="@+id/mandatory_uf"
-                    android:layout_width="6dp"
-                    android:layout_height="6dp"
-                    android:src="@drawable/mandatory"
-                    />
-            </LinearLayout>
-            <ImageView
-                android:layout_width="103dp"
-                android:layout_height="84dp"
-                android:src="@drawable/unggah_foto"
-                android:layout_marginTop="15dp">
-
-            </ImageView>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView> -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_bawah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
