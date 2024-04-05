@@ -16,6 +16,12 @@
             android:name=".customer.pesanmenu.MenuActivity2"
             android:exported="false" />
         <activity
+            android:name=".DetailRiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatSelesaiActivity"
+            android:exported="false" />
+        <activity
             android:name=".customer.pesanmenu.MenuActivity"
             android:exported="false" />
         <activity
