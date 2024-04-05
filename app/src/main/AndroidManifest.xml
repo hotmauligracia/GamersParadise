@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GamersParadise"
         tools:targetApi="31">
         <activity
+            android:name=".customer.pesanmenu.MenuActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".customer.pesanmenu.MenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".RiwayatSelesaiActivity"
             android:exported="false" />
         <activity
@@ -22,16 +28,7 @@
             android:name=".RiwayatActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewFacilityActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
             android:name=".PromotionViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ReservasiActivity"
             android:exported="false" />
         <activity
             android:name=".form_fasilitas_admin"
@@ -59,12 +56,6 @@
             android:exported="false" />
         <activity
             android:name=".promosi_admin"
-            android:exported="false" />
-        <activity
-            android:name=".admin.AdminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".customer.reservasi.ReservasiActivity2"
             android:exported="false" />
         <activity
             android:name=".admin.AdminActivity"

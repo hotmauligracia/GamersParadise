@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_detail_pemesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="48dp"
+        android:text="Detail Pemesan"
+        style="@style/label_medium_prominent"/>
+
+    <TextView
+        android:id="@+id/tv_no_reservasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_pemesan"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="#10009"
+        style="@style/title_medium"/>
+
+    <TextView
+        android:id="@+id/tv_nama_reservan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_pemesan"
+        app:layout_constraintStart_toEndOf="@id/tv_no_reservasi"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="4dp"
+        android:text="- Balqis"
+        style="@style/title_medium"
+        android:textColor="@color/gray_normal"
+        android:lineSpacingExtra="3sp"/>
+
+    <ImageView
+        android:id="@+id/img_room"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_reservasi"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_room_location"/>
+
+    <TextView
+        android:id="@+id/tv_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_reservasi"
+        app:layout_constraintStart_toEndOf="@id/img_room"
+        android:layout_marginStart="4dp"
+        android:text="VIP 1"
+        style="@style/regular_prominent"/>
+
+    <TextView
+        android:id="@+id/tv_ringkasan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/img_room"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="38dp"
+        android:text="Ringkasan Pesanan"
+        style="@style/label_medium_prominent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ringkasan"
+        android:layout_marginTop="22dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
