@@ -365,7 +365,7 @@
                 style="@style/secondary_button"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:text="Pesan Sekarang"
+                android:text="Batalkan Pesanan"
                 android:layout_weight="1"
                 android:layout_marginRight="12dp"/>
 
@@ -374,7 +374,7 @@
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:text="Pesan Sekarang"
+                android:text="Unduh E-tiket"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
