@@ -29,35 +29,19 @@
 
     <RelativeLayout
         android:id="@+id/tf_name"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome_desc"
         app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="73dp">
-
-        <View
-            android:id="@+id/rect_tf_name"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
 
         <EditText
             android:id="@+id/edt_name"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_name"
-            android:layout_alignEnd="@id/rect_tf_name"
-            android:layout_alignTop="@id/rect_tf_name"
-            android:layout_alignBottom="@id/rect_tf_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/nama_lengkap"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
-            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="text" />
 
@@ -65,35 +49,18 @@
 
     <RelativeLayout
         android:id="@+id/tf_username"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_name"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="11dp">
-
-        <View
-            android:id="@+id/rect_tf_username"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_username"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_username"
-            android:layout_alignEnd="@id/rect_tf_username"
-            android:layout_alignTop="@id/rect_tf_username"
-            android:layout_alignBottom="@id/rect_tf_username"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/nama_pengguna"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
-            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="text" />
 
@@ -101,35 +68,18 @@
 
     <RelativeLayout
         android:id="@+id/tf_email"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_username"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="11dp">
-
-        <View
-            android:id="@+id/rect_tf_email"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_email"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_email"
-            android:layout_alignEnd="@id/rect_tf_email"
-            android:layout_alignTop="@id/rect_tf_email"
-            android:layout_alignBottom="@id/rect_tf_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/alamat_email"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
-            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textEmailAddress" />
 
@@ -137,35 +87,18 @@
 
     <RelativeLayout
         android:id="@+id/tf_password"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_email"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="11dp">
-
-        <View
-            android:id="@+id/rect_tf_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_password"
-            android:layout_alignEnd="@id/rect_tf_password"
-            android:layout_alignTop="@id/rect_tf_password"
-            android:layout_alignBottom="@id/rect_tf_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/kata_sandi"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
-            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
 
@@ -173,35 +106,18 @@
 
     <RelativeLayout
         android:id="@+id/tf_confirm_password"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        style="@style/text_field"
         app:layout_constraintTop_toBottomOf="@id/tf_password"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="11dp">
-
-        <View
-            android:id="@+id/rect_tf_confirm_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rectangle_tf" />
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="13dp" >
 
         <EditText
             android:id="@+id/edt_confirm_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignStart="@id/rect_tf_confirm_password"
-            android:layout_alignEnd="@id/rect_tf_confirm_password"
-            android:layout_alignTop="@id/rect_tf_confirm_password"
-            android:layout_alignBottom="@id/rect_tf_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/konfirmasi_kata_sandi"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="13dp"
             style="@style/label_regular"
-            android:textColor="@color/gray70"
             android:background="@android:color/transparent"
             android:inputType="textPassword" />
 
@@ -216,31 +132,22 @@
         android:layout_marginTop="13dp"
         android:text="@string/saya_telah_membaca"
         android:textAppearance="@style/label_regular"
-        android:textColor="@color/black"
         android:buttonTint="@color/orange"
         android:gravity="center_vertical"/>
 
     <Button
         android:id="@+id/btn_sign_up"
-        style="@style/label_medium"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        style="@style/button"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/button"
         android:text="@string/register"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btn_google_sign_up" />
 
     <LinearLayout
         android:id="@+id/btn_google_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        style="@style/button_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/button_outline"
-        android:gravity="center"
         android:orientation="horizontal"
         android:clickable="true"
         android:focusable="true"
@@ -257,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16.5dp"
             android:text="@string/daftar_dengan_google"
-            android:textColor="@color/gray150"
+            android:textColor="@color/gray_normal"
             tools:ignore="TextContrastCheck" />
 
     </LinearLayout>

@@ -40,7 +40,19 @@
             android:name=".promosi_admin"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.reservasi.ReservasiActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".customer.reservasi.ReservasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.CustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".homeAdmin"
@@ -55,7 +67,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false" />
 
         <meta-data
