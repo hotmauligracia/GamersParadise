@@ -1,13 +1,14 @@
 package com.example.gamersparadise;
 
-import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReservasiActivity extends AppCompatActivity {
+import android.os.Bundle;
+
+public class homeAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservasi);
+        setContentView(R.layout.activity_home_admin);
     }
 }

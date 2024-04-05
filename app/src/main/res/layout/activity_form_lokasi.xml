@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".form_lokasi">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topbar_lokasi"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            tools:ignore="MissingConstraints,UseCompoundDrawables"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_back"
+                android:gravity="start"
+                android:textColor="@color/orange"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="Tambah Lokasi"
+                style="@style/title_medium"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_nama_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_lokasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-1dp">
+
+        <LinearLayout
+            android:id="@+id/judul_nm_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Cabang"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_nm"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_nm_lokasi"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/judul_nm_lokasi"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_nm_lokasi"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@id/rect_tf_nm_lokasi"
+                    android:layout_alignEnd="@id/rect_tf_nm_lokasi"
+                    android:layout_alignTop="@id/rect_tf_nm_lokasi"
+                    android:layout_alignBottom="@id/rect_tf_nm_lokasi"
+                    android:hint="isi nama cabang"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_nama_lokasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Provinsi"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_provinsi"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_provinsi"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/detail"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_provinsi"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_provinsi"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_provinsi"
+                    android:layout_alignEnd="@+id/rect_tf_provinsi"
+                    android:layout_alignTop="@+id/rect_tf_provinsi"
+                    android:layout_alignBottom="@+id/rect_tf_provinsi"
+                    android:hint="isi nama provinsi"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kota"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_kota"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_kota"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/detail"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_kota"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_kota"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_kota"
+                    android:layout_alignEnd="@+id/rect_tf_kota"
+                    android:layout_alignTop="@+id/rect_tf_kota"
+                    android:layout_alignBottom="@+id/rect_tf_kota"
+                    android:hint="isi nama kota"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kecamatan"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_kecamatan"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_kecamatan"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/detail"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_kecamatan"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_kecamatan"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_kecamatan"
+                    android:layout_alignEnd="@+id/rect_tf_kecamatan"
+                    android:layout_alignTop="@+id/rect_tf_kecamatan"
+                    android:layout_alignBottom="@+id/rect_tf_kecamatan"
+                    android:hint="isi nama kecamatan"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kode Pos"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_kd_pos"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_kd_pos"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/detail"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_kd_pos"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_kd_pos"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_kd_pos"
+                    android:layout_alignEnd="@+id/rect_tf_kd_pos"
+                    android:layout_alignTop="@+id/rect_tf_kd_pos"
+                    android:layout_alignBottom="@+id/rect_tf_kd_pos"
+                    android:hint="isi nama kode pos"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Jalan"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+                <ImageView
+                    android:id="@+id/mandatory_nm_jln"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/tf_nm_jln"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/detail"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_nm_jln"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_nm_jln"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_nm_jln"
+                    android:layout_alignEnd="@+id/rect_tf_nm_jln"
+                    android:layout_alignTop="@+id/rect_tf_nm_jln"
+                    android:layout_alignBottom="@+id/rect_tf_nm_jln"
+                    android:hint="isi nama jalan"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray70"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+            <Button
+                android:id="@+id/button_promo_baru"
+                style="@style/label_medium"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button"
+                android:text="Simpan"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

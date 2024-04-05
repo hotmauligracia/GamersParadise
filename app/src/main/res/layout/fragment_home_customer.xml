@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".customer.HomeCustomerFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,7 +58,7 @@
                             android:layout_height="wrap_content"
                             android:entries="@array/location_array"
                             android:prompt="@string/pilih_lokasi"
-                            android:textColor="@color/gray150" />
+                            android:textColor="@color/gray_normal" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -121,31 +120,34 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tv_fasilitas"
+                    style="@style/label_large_prominent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="12dp">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fasilitas"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/tv_fasilitas"
-                        style="@style/label_large_prominent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Fasilitas"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/tv_label1"
-                        style="@style/label_small"
-                        android:layout_width="128dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Lihat semua"
-                        android:textColor="@color/orange" />
+                <TextView
+                    android:id="@+id/tv_label1"
+                    style="@style/label_small"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lihat semua"
+                    android:textColor="@color/orange"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:onClick="onFacilitiesClick"/>
 
             </LinearLayout>
 
@@ -153,8 +155,8 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
 <!--                tools:listitem="@layout/cardholder"/>-->
+                android:layout_weight="1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,24 +166,27 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp">
 
-                    <TextView
-                        android:id="@+id/tv_Menu"
-                        style="@style/label_large_prominent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Menu"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_Menu"
+                    style="@style/label_large_prominent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Menu"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/tv_lable2"
-                        style="@style/label_small"
-                        android:layout_width="128dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Lihat semua"
-                        android:textColor="@color/orange" />
+                <TextView
+                    android:id="@+id/tv_lable2"
+                    style="@style/label_small"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lihat semua"
+                    android:textColor="@color/orange"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:onClick="onMenuClick"/>
 
             </LinearLayout>
 
@@ -193,4 +198,4 @@
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
