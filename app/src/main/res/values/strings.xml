@@ -18,6 +18,19 @@
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
 
+    <!-- dropdown Form Booking -->
+    <string-array name="dropdown_options">
+        <item>Tidak hadir tanpa konfirmasi keterlambatan</item>
+        <item>Lainnya</item>
+    </string-array>
+
+    <style name="buttonhapus">
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <string name="button">Hapus</string>
+  
     <!--    Dropdown Home-->
     <string-array name="tipeMenu">
         <item>Makanan</item>

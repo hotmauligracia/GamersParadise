@@ -148,4 +148,9 @@
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
+    <style name="buttonhapus">
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>
