@@ -135,7 +135,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:gravity="center"
-                    android:src="@drawable/ic_location" />
+                    android:src="@drawable/ic_lokasi" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -224,12 +224,15 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:gravity="center"
-                    android:src="@drawable/ic_location" />
+                    android:src="@drawable/ic_resto" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
 
     </GridLayout>
+
+    <include layout="@layout/activity_admin"/>
+
 
 </RelativeLayout>

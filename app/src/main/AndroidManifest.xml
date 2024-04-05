@@ -13,6 +13,24 @@
         android:theme="@style/Theme.GamersParadise"
         tools:targetApi="31">
         <activity
+            android:name=".menu_resto_hapus"
+            android:exported="false" />
+        <activity
+            android:name=".menu_resto_Admin2"
+            android:exported="false" />
+        <activity
+            android:name=".lokasi_admin_hapus"
+            android:exported="false" />
+        <activity
+            android:name=".promosi_admin_hapus"
+            android:exported="false" />
+        <activity
+            android:name=".lokasi_admin2"
+            android:exported="false" />
+        <activity
+            android:name=".fasilitas_admin2"
+            android:exported="false" />
+        <activity
             android:name=".form_fasilitas_admin"
             android:exported="false" />
         <activity

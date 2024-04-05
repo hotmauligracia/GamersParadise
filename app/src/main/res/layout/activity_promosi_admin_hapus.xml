@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lokasi_admin">
+    tools:context=".promosi_admin_hapus">
 
     <LinearLayout
-        android:id="@+id/topbar_lokasi"
+        android:id="@+id/topbar_promo"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
-            android:text="Lokasi"
+            android:text="Promosi"
             style="@style/title_medium"
             android:textColor="@color/black"
             android:layout_marginStart="16dp"
@@ -40,11 +40,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/status_lokasi"
+        android:id="@+id/status_promo"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/topbar_lokasi"
+        app:layout_constraintTop_toBottomOf="@id/topbar_promo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/status_admin">
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lokasi Saat Ini"
+            android:text="Berjalan"
             style="@style/label_large_prominent"
             android:textAlignment="center"
             android:gravity="center"
@@ -65,39 +65,19 @@
         </TextView>
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/illust_lokasi"
-        app:layout_constraintTop_toBottomOf="@id/status_lokasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/image_illust_lokasi"
-            android:layout_width="wrap_content"
-            android:layout_height="141dp"
-            android:src="@drawable/not_found"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/text_illust_lokasi"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lokasi Tidak Tersedia"
-            style="@style/label_regular"
-            app:layout_constraintTop_toBottomOf="@id/image_illust_lokasi"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/status_promo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            android:gravity="center"/>
+            app:layout_constraintEnd_toEndOf="parent">
+            <include layout="@layout/card_promosi_admin"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- button -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_bawah"
         android:layout_width="match_parent"
@@ -107,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/button_lokasi_baru"
+            android:id="@+id/button_promo_baru"
             style="@style/label_medium"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -116,16 +96,33 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/button"
-            android:text="Buat Lokasi Baru"
+            android:text="Buat Promo Diskon Baru"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
+    <!-- confirm pop up -->
+    <LinearLayout
+        android:id="@+id/popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/semi_transparent_background">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/dialog_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

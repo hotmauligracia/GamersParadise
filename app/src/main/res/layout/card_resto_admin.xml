@@ -9,16 +9,17 @@
     android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <!--konten atas-->
             <LinearLayout
@@ -27,35 +28,58 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                tools:ignore="MissingConstraints">
+                tools:ignore="MissingConstraints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <!--wrap judul&waktu -->
                 <LinearLayout
                     android:id="@+id/judul_waktu"
-                    android:layout_width="0dp"
+                    android:layout_width="263dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     tools:ignore="MissingConstraints">
 
-                    <!--judul promo-->
-                    <TextView
-                        android:id="@+id/judul_card"
-                        style="@style/label_medium_prominent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
-                        android:text="CHIRSTMAS PACKAGE"
-                        android:textColor="@color/black"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        tools:ignore="NestedWeights">
+                        <!--judul promo-->
+                        <TextView
+                            android:id="@+id/judul_card"
+                            style="@style/label_medium_prominent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:text="Nasi Goreng Spesial"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            style="@style/label_regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Makanan"
+                            android:textColor="@color/gray_normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
 
                     <!--waktu-->
                     <LinearLayout
                         android:id="@+id/waktu_promo"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="@id/judul_card"
                         app:layout_constraintStart_toStartOf="@id/judul_card"
@@ -69,40 +93,16 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="7dp"
                             android:layout_marginBottom="12dp"
-                            android:text="20-12-2023 08:00" />
-
-                        <TextView
-                            android:id="@+id/title_card2"
-                            style="@style/label_regular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="12dp"
-                            android:text="-"
-                            app:layout_constraintStart_toEndOf="@id/title_card" />
-
-                        <TextView
-                            android:id="@+id/title_card3"
-                            style="@style/label_regular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginEnd="24dp"
-                            android:layout_marginBottom="12dp"
-                            android:text="31-12-2023 08:00"
-                            app:layout_constraintStart_toEndOf="@id/title_card2" />
+                            android:text="Rp50.000" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="127dp"
                     android:layout_height="61dp"
-
-                    android:src="@drawable/poster_promo" />
+                    android:src="@drawable/nasgor" />
 
             </LinearLayout>
 

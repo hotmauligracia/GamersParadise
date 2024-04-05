@@ -111,7 +111,7 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="13dp"
                     style="@style/label_regular"
-                    android:textColor="@color/gray70"
+                    android:textColor="@color/gray_normal"
                     android:background="@android:color/transparent"
                     android:inputType="text" />
 
