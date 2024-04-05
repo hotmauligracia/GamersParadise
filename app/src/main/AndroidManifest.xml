@@ -13,6 +13,33 @@
         android:theme="@style/Theme.GamersParadise"
         tools:targetApi="31">
         <activity
+            android:name=".form_fasilitas_admin"
+            android:exported="false" />
+        <activity
+            android:name=".fasilitas_admin"
+            android:exported="false" />
+        <activity
+            android:name=".formResto_admin"
+            android:exported="false" />
+        <activity
+            android:name=".menuResto_admin"
+            android:exported="false" />
+        <activity
+            android:name=".form_lokasi"
+            android:exported="false" />
+        <activity
+            android:name=".lokasi_admin"
+            android:exported="false" />
+        <activity
+            android:name=".promosi_admin2"
+            android:exported="false" />
+        <activity
+            android:name=".BuatPromoBaru"
+            android:exported="false" />
+        <activity
+            android:name=".promosi_admin"
+            android:exported="false" />
+        <activity
             android:name=".admin.AdminActivity"
             android:exported="false" />
         <activity
@@ -26,6 +53,9 @@
             android:exported="false" />
         <activity
             android:name=".login.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".homeAdmin"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
