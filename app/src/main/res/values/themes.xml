@@ -113,6 +113,20 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="secondary_button">
+        <item name="android:background">@drawable/secondary_button</item>
+        <item name="android:textAppearance">@style/label_medium</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="safe_area">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">64dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+        
     <style name="card_list">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">112dp</item>

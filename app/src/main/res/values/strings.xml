@@ -17,6 +17,8 @@
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
+
+    <!--    Dropdown Home-->
     <string-array name="tipeMenu">
         <item>Makanan</item>
         <item>Minuman</item>
@@ -46,6 +48,33 @@
         <item>Blok M</item>
     </string-array>
     <string name="pilih_lokasi">Pilih Lokasi</string>
+
+    <!--    Promotion View Content-->
+    <string name="promo_title">4 Cara Mudah Menggunakan Kode Promo di Aplikasi Games’s Paradise</string>
+    <string name="tnc">Syarat dan Ketentuan</string>
+    <string name="tnc_content">
+        1. Minimal order 100 ribu\n
+        2. Berlaku dari 28 Maret 2024 - 05 April 2024\n
+        3. Voucher hanya dapat digunakan satu kali
+    </string>
+    <string name="btn_promo_view">Pakai Voucher</string>
+
+    <string name="uname">"@aml.balkis"</string>
+
+    <string name="facility_content">
+        * PS5\n
+        * Nintendo Switch\n
+        * Netflix\n
+        * Smart TV\n
+        * Hand Sanitizer
+    </string>
+
+    <!--    Dropdown Riwayat-->
+    <string-array name="history_array">
+        <item>Reservasi</item>
+        <item>Food Drinks</item>
+    </string-array>
+    <string name="pilih_riwayat">All</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
