@@ -19,7 +19,7 @@
     <string name="daftar_dengan_google">Daftar dengan Google</string>
 
     <string name="button">Hapus</string>
-  
+
     <!--    Dropdown Home-->
     <string-array name="tipeMenu">
         <item>Makanan</item>
