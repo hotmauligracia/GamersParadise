@@ -1,6 +1,7 @@
 package com.example.gamersparadise;
 
 public class Facility {
+    private int facility_id;
     private int imageResource;
     private String name;
     private int capacity;

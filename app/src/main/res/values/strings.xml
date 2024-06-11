@@ -2,7 +2,7 @@
     <string name="app_name">GamersParadise</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="lengkapi_detail_anda_untuk_masuk">Lengkapi detail Anda untuk masuk</string>
-    <string name="nama_pengguna_atau_alamat_email">Nama Pengguna atau Alamat Email</string>
+    <string name="alamat_email">Alamat Email</string>
     <string name="kata_sandi">Kata Sandi</string>
     <string name="masuk">Masuk</string>
     <string name="masuk_dengan_google">Masuk dengan Google</string>
@@ -12,7 +12,6 @@
     <string name="mendaftar_untuk_memulai">Mendaftar untuk memulai</string>
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="nama_pengguna">Nama Pengguna</string>
-    <string name="alamat_email">Alamat Email</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
