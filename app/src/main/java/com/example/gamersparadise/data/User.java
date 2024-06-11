@@ -1,4 +1,4 @@
-package com.example.gamersparadise;
+package com.example.gamersparadise.data;
 
 public class User {
     private String name;

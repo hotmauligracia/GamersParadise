@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="27dp"
     android:backgroundTint="@color/white"
-    tools:context=".login.LoginActivity">
+    tools:context=".onboarding.LoginActivity">
 
     <TextView
         android:id="@+id/tv_welcome"
@@ -46,7 +46,7 @@
             android:hint="@string/alamat_email"
             style="@style/label_regular"
             android:background="@android:color/transparent"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
 
     </RelativeLayout>
 

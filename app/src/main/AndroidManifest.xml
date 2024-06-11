@@ -75,10 +75,10 @@
             android:name=".customer.CustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".login.SignUpActivity"
+            android:name=".onboarding.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".onboarding.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

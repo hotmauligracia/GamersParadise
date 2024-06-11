@@ -1,4 +1,4 @@
-package com.example.gamersparadise.login;
+package com.example.gamersparadise.onboarding;
 
 import android.content.Intent;
 import android.os.Bundle;

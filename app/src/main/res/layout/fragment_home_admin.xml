@@ -20,21 +20,21 @@
             android:layout_marginBottom="16dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_username"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
-                android:text="Admin"
+                android:text="@string/hai_username"
                 style="@style/title_large"
                 android:textColor="@color/black"
                 android:layout_marginStart="32dp"
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/button_logout"
+                android:id="@+id/btn_logout"
                 android:layout_width="64dp"
                 android:layout_height="31dp"
-                android:text="KELUAR"
-                android:layout_alignParentEnd="true"
+                android:text="@string/keluar"
                 android:layout_marginEnd="32dp"
                 android:gravity="center"
                 android:background="@drawable/button_secondary"
@@ -80,16 +80,16 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:textAlignment="textStart"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="2sp"
-                        android:text="PROMOSI"
+                        android:text="@string/promosi"
                         android:textAppearance="@style/label_large_prominent"
                         android:textColor="@color/white"
+                        android:textAllCaps="true"
                         style="@style/label_large_prominent"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
 
                     <ImageView
                         android:layout_width="35dp"
@@ -126,16 +126,16 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:textAlignment="textStart"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="2sp"
-                        android:text="LOKASI"
+                        android:text="@string/lokasi"
                         android:textAppearance="@style/label_large_prominent"
                         android:textColor="@color/white"
+                        android:textAllCaps="true"
                         android:layout_weight="1"
-                        style="@style/label_large_prominent"
-                        />
+                        style="@style/label_large_prominent" />
 
                     <ImageView
                         android:layout_width="35dp"
@@ -176,12 +176,12 @@
                         android:textAlignment="textStart"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="2sp"
-                        android:text="FASILITAS"
+                        android:text="@string/fasilitas"
                         android:textAppearance="@style/label_large_prominent"
                         android:textColor="@color/white"
+                        android:textAllCaps="true"
                         android:layout_weight="1"
-                        style="@style/label_large_prominent"
-                        />
+                        style="@style/label_large_prominent" />
 
                     <ImageView
                         android:layout_width="35dp"
@@ -218,11 +218,11 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:textAlignment="textStart"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="2sp"
-                        android:text="MAKANAN &amp; MINUMAN"
+                        android:text="@string/makanan_minuman"
                         android:textColor="@color/white"
                         style="@style/label_large_prominent"
                         android:layout_weight="1"
