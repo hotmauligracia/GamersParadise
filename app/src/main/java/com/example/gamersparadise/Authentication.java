@@ -14,6 +14,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class Authentication {
     private final FirebaseAuth mAuth;
@@ -128,5 +129,26 @@ public class Authentication {
     public interface FirebaseLoginCallback {
         void onSuccess(boolean isAdmin);
         void onFailure();
+    }
+
+    public void fetchCollectionData(String collectionName, FirebaseCollectionCallback callback) {
+        db.collection(collectionName).get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot querySnapshot = task.getResult();
+                        if (querySnapshot != null) {
+                            callback.onSuccess(querySnapshot);
+                        } else {
+                            callback.onFailure("Tidak ada data ditemukan");
+                        }
+                    } else {
+                        callback.onFailure("Error mengakses dokumen: " + task.getException());
+                    }
+                });
+    }
+
+    public interface FirebaseCollectionCallback {
+        void onSuccess(QuerySnapshot querySnapshot);
+        void onFailure(String errorMessage);
     }
 }

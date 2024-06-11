@@ -12,7 +12,7 @@
         android:layout_marginTop="67dp"
         android:onClick="onMenuItemClick" >
 
-        <include layout="@layout/menu_item" />
+        <include layout="@layout/item_menu" />
 
     </RelativeLayout>
 

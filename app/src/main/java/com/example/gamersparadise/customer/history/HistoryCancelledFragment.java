@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import com.example.gamersparadise.R;
 
-public class SelesaiFragment extends Fragment {
+public class HistoryCancelledFragment extends Fragment {
 
-    public SelesaiFragment() {
+    public HistoryCancelledFragment() {
         // Required empty public constructor
     }
 
@@ -20,6 +20,6 @@ public class SelesaiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_selesai, container, false);
+        return inflater.inflate(R.layout.fragment_history_cancelled, container, false);
     }
 }

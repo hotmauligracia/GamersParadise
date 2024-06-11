@@ -90,7 +90,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="12dp">
 
-        <include layout="@layout/facility_item" />
+        <include layout="@layout/item_facility" />
 
     </RelativeLayout>
 
@@ -151,7 +151,7 @@
         android:layout_marginTop="12dp"
         android:padding="16dp"
         android:clipToPadding="false"
-        tools:listitem="@layout/time_slot_item"
+        tools:listitem="@layout/item_time_slot"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

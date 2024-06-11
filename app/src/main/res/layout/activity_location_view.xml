@@ -7,44 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".admin.home.location.LocationViewActivity">
 
-    <LinearLayout
-        android:id="@+id/topbar_lokasi"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/toolbar_back_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_arrow_back"
-            android:gravity="start"
-            android:textColor="@color/orange"
-            android:layout_marginStart="16dp"/>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="textStart"
-            android:text="Lokasi"
-            style="@style/title_medium"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_lokasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lokasi"
+                style="@style/body_large"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="1sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:id="@+id/status_lokasi"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/topbar_lokasi"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/status_admin">
@@ -52,7 +51,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lokasi Saat Ini"
+            android:text="Daftar Lokasi"
             style="@style/label_large_prominent"
             android:textAlignment="center"
             android:gravity="center"
@@ -73,7 +72,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible">
 
         <ImageView
             android:id="@+id/image_illust_lokasi"
@@ -97,6 +97,14 @@
             android:gravity="center"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_lokasi"
+        tools:listitem="@layout/item_location_view"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_bawah"
