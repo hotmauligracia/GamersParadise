@@ -1,4 +1,4 @@
-package com.example.gamersparadise.admin.home.facility;
+package com.example.gamersparadise.customer.pesanmenu;
 
 import android.os.Bundle;
 
@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gamersparadise.R;
 
-public class FacilityViewFormActivity extends AppCompatActivity {
+public class MenuActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facility_view_form);
+        setContentView(R.layout.activity_menu2);
     }
 }

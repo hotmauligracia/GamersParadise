@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".customer.home.menu.MenuActivity">
+    tools:context=".customer.pesanmenu.MenuActivity2">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -23,38 +22,21 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="start"
-                android:src="@drawable/ic_arrow_back" />
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_detail_pesanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
-                android:orientation="vertical"
-                android:gravity="center_vertical">
+                android:text="Detail Pesanan"
+                style="@style/body_large"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="1sp" />
 
-                <TextView
-                    android:id="@+id/tv_cabang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cabang"
-                    style="@style/body_small" />
-
-                <TextView
-                    android:id="@+id/tv_facilities"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/kebayoran_baru"
-                    style="@style/title_medium"
-                    app:drawableEndCompat="@drawable/ic_dropdown_toolbar"
-                    android:gravity="center_vertical" />
-
-            </LinearLayout>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_menu" />
-
-
-    <include layout="@layout/bottom_bar_order"/>
+    <include layout="@layout/content_menu2" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

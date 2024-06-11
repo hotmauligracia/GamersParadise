@@ -76,4 +76,21 @@
     <string name="pilih_riwayat">All</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="keluar">KELUAR</string>
+    <string name="hai_username">Hai, username!</string>
+    <string name="fasilitas">Fasilitas</string>
+    <string name="lihat_semua">Lihat semua</string>
+    <string name="menu">Menu</string>
+    <string name="promosi">Promosi</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="makanan_minuman"><![CDATA[MAKANAN & MINUMAN]]></string>
+    <string name="tambah_menu">Tambah Menu</string>
+    <string name="unggah_foto">Unggah Foto</string>
+    <string name="nama_fasilitas">Nama Fasilitas</string>
+    <string name="masukkan_nama_fasilitas_disini">Masukkan nama fasilitas di sini</string>
+    <string name="kapasitas">Kapasitas</string>
+    <string name="masukkan_kapasitas_fasilitas_di_sini">Masukkan kapasitas fasilitas di sini</string>
+    <string name="detail_fasilitas">Detail Fasilitas</string>
+    <string name="masukan_detail_fasilitas_di_sini">Masukan detail fasilitas di sini</string>
+    <string name="tambahkan">Tambahkan</string>
 </resources>

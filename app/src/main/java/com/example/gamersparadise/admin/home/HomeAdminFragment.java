@@ -9,7 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
 import com.example.gamersparadise.admin.home.facility.FacilityViewActivity;
 import com.example.gamersparadise.admin.home.location.LocationViewActivity;
@@ -27,6 +30,16 @@ public class HomeAdminFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home_admin, container, false);
+
+        TextView tvUsername = view.findViewById(R.id.tv_username);
+        Button btnLogout = view.findViewById(R.id.btn_logout);
+
+        Authentication auth = new Authentication();
+
+        String username = auth.getCurrentUser().getDisplayName();
+        tvUsername.setText(String.format("Hai, %s", username));
+
+        btnLogout.setOnClickListener(v -> auth.logoutUser(requireContext()));
 
         CardView cvPromotion = view.findViewById(R.id.cv_promotion);
         cvPromotion.setOnClickListener(this::onPromotionViewClick);

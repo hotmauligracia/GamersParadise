@@ -1,20 +1,23 @@
 package com.example.gamersparadise;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.gamersparadise.login.LoginActivity;
+import com.example.gamersparadise.data.User;
+import com.example.gamersparadise.onboarding.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Authentication {
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private final FirebaseAuth mAuth;
+    private final FirebaseFirestore db;
 
     public Authentication(){
         mAuth = FirebaseAuth.getInstance();
@@ -28,6 +31,17 @@ public class Authentication {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
                         if (firebaseUser != null) {
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(user.getUsername())
+                                    .build();
+
+                            firebaseUser.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            Log.d("Authentication", "Profil user diperbarui.");
+                                        }
+                                    });
+
                             saveUserToFirestore(firebaseUser.getUid(), user);
                             sendEmailVerification(activity, firebaseUser);
                         }
@@ -104,8 +118,11 @@ public class Authentication {
         return mAuth.getCurrentUser();
     }
 
-    public void signOut() {
+    public void logoutUser(Context context) {
         mAuth.signOut();
+        Intent loginIntent = new Intent(context, LoginActivity.class);
+        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(loginIntent);
     }
 
     public interface FirebaseLoginCallback {
