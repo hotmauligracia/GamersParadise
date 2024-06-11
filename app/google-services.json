@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "105477329491",
+    "project_id": "gamers-paradise-project",
+    "storage_bucket": "gamers-paradise-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105477329491:android:aa821fe391c9b4fa042ca6",
+        "android_client_info": {
+          "package_name": "com.example.gamersparadise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAizgOBGxNQyVjyum2l3Y7fZwtbvS4HMsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
