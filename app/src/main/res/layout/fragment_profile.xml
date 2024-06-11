@@ -3,12 +3,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.ProfileFragment">
+    android:background="@color/white"
+    tools:context=".customer.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Ini profile" />
+        android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/top_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    style="@style/title_medium" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            style="@style/safe_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="264dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/img_profile" />
+
+            <TextView
+                style="@style/label_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Amalia Balqis"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                style="@style/label_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="52dp"
+                android:text="@string/uname"
+                android:textAlignment="center"
+                android:textColor="@color/gray_normal" />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btn_medsos"
+                    style="@style/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Media Sosial Gamer's Paradise"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btn_about_us"
+                    style="@style/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Tentang Pengembang"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    style="@style/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Log Out" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

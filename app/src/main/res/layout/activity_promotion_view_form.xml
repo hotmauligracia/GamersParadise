@@ -1,0 +1,282 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".admin.home.promotion.PromotionViewFormActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topbar_promo"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            tools:ignore="MissingConstraints,UseCompoundDrawables"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_back"
+                android:gravity="start"
+                android:textColor="@color/orange"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="Buat Promo Baru"
+                style="@style/title_medium"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_nama_promo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_promo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-1dp">
+
+        <LinearLayout
+            android:id="@+id/judul_nm_promo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Promo"
+                style="@style/label_regular"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory" />
+
+            <RelativeLayout
+                android:id="@+id/tf_nm_promo"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                app:layout_constraintTop_toBottomOf="@id/judul_nm_promo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_nm_promo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@id/rect_tf_nm_promo"
+                    android:layout_alignEnd="@id/rect_tf_nm_promo"
+                    android:layout_alignTop="@id/rect_tf_nm_promo"
+                    android:layout_alignBottom="@id/rect_tf_nm_promo"
+                    android:hint="isi nama promo disini"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray_active"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2_promo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/card_nama_promo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/judul_waktu_mulai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Mulai"
+                    style="@style/label_regular"
+                    android:drawablePadding="4dp"
+                    app:drawableEndCompat="@drawable/ic_mandatory" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31-03-2024 08:00"
+                    style="@style/label_regular"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_waktu_promo_berakhir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/card2_promo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/judul_waktu_berakhir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Berakhir"
+                    style="@style/label_regular"
+                    android:drawablePadding="4dp"
+                    app:drawableEndCompat="@drawable/ic_mandatory" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31-03-2024 09:00"
+                    style="@style/label_regular"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/arrow_right"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card4_promo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_waktu_promo_berakhir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/layout_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unggah Foto"
+                style="@style/label_regular"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory" />
+
+            <ImageView
+                android:layout_width="103dp"
+                android:layout_height="84dp"
+                android:src="@drawable/unggah_foto"
+                android:layout_marginTop="15dp">
+
+            </ImageView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_promo_baru"
+                style="@style/label_medium"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button"
+                android:text="Simpan"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

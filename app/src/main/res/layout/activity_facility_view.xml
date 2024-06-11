@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".admin.home.facility.FacilityViewActivity">
+
+    <!--top bar-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topbar_fasilitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+
+            android:layout_marginBottom="8dp"
+            tools:ignore="MissingConstraints,UseCompoundDrawables"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_back"
+                android:gravity="start"
+                android:textColor="@color/orange"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="Fasilitas"
+                style="@style/title_medium"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- tipe menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_tipe_fasilitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_fasilitas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-1dp">
+
+        <LinearLayout
+            android:id="@+id/judul_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Lokasi"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

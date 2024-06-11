@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailRiwayatActivity">
+    tools:context=".customer.history.DetailRiwayatActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="3 April 2024"
                     style="@style/label_small"
-                    android:textColor="@color/gray150"
+                    android:textColor="@color/gray_normal"
                     android:layout_marginRight="12dp"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -99,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:text="15:00 - 17:00 WIB"
                             style="@style/label_small"
-                            android:textColor="@color/gray150"/>
+                            android:textColor="@color/gray_normal"/>
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -133,7 +133,7 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_marginRight="4dp"
-                            android:backgroundTint="@color/gray150"
+                            android:backgroundTint="@color/gray_normal"
                             android:src="@drawable/ic_person" />
 
                         <TextView
@@ -142,7 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="6 orang"
-                            android:textColor="@color/gray150" />
+                            android:textColor="@color/gray_normal" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -262,7 +262,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="PC Gaming Arena x 2 jam"/>
 
                     <TextView
@@ -270,7 +270,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="Legend Cheese Burger x 1"/>
 
                     <TextView
@@ -278,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="Diskon Voucher"/>
                 </LinearLayout>
 
@@ -292,7 +292,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="Rp160.000"
                         android:textAlignment="textEnd"/>
 
@@ -301,7 +301,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="Rp60.000"
                         android:textAlignment="textEnd"/>
 
@@ -310,7 +310,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray150"
+                        android:textColor="@color/gray_normal"
                         android:text="- Rp2.000"
                         android:textAlignment="textEnd"/>
                 </LinearLayout>

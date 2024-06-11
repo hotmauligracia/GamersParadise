@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.pesanmenu.MenuActivity">
+    android:background="@color/white"
+    tools:context=".customer.home.menu.MenuActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -53,6 +54,7 @@
 
     <include layout="@layout/content_menu" />
 
-    <include layout="@layout/bottom_bar_menu"/>
+
+    <include layout="@layout/bottom_bar_order"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

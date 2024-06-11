@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.admin.home.HomeAdminFragment;
+import com.example.gamersparadise.admin.orders.OrdersFragment;
+import com.example.gamersparadise.admin.reservations.ReservationsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AdminActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
