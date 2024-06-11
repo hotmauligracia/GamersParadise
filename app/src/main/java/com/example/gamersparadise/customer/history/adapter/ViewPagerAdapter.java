@@ -1,4 +1,4 @@
-package com.example.gamersparadise.customer.history;
+package com.example.gamersparadise.customer.history.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

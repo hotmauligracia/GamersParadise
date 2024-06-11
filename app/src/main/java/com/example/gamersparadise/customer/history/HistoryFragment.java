@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.customer.history.adapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -52,9 +53,9 @@ public class HistoryFragment extends Fragment {
 
     private void setupViewPager(ViewPager2 viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
-        adapter.addFragment(new DijadwalkanFragment());
-        adapter.addFragment(new SelesaiFragment());
-        adapter.addFragment(new DibatalkanFragment());
+        adapter.addFragment(new HistoryScheduledFragment());
+        adapter.addFragment(new HistoryFinishedFragment());
+        adapter.addFragment(new HistoryCancelledFragment());
         viewPager.setAdapter(adapter);
     }
 }

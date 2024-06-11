@@ -40,7 +40,7 @@
                     style="@style/body_small" />
 
                 <TextView
-                    android:id="@+id/tv_facilities"
+                    android:id="@+id/tv_facility_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/kebayoran_baru"

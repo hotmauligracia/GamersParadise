@@ -8,7 +8,7 @@
     style="@style/card_list">
 
     <ImageView
-        android:id="@+id/img_facilities"
+        android:id="@+id/facility_img"
         android:layout_width="108dp"
         android:layout_height="94dp"
         app:layout_constraintTop_toTopOf="@id/facilities_list_item"
@@ -17,11 +17,11 @@
         android:src="@drawable/img_room1" />
 
     <TextView
-        android:id="@+id/tv_facilities"
+        android:id="@+id/tv_facility_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/facilities_list_item"
-        app:layout_constraintStart_toEndOf="@id/img_facilities"
+        app:layout_constraintStart_toEndOf="@id/facility_img"
         android:layout_marginStart="8dp"
         android:text="@string/pc_gaming_arena"
         android:textAppearance="@style/label_large_prominent"
@@ -33,24 +33,24 @@
         android:id="@+id/tbl_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_facilities"
-        app:layout_constraintStart_toEndOf="@id/img_facilities"
+        app:layout_constraintTop_toBottomOf="@id/tv_facility_name"
+        app:layout_constraintStart_toEndOf="@id/facility_img"
         android:layout_marginStart="8dp">
 
         <TableRow
-            android:id="@+id/tr_person"
+            android:id="@+id/tr_facility_capacity"
             android:layout_width="127dp"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/img_person"
+                android:id="@+id/img_facility_capacity"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
                 android:src="@drawable/ic_person"
                 app:tint="@color/gray_normal" />
 
             <TextView
-                android:id="@+id/tv_person"
+                android:id="@+id/tv_facility_capacity"
                 style="@style/label_small"
                 android:layout_width="107dp"
                 android:layout_height="wrap_content"
@@ -64,19 +64,19 @@
         </TableRow>
 
         <TableRow
-            android:id="@+id/tr_devices"
+            android:id="@+id/tr_facility_details"
             android:layout_width="127dp"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/img_devices"
+                android:id="@+id/img_facility_details"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
                 android:src="@drawable/ic_devices"
                 app:tint="@color/gray_normal" />
 
             <TextView
-                android:id="@+id/tv_devices"
+                android:id="@+id/tv_facility_details"
                 style="@style/label_small"
                 android:layout_width="107dp"
                 android:layout_height="wrap_content"
@@ -91,6 +91,7 @@
     </TableLayout>
 
     <TextView
+        android:id="@+id/tv_facility_price"
         style="@style/label_large_prominent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

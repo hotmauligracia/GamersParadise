@@ -37,6 +37,6 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_menu2" />
+    <include layout="@layout/content_order" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

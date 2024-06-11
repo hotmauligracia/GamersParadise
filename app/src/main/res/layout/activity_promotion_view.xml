@@ -114,7 +114,7 @@
             tools:ignore="MissingConstraints"
             android:layout_marginTop="12dp">
 
-            <include layout="@layout/card_promosi_admin"
+            <include layout="@layout/item_promotion_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />

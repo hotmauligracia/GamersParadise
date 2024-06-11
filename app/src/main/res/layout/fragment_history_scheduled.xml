@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".customer.history.DibatalkanFragment">
+
+    tools:context=".customer.history.HistoryScheduledFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_terlambat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/riwayat_selesai"/>
+        tools:listitem="@layout/item_history_scheduled"/>
 
 </LinearLayout>
