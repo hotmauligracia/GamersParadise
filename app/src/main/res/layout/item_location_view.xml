@@ -8,23 +8,23 @@
     >
 
     <TextView
-        android:id="@+id/tv_location"
+        android:id="@+id/tv_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kebayoran Baru"
+        android:text="@string/kebayoran_baru"
         android:textAllCaps="true"
         style="@style/label_medium_prominent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_address"
+        android:id="@+id/tv_location_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/label_small"
         android:textColor="@color/gray_normal"
-        android:text="Jl. KH. Ahmad Dahlan Kby. No.32, RT.3/RW.3, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130"
-        app:layout_constraintTop_toBottomOf="@id/tv_location"
+        android:text="@string/cth_alamat"
+        app:layout_constraintTop_toBottomOf="@id/tv_location_name"
         app:layout_constraintStart_toStartOf="parent"/>
     
     <LinearLayout
@@ -32,24 +32,24 @@
         android:layout_height="35dp"
         android:layout_marginTop="15dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tv_address"
+        app:layout_constraintTop_toBottomOf="@id/tv_location_address"
         app:layout_constraintStart_toStartOf="parent">
         
         <Button
-            android:id="@+id/btn_edit"
+            android:id="@+id/btn_edit_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ubah"
+            android:text="@string/ubah"
             style="@style/secondary_button"/>
 
         <Button
-            android:id="@+id/btn_delete"
+            android:id="@+id/btn_delete_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="19dp"
-            android:text="Hapus"
+            android:text="@string/hapus"
             style="@style/secondary_button"/>
 
     </LinearLayout>

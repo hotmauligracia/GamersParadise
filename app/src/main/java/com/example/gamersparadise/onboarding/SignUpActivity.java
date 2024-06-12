@@ -54,7 +54,10 @@ public class SignUpActivity extends AppCompatActivity {
             String confirmPassword = edtConfirmPassword.getText().toString().trim();
 
             if (!cbApproval.isChecked()) {
-                Toast.makeText(SignUpActivity.this, "Harap menyetujui Syarat dan Ketentuan serta Kebijakan Privasi aplikasi.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this,
+                        R.string.harap_menyetujui_syarat_dan_ketentuan,
+                                Toast.LENGTH_SHORT)
+                        .show();
                 return;
             }
 
@@ -62,7 +65,10 @@ public class SignUpActivity extends AppCompatActivity {
                 User user = new User(name, username, email, password, false);
                 auth.registerUser(SignUpActivity.this, user);
             } else {
-                Toast.makeText(SignUpActivity.this, "Kata sandi tidak sama.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this,
+                        R.string.kata_sandi_tidak_sama,
+                                Toast.LENGTH_SHORT)
+                        .show();
             }
         });
     }

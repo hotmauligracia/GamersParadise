@@ -16,6 +16,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Map;
+import java.util.Objects;
+
 public class Authentication {
     private final FirebaseAuth mAuth;
     private final FirebaseFirestore db;
@@ -139,16 +142,81 @@ public class Authentication {
                         if (querySnapshot != null) {
                             callback.onSuccess(querySnapshot);
                         } else {
-                            callback.onFailure("Tidak ada data ditemukan");
+                            callback.onFailure("Collection does not exist");
                         }
                     } else {
-                        callback.onFailure("Error mengakses dokumen: " + task.getException());
+                        callback.onFailure("Failed to load collection: " + task.getException());
                     }
                 });
     }
 
     public interface FirebaseCollectionCallback {
         void onSuccess(QuerySnapshot querySnapshot);
+        void onFailure(String errorMessage);
+    }
+
+    public DocumentReference getDocumentRef(String collectionName, String documentId) {
+        if (getCurrentUser() != null) {
+            return db.collection(collectionName).document(documentId);
+        }
+        return null;
+    }
+
+    public void loadDocumentData(String collectionName, String documentId, FirebaseDocumentCallback callback) {
+        DocumentReference documentRef = getDocumentRef(collectionName, documentId);
+        if (documentRef != null) {
+            documentRef.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        callback.onSuccess(document);
+                    }
+                } else {
+                    callback.onFailure("Failed to load document: " + Objects.requireNonNull(task.getException()).getMessage());
+                }
+            });
+        } else {
+            callback.onFailure("No user logged in");
+        }
+    }
+
+    public void saveDocumentData(String collectionName, String documentId, Map<String, Object> data, FirebaseDocumentCallback callback) {
+        DocumentReference documentRef = getDocumentRef(collectionName, documentId);
+        if (documentRef != null) {
+            documentRef.set(data).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    callback.onSuccess(null);
+                } else {
+                    callback.onFailure("Failed to save document: " + Objects.requireNonNull(task.getException()).getMessage());
+                }
+            });
+        } else {
+            callback.onFailure("No user logged in");
+        }
+    }
+
+    public interface FirebaseDocumentCallback {
+        void onSuccess(DocumentSnapshot document);
+        void onFailure(String errorMessage);
+    }
+
+    public void deleteDocumentData(String collectionName, String documentId, FirebaseDocumentDeleteCallback callback) {
+        if (collectionName != null && documentId != null) {
+            db.collection(collectionName).document(documentId).delete()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            callback.onSuccess();
+                        } else {
+                            callback.onFailure("Failed to delete document: " + task.getException());
+                        }
+                    });
+        } else {
+            callback.onFailure("Collection name or document ID is null.");
+        }
+    }
+
+    public interface FirebaseDocumentDeleteCallback {
+        void onSuccess();
         void onFailure(String errorMessage);
     }
 }
