@@ -3,13 +3,16 @@ package com.example.gamersparadise.data;
 import com.google.type.DateTime;
 
 public class Promotion {
-    private int id;
+    private String id;
     private String name;
     private DateTime startTime;
     private DateTime endTime;
     private int imageResource;
     private int promotionTypeId;
     private float nominal;
+
+    public Promotion() {
+    }
 
     public Promotion(String name, DateTime startTime, DateTime endTime, int imageResource, int promotionTypeId, float nominal) {
         this.name = name;
@@ -20,11 +23,11 @@ public class Promotion {
         this.nominal = nominal;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

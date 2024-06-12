@@ -93,4 +93,27 @@
     <string name="detail_fasilitas">Detail Fasilitas</string>
     <string name="masukan_detail_fasilitas_di_sini">Masukan detail fasilitas di sini</string>
     <string name="tambahkan">Tambahkan</string>
+    <string name="tambah_lokasi">Tambah Lokasi</string>
+    <string name="cth_alamat">Jl. KH. Ahmad Dahlan Kby. No.32, RT.3/RW.3, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</string>
+    <string name="ubah">Ubah</string>
+    <string name="hapus">Hapus</string>
+    <string name="nama_cabang">Nama Cabang</string>
+    <string name="isi_nama_cabang">Isi nama cabang</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="isi_nama_provinsi">Isi nama provinsi</string>
+    <string name="kota">Kota</string>
+    <string name="isi_nama_kota">Isi nama kota</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="isi_nama_kecamatan">Isi nama kecamatan</string>
+    <string name="kode_pos">Kode Pos</string>
+    <string name="isi_nama_kode_pos">Isi nama kode pos</string>
+    <string name="isi_nama_jalan">Isi nama jalan</string>
+    <string name="simpan">Simpan</string>
+    <string name="jalan">Jalan</string>
+    <string name="buat_lokasi_baru">Buat Lokasi Baru</string>
+    <string name="daftar_lokasi">Daftar Lokasi</string>
+    <string name="lokasi_tidak_tersedia">Lokasi Tidak Tersedia</string>
+    <string name="harap_menyetujui_syarat_dan_ketentuan">Harap menyetujui Syarat dan Ketentuan serta Kebijakan Privasi aplikasi.</string>
+    <string name="kata_sandi_tidak_sama">Kata sandi tidak sama.</string>
+    <string name="error_field_kosong">Tidak boleh ada field yang kosong</string>
 </resources>

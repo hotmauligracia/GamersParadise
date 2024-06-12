@@ -15,7 +15,7 @@ public class PromotionViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion_view);
 
-        Button btnPromoBaru = findViewById(R.id.btn_promo_baru);
+        Button btnPromoBaru = findViewById(R.id.btn_save);
         btnPromoBaru.setOnClickListener(v -> {
             Intent createPromotion = new Intent(PromotionViewActivity.this, PromotionViewFormActivity.class);
             startActivity(createPromotion);

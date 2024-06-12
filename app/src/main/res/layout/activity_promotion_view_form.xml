@@ -262,7 +262,7 @@
             tools:ignore="MissingConstraints">
 
             <Button
-                android:id="@+id/btn_promo_baru"
+                android:id="@+id/btn_save"
                 style="@style/label_medium"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

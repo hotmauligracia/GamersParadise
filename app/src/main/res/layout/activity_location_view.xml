@@ -10,7 +10,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_app_bar"
@@ -51,7 +53,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Daftar Lokasi"
+            android:text="@string/daftar_lokasi"
             style="@style/label_large_prominent"
             android:textAlignment="center"
             android:gravity="center"
@@ -88,7 +90,7 @@
             android:id="@+id/text_illust_lokasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lokasi Tidak Tersedia"
+            android:text="@string/lokasi_tidak_tersedia"
             style="@style/label_regular"
             app:layout_constraintTop_toBottomOf="@id/image_illust_lokasi"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +101,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_lokasi"
+        android:id="@+id/rv_location_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/btn_lokasi_baru"
+            android:id="@+id/btn_new_location"
             style="@style/label_medium"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -124,10 +126,9 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/button"
-            android:text="Buat Lokasi Baru"
+            android:text="@string/buat_lokasi_baru"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

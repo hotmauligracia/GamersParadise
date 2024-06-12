@@ -38,7 +38,10 @@ public class LoginActivity extends AppCompatActivity {
             String password = edtPassword.getText().toString().trim();
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-                Toast.makeText(LoginActivity.this, "Tidak boleh ada field yang kosong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,
+                        R.string.error_field_kosong,
+                                Toast.LENGTH_SHORT)
+                        .show();
                 return;
             }
 
