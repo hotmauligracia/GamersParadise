@@ -10,7 +10,7 @@ public class PromotionType implements Parcelable {
 
     public PromotionType() {
     }
-
+  
     public PromotionType(String name, String operator) {
         this.name = name;
         this.operator = operator;
