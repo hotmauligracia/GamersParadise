@@ -1,5 +1,7 @@
 package com.example.gamersparadise.admin.home.location.adapter;
 
+import static com.example.gamersparadise.Authentication.*;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
