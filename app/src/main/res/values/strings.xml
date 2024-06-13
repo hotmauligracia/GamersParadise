@@ -125,4 +125,6 @@
     <string name="_20_12_2023_08_00">20–12–2023 08:00</string>
     <string name="sampai">-</string>
     <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
+    <string name="tambah_fasilitas">Tambah Fasilitas</string>
+    <string name="fasilitas_tidak_tersedia">Fasilitas tidak tersedia</string>
 </resources>

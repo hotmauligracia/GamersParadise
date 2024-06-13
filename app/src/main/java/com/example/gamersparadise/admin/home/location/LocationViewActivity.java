@@ -54,7 +54,7 @@ public class LocationViewActivity extends AppCompatActivity {
         Button btnNewLocation = findViewById(R.id.btn_new_location);
 
         tvConfirmTitle.setText("Yakin Hapus Lokasi?");
-        tvConfirmMessage.setText("Lokasi yang sudah dihapus tidak dapat dikembalikan lagi.");
+        tvConfirmMessage.setText("Lokasi yang sudah dihapus tidak dapat dikembalikan lagi");
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
