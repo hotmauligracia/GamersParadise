@@ -11,21 +11,55 @@ import com.example.gamersparadise.onboarding.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.Map;
 
 import java.util.Map;
 import java.util.Objects;
 
 public class Authentication {
+    private static final String TAG = "Authentication";
     private final FirebaseAuth mAuth;
     private final FirebaseFirestore db;
 
     public Authentication(){
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+    }
+
+    public FirebaseUser getCurrentUser() {
+        return mAuth.getCurrentUser();
+    }
+
+    public interface FirebaseLoginCallback {
+        void onSuccess(boolean isAdmin);
+        void onFailure();
+    }
+
+    public interface FirebaseCollectionCallback {
+        void onSuccess(QuerySnapshot querySnapshot);
+        void onFailure(String errorMessage);
+    }
+
+    public interface FirebaseDocumentCallback {
+        void onSuccess(DocumentSnapshot document);
+        void onFailure(String errorMessage);
+    }
+
+    public interface FirebaseDocumentAddCallback {
+        void onSuccess(String documentId);
+        void onFailure(String errorMessage);
+    }
+
+    public interface FirebaseDocumentDeleteCallback {
+        void onSuccess();
+        void onFailure(String errorMessage);
     }
 
     public void registerUser(Activity activity, User user) {
@@ -42,7 +76,7 @@ public class Authentication {
                             firebaseUser.updateProfile(profileUpdates)
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
-                                            Log.d("Authentication", "Profil user diperbarui.");
+                                            Log.d(TAG, "Profil user diperbarui.");
                                         }
                                     });
 
@@ -50,11 +84,11 @@ public class Authentication {
                             sendEmailVerification(activity, firebaseUser);
                         }
 
-                        Log.d("Authentication", "createUserWithEmail:success");
+                        Log.d(TAG, "createUserWithEmail:success");
                         Toast.makeText(activity, "Registrasi berhasil. Verifikasi email Anda.",
                                 Toast.LENGTH_SHORT).show();
                     } else {
-                        Log.w("Authentication", "createUserWithEmail:failure", task.getException());
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
                         Toast.makeText(activity, "Registrasi gagal.",
                                 Toast.LENGTH_SHORT).show();
                     }
@@ -73,7 +107,7 @@ public class Authentication {
                 activity.startActivity(loginIntent);
                 activity.finish();
             } else {
-                Log.e("Authentication", "sendEmailVerification:failure", task.getException());
+                Log.e(TAG, "sendEmailVerification:failure", task.getException());
                 Toast.makeText(activity, "Gagal mengirim email verifikasi.", Toast.LENGTH_SHORT).show();
             }
         });
@@ -92,9 +126,9 @@ public class Authentication {
                             Toast.makeText(activity, "Email belum diverifikasi.", Toast.LENGTH_SHORT).show();
                         }
 
-                        Log.d("Authentication", "signInWithEmail:success");
+                        Log.d(TAG, "signInWithEmail:success");
                     } else {
-                        Log.w("Authentication", "signInWithEmail:failure", task.getException());
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(activity, "Login gagal.",
                                 Toast.LENGTH_SHORT).show();
                     }
@@ -118,10 +152,6 @@ public class Authentication {
         });
     }
 
-    public FirebaseUser getCurrentUser() {
-        return mAuth.getCurrentUser();
-    }
-
     public void logoutUser(Context context) {
         mAuth.signOut();
         Intent loginIntent = new Intent(context, LoginActivity.class);
@@ -129,30 +159,34 @@ public class Authentication {
         context.startActivity(loginIntent);
     }
 
-    public interface FirebaseLoginCallback {
-        void onSuccess(boolean isAdmin);
-        void onFailure();
-    }
-
     public void fetchCollectionData(String collectionName, FirebaseCollectionCallback callback) {
-        db.collection(collectionName).get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        QuerySnapshot querySnapshot = task.getResult();
-                        if (querySnapshot != null) {
-                            callback.onSuccess(querySnapshot);
-                        } else {
-                            callback.onFailure("Collection does not exist");
-                        }
-                    } else {
-                        callback.onFailure("Failed to load collection: " + task.getException());
-                    }
-                });
+        db.collection(collectionName)
+                .get()
+                .addOnSuccessListener(callback::onSuccess)
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
     }
 
-    public interface FirebaseCollectionCallback {
-        void onSuccess(QuerySnapshot querySnapshot);
-        void onFailure(String errorMessage);
+    public void addDocumentData(String collectionName, Map<String, Object> data, final FirebaseDocumentAddCallback callback) {
+        CollectionReference collectionReference = db.collection(collectionName);
+        collectionReference.add(data)
+                .addOnSuccessListener(documentReference -> callback.onSuccess(documentReference.getId()))
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+    }
+
+    public void updateDocumentData(String collectionName, String documentId, Map<String, Object> data, FirebaseDocumentCallback callback) {
+        DocumentReference documentReference = db.collection(collectionName).document(documentId);
+        documentReference.set(data, SetOptions.merge())
+                .addOnSuccessListener(aVoid -> documentReference.get()
+                        .addOnSuccessListener(callback::onSuccess)
+                        .addOnFailureListener(e -> callback.onFailure(e.getMessage())))
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+    }
+
+    public void deleteDocumentData(String collectionName, String documentId, final FirebaseDocumentDeleteCallback callback) {
+        DocumentReference documentReference = db.collection(collectionName).document(documentId);
+        documentReference.delete()
+                .addOnSuccessListener(aVoid -> callback.onSuccess())
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
     }
 
     public DocumentReference getDocumentRef(String collectionName, String documentId) {

@@ -115,5 +115,6 @@
     <string name="lokasi_tidak_tersedia">Lokasi Tidak Tersedia</string>
     <string name="harap_menyetujui_syarat_dan_ketentuan">Harap menyetujui Syarat dan Ketentuan serta Kebijakan Privasi aplikasi.</string>
     <string name="kata_sandi_tidak_sama">Kata sandi tidak sama.</string>
-    <string name="error_field_kosong">Tidak boleh ada field yang kosong</string>
+    <string name="error_field_kosong">Harap isi semua kolom</string>
+    <string name="coming_soon">Coming Soon</string>
 </resources>
