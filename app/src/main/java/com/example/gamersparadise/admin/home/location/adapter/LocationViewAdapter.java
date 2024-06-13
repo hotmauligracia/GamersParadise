@@ -10,12 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
 import com.example.gamersparadise.admin.home.location.LocationViewActivity;
 import com.example.gamersparadise.admin.home.location.LocationViewFormActivity;
@@ -27,12 +25,10 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
 
     private final Context context;
     private final List<Location> locationList;
-    private final Authentication auth;
 
-    public LocationViewAdapter(Context context, List<Location> locationList, Authentication auth) {
+    public LocationViewAdapter(Context context, List<Location> locationList) {
         this.context = context;
         this.locationList = locationList;
-        this.auth = auth;
     }
 
     @NonNull
@@ -64,19 +60,11 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
             ((Activity) context).startActivityForResult(intent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
         });
 
-        holder.btnDeleteLocation.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new FirebaseDocumentDeleteCallback() {
-            @Override
-            public void onSuccess() {
-                locationList.remove(holder.getAdapterPosition());
-                notifyDataSetChanged();
-                Toast.makeText(context, "Data lokasi terhapus", Toast.LENGTH_SHORT).show();
+        holder.btnDeleteLocation.setOnClickListener(v -> {
+            if (context instanceof LocationViewActivity) {
+                ((LocationViewActivity) context).showDeletionConfirmationPopup(location);
             }
-
-            @Override
-            public void onFailure(String errorMessage) {
-                Toast.makeText(context, "Gagal menghapus data lokasi: " + errorMessage, Toast.LENGTH_SHORT).show();
-            }
-        }));
+        });
     }
 
     @Override

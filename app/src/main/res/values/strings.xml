@@ -117,4 +117,12 @@
     <string name="kata_sandi_tidak_sama">Kata sandi tidak sama.</string>
     <string name="error_field_kosong">Harap isi semua kolom</string>
     <string name="coming_soon">Coming Soon</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="yakin_hapus_menu">Yakin Hapus Menu?</string>
+    <string name="menu_yang_sudah_dihapus_tidak_dapat_dikembalikan_lagi">Menu yang sudah dihapus tidak dapat dikembalikan lagi</string>
+    <string name="christmas_package">CHRISTMAS PACKAGE</string>
+    <string name="_20_12_2023_08_00">20–12–2023 08:00</string>
+    <string name="sampai">-</string>
+    <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
 </resources>
