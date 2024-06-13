@@ -20,6 +20,9 @@ import com.google.firebase.firestore.SetOptions;
 
 import java.util.Map;
 
+import java.util.Map;
+import java.util.Objects;
+
 public class Authentication {
     private static final String TAG = "Authentication";
     private final FirebaseAuth mAuth;
@@ -184,5 +187,70 @@ public class Authentication {
         documentReference.delete()
                 .addOnSuccessListener(aVoid -> callback.onSuccess())
                 .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+    }
+
+    public DocumentReference getDocumentRef(String collectionName, String documentId) {
+        if (getCurrentUser() != null) {
+            return db.collection(collectionName).document(documentId);
+        }
+        return null;
+    }
+
+    public void loadDocumentData(String collectionName, String documentId, FirebaseDocumentCallback callback) {
+        DocumentReference documentRef = getDocumentRef(collectionName, documentId);
+        if (documentRef != null) {
+            documentRef.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        callback.onSuccess(document);
+                    }
+                } else {
+                    callback.onFailure("Failed to load document: " + Objects.requireNonNull(task.getException()).getMessage());
+                }
+            });
+        } else {
+            callback.onFailure("No user logged in");
+        }
+    }
+
+    public void saveDocumentData(String collectionName, String documentId, Map<String, Object> data, FirebaseDocumentCallback callback) {
+        DocumentReference documentRef = getDocumentRef(collectionName, documentId);
+        if (documentRef != null) {
+            documentRef.set(data).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    callback.onSuccess(null);
+                } else {
+                    callback.onFailure("Failed to save document: " + Objects.requireNonNull(task.getException()).getMessage());
+                }
+            });
+        } else {
+            callback.onFailure("No user logged in");
+        }
+    }
+
+    public interface FirebaseDocumentCallback {
+        void onSuccess(DocumentSnapshot document);
+        void onFailure(String errorMessage);
+    }
+
+    public void deleteDocumentData(String collectionName, String documentId, FirebaseDocumentDeleteCallback callback) {
+        if (collectionName != null && documentId != null) {
+            db.collection(collectionName).document(documentId).delete()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            callback.onSuccess();
+                        } else {
+                            callback.onFailure("Failed to delete document: " + task.getException());
+                        }
+                    });
+        } else {
+            callback.onFailure("Collection name or document ID is null.");
+        }
+    }
+
+    public interface FirebaseDocumentDeleteCallback {
+        void onSuccess();
+        void onFailure(String errorMessage);
     }
 }
