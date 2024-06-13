@@ -103,14 +103,4 @@ public class LocationViewActivity extends AppCompatActivity {
             rvLocation.setVisibility(View.VISIBLE);
         }
     }
-
-    private void updateVisibility() {
-        if (locationList.isEmpty()) {
-            illustLokasi.setVisibility(View.VISIBLE);
-            rvLocation.setVisibility(View.GONE);
-        } else {
-            illustLokasi.setVisibility(View.GONE);
-            rvLocation.setVisibility(View.VISIBLE);
-        }
-    }
 }
