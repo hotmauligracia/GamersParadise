@@ -1,5 +1,7 @@
 package com.example.gamersparadise.admin.home.location.adapter;
 
+import static com.example.gamersparadise.Authentication.*;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -62,7 +64,7 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
             ((Activity) context).startActivityForResult(intent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
         });
 
-        holder.btnDeleteLocation.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
+        holder.btnDeleteLocation.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new FirebaseDocumentDeleteCallback() {
             @Override
             public void onSuccess() {
                 locationList.remove(holder.getAdapterPosition());
