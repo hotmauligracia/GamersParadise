@@ -1,10 +1,8 @@
 package com.example.gamersparadise.admin.home.location;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
-import com.example.gamersparadise.data.Location;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 
@@ -23,11 +20,9 @@ import java.util.Map;
 
 public class LocationViewFormActivity extends AppCompatActivity {
 
-    private static final String TAG = "LocationViewFormActivity";
-
     private EditText edtLocationName, edtLocationProvince, edtLocationCity, edtLocationSubdistrict, edtLocationZipCode, edtLocationStreet;
+    private Button btnSave;
     private Authentication auth;
-    private Location location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,105 +37,91 @@ public class LocationViewFormActivity extends AppCompatActivity {
         edtLocationSubdistrict = findViewById(R.id.edt_location_subdistrict);
         edtLocationZipCode = findViewById(R.id.edt_location_zip_code);
         edtLocationStreet = findViewById(R.id.edt_location_street);
-        Button btnSave = findViewById(R.id.btn_save);
+        btnSave = findViewById(R.id.btn_save);
 
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("location")) {
-            location = intent.getParcelableExtra("location");
-            if (location != null) {
-                populateForm(location);
-            } else {
-                Log.e(TAG, "Location extra is null");
-            }
-        } else {
-            Log.e(TAG, "Intent or location extra is null");
-        }
+        loadLocation();
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
+
         getSupportActionBar().setTitle(null);
 
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
         backButton.setOnClickListener(v -> onBackPressed());
 
-        btnSave.setOnClickListener(v -> {
-            if (validateInputs()) {
-                if (location == null) {
-                    createNewLocation();
-                } else {
-                    updateLocation();
-                }
-            }
-        });
+        btnSave.setOnClickListener(v -> saveLocation());
     }
 
-    private void populateForm(Location location) {
-        edtLocationName.setText(location.getName());
-        edtLocationProvince.setText(location.getProvince());
-        edtLocationCity.setText(location.getCity());
-        edtLocationSubdistrict.setText(location.getSubdistrict());
-        edtLocationZipCode.setText(location.getZipCode());
-        edtLocationStreet.setText(location.getStreet());
-    }
+    private void loadLocation() {
+        if (auth.getCurrentUser() != null) {
+            auth.loadDocumentData("locations",
+                    auth.getCurrentUser().getUid(),
+                    new Authentication.FirebaseDocumentCallback()
+                    {
+                        @Override
+                        public void onSuccess(DocumentSnapshot document) {
+                            if (document != null) {
+                                edtLocationName.setText(document.getString("name"));
+                                edtLocationProvince.setText(document.getString("province"));
+                                edtLocationCity.setText(document.getString("city"));
+                                edtLocationSubdistrict.setText(document.getString("subdistrict"));
+                                edtLocationZipCode.setText(document.getString("zipCode"));
+                                edtLocationStreet.setText(document.getString("street"));
+                            }
+                        }
 
-    private boolean validateInputs() {
-        if (TextUtils.isEmpty(edtLocationName.getText().toString()) ||
-                TextUtils.isEmpty(edtLocationProvince.getText().toString()) ||
-                TextUtils.isEmpty(edtLocationCity.getText().toString()) ||
-                TextUtils.isEmpty(edtLocationSubdistrict.getText().toString()) ||
-                TextUtils.isEmpty(edtLocationZipCode.getText().toString()) ||
-                TextUtils.isEmpty(edtLocationStreet.getText().toString())) {
-            Toast.makeText(this, R.string.error_field_kosong, Toast.LENGTH_SHORT).show();
-            return false;
+                        @Override
+                        public void onFailure(String errorMessage) {
+                            Toast.makeText(LocationViewFormActivity.this,
+                                    errorMessage, Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
-        return true;
     }
 
-    private void createNewLocation() {
-        Map<String, Object> data = new HashMap<>();
-        data.put("name", edtLocationName.getText().toString());
-        data.put("province", edtLocationProvince.getText().toString());
-        data.put("city", edtLocationCity.getText().toString());
-        data.put("subdistrict", edtLocationSubdistrict.getText().toString());
-        data.put("zipCode", edtLocationZipCode.getText().toString());
-        data.put("street", edtLocationStreet.getText().toString());
+    private void saveLocation() {
+        String name = edtLocationName.getText().toString();
+        String province = edtLocationProvince.getText().toString();
+        String city = edtLocationCity.getText().toString();
+        String subdistrict = edtLocationSubdistrict.getText().toString();
+        String zipCode = edtLocationZipCode.getText().toString();
+        String street = edtLocationStreet.getText().toString();
 
-        auth.addDocumentData("locations", data, new Authentication.FirebaseDocumentAddCallback() {
-            @Override
-            public void onSuccess(String documentId) {
-                Toast.makeText(LocationViewFormActivity.this, "Data lokasi ditambahkan", Toast.LENGTH_SHORT).show();
-                setResult(Activity.RESULT_OK);
-                finish();
-            }
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(province) ||
+                TextUtils.isEmpty(city) || TextUtils.isEmpty(subdistrict) ||
+                TextUtils.isEmpty(zipCode) || TextUtils.isEmpty(street)
+        ) {
+            Toast.makeText(this, R.string.error_field_kosong, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            @Override
-            public void onFailure(String errorMessage) {
-                Toast.makeText(LocationViewFormActivity.this, "Gagal menambahkan data lokasi: " + errorMessage, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+        Map<String, Object> locationData = new HashMap<>();
+        locationData.put("name", name);
+        locationData.put("province", province);
+        locationData.put("city", city);
+        locationData.put("subdistrict", subdistrict);
+        locationData.put("zipCode", zipCode);
+        locationData.put("street", street);
 
-    private void updateLocation() {
-        Map<String, Object> data = new HashMap<>();
-        data.put("name", edtLocationName.getText().toString());
-        data.put("province", edtLocationProvince.getText().toString());
-        data.put("city", edtLocationCity.getText().toString());
-        data.put("subdistrict", edtLocationSubdistrict.getText().toString());
-        data.put("zipCode", edtLocationZipCode.getText().toString());
-        data.put("street", edtLocationStreet.getText().toString());
+        if (auth.getCurrentUser() != null) {
+            auth.saveDocumentData("locations",
+                    auth.getCurrentUser().getUid(),
+                    locationData,
+                    new Authentication.FirebaseDocumentCallback()
+                    {
+                        @Override
+                        public void onSuccess(DocumentSnapshot document) {
+                            Toast.makeText(LocationViewFormActivity.this, "Data lokasi berhasil disimpan.", Toast.LENGTH_SHORT).show();
+                            setResult(Activity.RESULT_OK);
+                            finish();
+                        }
 
-        auth.updateDocumentData("locations", location.getId(), data, new Authentication.FirebaseDocumentCallback() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Toast.makeText(LocationViewFormActivity.this, "Data lokasi diperbarui", Toast.LENGTH_SHORT).show();
-                setResult(Activity.RESULT_OK);
-                finish();
-            }
-
-            @Override
-            public void onFailure(String errorMessage) {
-                Toast.makeText(LocationViewFormActivity.this, "Gagal memperbarui data lokasi: " + errorMessage, Toast.LENGTH_SHORT).show();
-            }
-        });
+                        @Override
+                        public void onFailure(String errorMessage) {
+                            Toast.makeText(LocationViewFormActivity.this,
+                                    errorMessage, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
 }

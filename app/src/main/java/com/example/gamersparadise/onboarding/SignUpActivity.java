@@ -20,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText edtName, edtUsername, edtEmail, edtPassword, edtConfirmPassword;
     private CheckBox cbApproval;
+    private Button btnSignUp;
     private Authentication auth;
 
     @Override
@@ -33,7 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edt_password);
         edtConfirmPassword = findViewById(R.id.edt_confirm_password);
         cbApproval = findViewById(R.id.cb_approval);
-        Button btnSignUp = findViewById(R.id.btn_sign_up);
+        btnSignUp = findViewById(R.id.btn_sign_up);
 
         auth = new Authentication();
 
@@ -73,6 +74,5 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onGoogleSignUpClick(View view) {
-        Toast.makeText(this, R.string.coming_soon, Toast.LENGTH_SHORT).show();
     }
 }

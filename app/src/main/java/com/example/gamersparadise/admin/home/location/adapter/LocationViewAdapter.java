@@ -1,6 +1,5 @@
 package com.example.gamersparadise.admin.home.location.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
-import com.example.gamersparadise.admin.home.location.LocationViewActivity;
 import com.example.gamersparadise.admin.home.location.LocationViewFormActivity;
 import com.example.gamersparadise.data.Location;
 
@@ -56,13 +54,13 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
                 )
         );
 
-        holder.btnEditLocation.setOnClickListener(v -> {
+        holder.btnEdit.setOnClickListener(v -> {
             Intent intent = new Intent(context, LocationViewFormActivity.class);
-            intent.putExtra("location", location);
-            ((Activity) context).startActivityForResult(intent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
+            intent.putExtra("locations", location);
+            context.startActivity(intent);
         });
 
-        holder.btnDeleteLocation.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
+        holder.btnDelete.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
             @Override
             public void onSuccess() {
                 locationList.remove(holder.getAdapterPosition());
@@ -84,15 +82,15 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
 
     public static class LocationViewHolder extends RecyclerView.ViewHolder {
         TextView tvLocationName, tvLocationAddress;
-        Button btnEditLocation, btnDeleteLocation;
+        Button btnEdit, btnDelete;
 
         public LocationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvLocationName = itemView.findViewById(R.id.tv_location_name);
             tvLocationAddress = itemView.findViewById(R.id.tv_location_address);
-            btnEditLocation = itemView.findViewById(R.id.btn_edit_location);
-            btnDeleteLocation = itemView.findViewById(R.id.btn_delete_location);
+            btnEdit = itemView.findViewById(R.id.btn_edit_location);
+            btnDelete = itemView.findViewById(R.id.btn_delete_location);
         }
     }
 }

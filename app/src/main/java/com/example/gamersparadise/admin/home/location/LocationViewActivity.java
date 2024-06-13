@@ -25,8 +25,7 @@ import java.util.List;
 
 public class LocationViewActivity extends AppCompatActivity {
 
-    public static final int REQUEST_CODE_NEW_LOCATION = 1;
-    public static final int REQUEST_CODE_EDIT_LOCATION = 2;
+    private static final int REQUEST_CODE_NEW_LOCATION = 1;
 
     private RecyclerView rvLocation;
     private View illustLokasi;
@@ -51,6 +50,7 @@ public class LocationViewActivity extends AppCompatActivity {
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
+
         getSupportActionBar().setTitle(null);
 
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
@@ -67,8 +67,7 @@ public class LocationViewActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if ((requestCode == REQUEST_CODE_NEW_LOCATION || requestCode == REQUEST_CODE_EDIT_LOCATION)
-                && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_CODE_NEW_LOCATION && resultCode == RESULT_OK) {
             fetchLocationData();
         }
     }
@@ -92,16 +91,6 @@ public class LocationViewActivity extends AppCompatActivity {
                 Toast.makeText(LocationViewActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void updateVisibility() {
-        if (locationList.isEmpty()) {
-            illustLokasi.setVisibility(View.VISIBLE);
-            rvLocation.setVisibility(View.GONE);
-        } else {
-            illustLokasi.setVisibility(View.GONE);
-            rvLocation.setVisibility(View.VISIBLE);
-        }
     }
 
     private void updateVisibility() {
