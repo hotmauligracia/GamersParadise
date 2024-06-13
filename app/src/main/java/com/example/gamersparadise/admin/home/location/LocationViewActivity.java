@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -29,7 +30,7 @@ public class LocationViewActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_EDIT_LOCATION = 2;
 
     private RecyclerView rvLocation;
-    private View illustLokasi;
+    private View illustLokasi, deletionConfirmationPopup;
     private LocationViewAdapter adapter;
     private List<Location> locationList;
     private Authentication auth;
@@ -43,11 +44,17 @@ public class LocationViewActivity extends AppCompatActivity {
 
         rvLocation = findViewById(R.id.rv_location_view);
         illustLokasi = findViewById(R.id.illust_lokasi);
+        deletionConfirmationPopup = findViewById(R.id.deletion_confirmation_popup);
+        TextView tvConfirmTitle = findViewById(R.id.tv_confirm_title);
+        TextView tvConfirmMessage = findViewById(R.id.tv_confirm_message);
         rvLocation.setLayoutManager(new LinearLayoutManager(this));
         locationList = new ArrayList<>();
-        adapter = new LocationViewAdapter(this, locationList, auth);
+        adapter = new LocationViewAdapter(this, locationList);
         rvLocation.setAdapter(adapter);
         Button btnNewLocation = findViewById(R.id.btn_new_location);
+
+        tvConfirmTitle.setText("Yakin Hapus Lokasi?");
+        tvConfirmMessage.setText("Lokasi yang sudah dihapus tidak dapat dikembalikan lagi.");
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
@@ -102,5 +109,36 @@ public class LocationViewActivity extends AppCompatActivity {
             illustLokasi.setVisibility(View.GONE);
             rvLocation.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void showDeletionConfirmationPopup(Location location) {
+        deletionConfirmationPopup.setVisibility(View.VISIBLE);
+
+        Button btnConfirmYa = findViewById(R.id.btn_confirm_ya);
+        Button btnConfirmTidak = findViewById(R.id.btn_confirm_tidak);
+
+        btnConfirmYa.setOnClickListener(v -> {
+            deleteLocation(location);
+            deletionConfirmationPopup.setVisibility(View.GONE);
+        });
+
+        btnConfirmTidak.setOnClickListener(v -> deletionConfirmationPopup.setVisibility(View.GONE));
+    }
+
+    private void deleteLocation(Location location) {
+        auth.deleteDocumentData("locations", location.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
+            @Override
+            public void onSuccess() {
+                locationList.remove(location);
+                adapter.notifyDataSetChanged();
+                updateVisibility();
+                Toast.makeText(LocationViewActivity.this, "Data lokasi terhapus", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(LocationViewActivity.this, "Gagal menghapus data lokasi: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
