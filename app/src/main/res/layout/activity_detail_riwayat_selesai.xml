@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.history.DetailRiwayatSelesaiActivity">
+    tools:context=".DetailRiwayatSelesaiActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="3 April 2024"
                     style="@style/label_small"
-                    android:textColor="@color/gray_normal"
+                    android:textColor="@color/gray150"
                     android:layout_marginRight="12dp"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -99,7 +99,7 @@
                             android:layout_height="wrap_content"
                             android:text="15:00 - 17:00 WIB"
                             style="@style/label_small"
-                            android:textColor="@color/gray_normal"/>
+                            android:textColor="@color/gray150"/>
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -133,7 +133,7 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_marginRight="4dp"
-                            android:backgroundTint="@color/gray_normal"
+                            android:backgroundTint="@color/gray150"
                             android:src="@drawable/ic_person" />
 
                         <TextView
@@ -142,7 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="6 orang"
-                            android:textColor="@color/gray_normal" />
+                            android:textColor="@color/gray150" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -262,7 +262,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="PC Gaming Arena x 2 jam"/>
 
                     <TextView
@@ -270,7 +270,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="Legend Cheese Burger x 1"/>
 
                     <TextView
@@ -278,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="Diskon Voucher"/>
 
                     <TextView
@@ -302,7 +302,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="Rp160.000"
                         android:textAlignment="textEnd"/>
 
@@ -311,7 +311,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="Rp60.000"
                         android:textAlignment="textEnd"/>
 
@@ -320,7 +320,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
-                        android:textColor="@color/gray_normal"
+                        android:textColor="@color/gray150"
                         android:text="- Rp2.000"
                         android:textAlignment="textEnd"/>
 
@@ -352,7 +352,7 @@
                     android:id="@+id/metode_bayar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/gray_normal"
+                    android:textColor="@color/gray150"
                     style="@style/label_regular"
                     android:text="Bayar tunai"
                     android:layout_weight="1"/>
@@ -361,7 +361,7 @@
                     android:id="@+id/grand_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/gray_normal"
+                    android:textColor="@color/gray150"
                     style="@style/label_regular"
                     android:text="Rp218.000"
                     android:textAlignment="textEnd"/>
