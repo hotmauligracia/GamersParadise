@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_order_item"
+    android:layout_width="match_parent"
+    android:layout_height="79dp"
+    android:padding="10dp"
+    android:background="@drawable/rectangle_tf"
+    android:lineSpacingExtra="2sp"
+    android:onClick="onOrdersItemClick">
+
+    <RelativeLayout
+        android:id="@+id/frame_10000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_queue_number"
+            style="@style/label_large_prominent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="#10009" />
+
+        <ImageView
+            android:id="@+id/img_reserve_time"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_below="@id/tv_queue_number"
+            android:src="@drawable/ic_clock"
+            app:tint="@color/gray_normal" />
+
+        <TextView
+            android:id="@+id/tv_reserve_time"
+            style="@style/label_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_queue_number"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/img_reserve_time"
+            android:text="12.00-14.00 WIB"
+            android:textColor="@color/gray_normal" />
+
+        <ImageView
+            android:id="@+id/img_room_location"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_below="@id/img_reserve_time"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_room_location"
+            app:tint="@color/gray_normal" />
+
+        <TextView
+            android:id="@+id/tv_room_reserved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_reserve_time"
+            android:layout_toEndOf="@id/img_room_location"
+            android:layout_marginStart="4dp"
+            android:text="VIP 1"
+            style="@style/label_small"
+            android:textColor="@color/gray_normal" />
+
+        <ImageView
+            android:id="@+id/img_orders"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_below="@id/img_room_location"
+            android:src="@drawable/ic_food"
+            app:tint="@color/gray_normal" />
+
+        <TextView
+            android:id="@+id/tv_orders"
+            style="@style/label_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_room_reserved"
+            android:layout_marginStart="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/img_orders"
+            android:text="Legend Cheese Burger"
+            android:textColor="@color/gray_normal"
+            android:maxLines="1"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_detail"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_next"
+        app:tint="@color/orange"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

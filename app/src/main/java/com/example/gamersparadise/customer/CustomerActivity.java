@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.customer.history.HistoryFragment;
+import com.example.gamersparadise.customer.home.HomeCustomerFragment;
+import com.example.gamersparadise.customer.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CustomerActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
