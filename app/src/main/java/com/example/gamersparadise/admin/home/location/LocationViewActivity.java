@@ -29,7 +29,7 @@ public class LocationViewActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_NEW_LOCATION = 1;
     public static final int REQUEST_CODE_EDIT_LOCATION = 2;
 
-    private RecyclerView rvLocation;
+    private RecyclerView rvLocationView;
     private View illustLokasi, deletionConfirmationPopup;
     private LocationViewAdapter adapter;
     private List<Location> locationList;
@@ -42,26 +42,27 @@ public class LocationViewActivity extends AppCompatActivity {
 
         auth = new Authentication();
 
-        rvLocation = findViewById(R.id.rv_location_view);
-        illustLokasi = findViewById(R.id.illust_lokasi);
-        deletionConfirmationPopup = findViewById(R.id.deletion_confirmation_popup);
+        MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
+        ImageView backButton = findViewById(R.id.toolbar_back_icon);
         TextView tvConfirmTitle = findViewById(R.id.tv_confirm_title);
         TextView tvConfirmMessage = findViewById(R.id.tv_confirm_message);
-        rvLocation.setLayoutManager(new LinearLayoutManager(this));
+        Button btnNewLocation = findViewById(R.id.btn_new_location);
+
+        rvLocationView = findViewById(R.id.rv_location_view);
+        illustLokasi = findViewById(R.id.illust_lokasi);
+        deletionConfirmationPopup = findViewById(R.id.deletion_confirmation_popup);
+
+        rvLocationView.setLayoutManager(new LinearLayoutManager(this));
         locationList = new ArrayList<>();
         adapter = new LocationViewAdapter(this, locationList);
-        rvLocation.setAdapter(adapter);
-        Button btnNewLocation = findViewById(R.id.btn_new_location);
+        rvLocationView.setAdapter(adapter);
+
+        setSupportActionBar(topAppBar);
+        getSupportActionBar().setTitle(null);
+        backButton.setOnClickListener(v -> onBackPressed());
 
         tvConfirmTitle.setText("Yakin Hapus Lokasi?");
         tvConfirmMessage.setText("Lokasi yang sudah dihapus tidak dapat dikembalikan lagi");
-
-        MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
-        setSupportActionBar(topAppBar);
-        getSupportActionBar().setTitle(null);
-
-        ImageView backButton = findViewById(R.id.toolbar_back_icon);
-        backButton.setOnClickListener(v -> onBackPressed());
 
         btnNewLocation.setOnClickListener(v -> {
             Intent createLocation = new Intent(LocationViewActivity.this, LocationViewFormActivity.class);
@@ -104,10 +105,10 @@ public class LocationViewActivity extends AppCompatActivity {
     private void updateVisibility() {
         if (locationList.isEmpty()) {
             illustLokasi.setVisibility(View.VISIBLE);
-            rvLocation.setVisibility(View.GONE);
+            rvLocationView.setVisibility(View.GONE);
         } else {
             illustLokasi.setVisibility(View.GONE);
-            rvLocation.setVisibility(View.VISIBLE);
+            rvLocationView.setVisibility(View.VISIBLE);
         }
     }
 

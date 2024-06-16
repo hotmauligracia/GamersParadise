@@ -1,7 +1,5 @@
 package com.example.gamersparadise.admin.home.location.adapter;
 
-import static com.example.gamersparadise.Authentication.*;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -55,9 +53,9 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
         );
 
         holder.btnEditLocation.setOnClickListener(v -> {
-            Intent intent = new Intent(context, LocationViewFormActivity.class);
-            intent.putExtra("location", location);
-            ((Activity) context).startActivityForResult(intent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
+            Intent editLocationIntent = new Intent(context, LocationViewFormActivity.class);
+            editLocationIntent.putExtra("location", location);
+            ((Activity) context).startActivityForResult(editLocationIntent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
         });
 
         holder.btnDeleteLocation.setOnClickListener(v -> {

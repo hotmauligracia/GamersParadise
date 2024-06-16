@@ -9,7 +9,7 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/tv_facility_view_name"
+        android:id="@+id/tv_facility_name_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/tbl_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_facility_view_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_facility_name_view"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="4dp">
 
