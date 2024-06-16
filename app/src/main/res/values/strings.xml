@@ -130,4 +130,6 @@
     <string name="harga_per_jam">Harga Per Jam</string>
     <string name="masukkan_harga_reservasi_fasilitas_per_jam_di_sini">Masukkan harga reservasi fasilitas per jam di sini</string>
     <string name="rp">Rp</string>
+    <string name="judul_notifikasi">Reservasi Dibatalkan</string>
+    <string name="cth_notifikasi">Reservasi Anda dibatalkan oleh Admin karena tidak hadir tanpa konfirmasi keterlambatan.</string>
 </resources>
