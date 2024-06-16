@@ -11,6 +11,7 @@ public class Menu implements Parcelable {
     private String description;
     private int menuTypeId;
     private float price;
+    private boolean isInStock;
 
     public Menu() {
     }
@@ -80,6 +81,14 @@ public class Menu implements Parcelable {
         this.price = price;
     }
 
+    public boolean isInStock() {
+        return isInStock;
+    }
+
+    public void setInStock(boolean inStock) {
+        isInStock = inStock;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -94,6 +103,7 @@ public class Menu implements Parcelable {
         dest.writeString(this.description);
         dest.writeInt(this.menuTypeId);
         dest.writeFloat(this.price);
+        dest.writeByte(this.isInStock ? (byte) 1 : (byte) 0);
     }
 
     public void readFromParcel(Parcel source) {
@@ -104,6 +114,7 @@ public class Menu implements Parcelable {
         this.description = source.readString();
         this.menuTypeId = source.readInt();
         this.price = source.readFloat();
+        this.isInStock = source.readByte() != 0;
     }
 
     protected Menu(Parcel in) {
@@ -114,9 +125,10 @@ public class Menu implements Parcelable {
         this.description = in.readString();
         this.menuTypeId = in.readInt();
         this.price = in.readFloat();
+        this.isInStock = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {
+    public static final Creator<Menu> CREATOR = new Creator<Menu>() {
         @Override
         public Menu createFromParcel(Parcel source) {
             return new Menu(source);
