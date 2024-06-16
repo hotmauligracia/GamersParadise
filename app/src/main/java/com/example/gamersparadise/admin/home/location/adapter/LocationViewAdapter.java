@@ -1,5 +1,6 @@
 package com.example.gamersparadise.admin.home.location.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,13 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.admin.home.location.LocationViewActivity;
 import com.example.gamersparadise.admin.home.location.LocationViewFormActivity;
 import com.example.gamersparadise.data.Location;
 
@@ -23,12 +23,10 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
 
     private final Context context;
     private final List<Location> locationList;
-    private final Authentication auth;
 
-    public LocationViewAdapter(Context context, List<Location> locationList, Authentication auth) {
+    public LocationViewAdapter(Context context, List<Location> locationList) {
         this.context = context;
         this.locationList = locationList;
-        this.auth = auth;
     }
 
     @NonNull
@@ -54,25 +52,17 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
                 )
         );
 
-        holder.btnEdit.setOnClickListener(v -> {
-            Intent intent = new Intent(context, LocationViewFormActivity.class);
-            intent.putExtra("locations", location);
-            context.startActivity(intent);
+        holder.btnEditLocation.setOnClickListener(v -> {
+            Intent editLocationIntent = new Intent(context, LocationViewFormActivity.class);
+            editLocationIntent.putExtra("location", location);
+            ((Activity) context).startActivityForResult(editLocationIntent, LocationViewActivity.REQUEST_CODE_EDIT_LOCATION);
         });
 
-        holder.btnDelete.setOnClickListener(v -> auth.deleteDocumentData("locations", location.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
-            @Override
-            public void onSuccess() {
-                locationList.remove(holder.getAdapterPosition());
-                notifyDataSetChanged();
-                Toast.makeText(context, "Data lokasi terhapus", Toast.LENGTH_SHORT).show();
+        holder.btnDeleteLocation.setOnClickListener(v -> {
+            if (context instanceof LocationViewActivity) {
+                ((LocationViewActivity) context).showDeletionConfirmationPopup(location);
             }
-
-            @Override
-            public void onFailure(String errorMessage) {
-                Toast.makeText(context, "Gagal menghapus data lokasi: " + errorMessage, Toast.LENGTH_SHORT).show();
-            }
-        }));
+        });
     }
 
     @Override
@@ -82,15 +72,15 @@ public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapte
 
     public static class LocationViewHolder extends RecyclerView.ViewHolder {
         TextView tvLocationName, tvLocationAddress;
-        Button btnEdit, btnDelete;
+        Button btnEditLocation, btnDeleteLocation;
 
         public LocationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvLocationName = itemView.findViewById(R.id.tv_location_name);
             tvLocationAddress = itemView.findViewById(R.id.tv_location_address);
-            btnEdit = itemView.findViewById(R.id.btn_edit_location);
-            btnDelete = itemView.findViewById(R.id.btn_delete_location);
+            btnEditLocation = itemView.findViewById(R.id.btn_edit_location);
+            btnDeleteLocation = itemView.findViewById(R.id.btn_delete_location);
         }
     }
 }

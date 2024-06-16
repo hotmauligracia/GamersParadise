@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class Facility implements Parcelable {
     private String id;
     private String locationId;
-    private int imageResource;
+    private String imageUrl;
     private String name;
     private int capacity;
     private String details;
@@ -15,9 +15,9 @@ public class Facility implements Parcelable {
     public Facility() {
     }
 
-    public Facility(String locationId, int imageResource, String name, int capacity, String details, float price) {
+    public Facility(String locationId, String imageUrl, String name, int capacity, String details, float price) {
         this.locationId = locationId;
-        this.imageResource = imageResource;
+        this.imageUrl = imageUrl;
         this.name = name;
         this.capacity = capacity;
         this.details = details;
@@ -40,12 +40,12 @@ public class Facility implements Parcelable {
         this.locationId = locationId;
     }
 
-    public int getImageResource() {
-        return imageResource;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -89,7 +89,7 @@ public class Facility implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.locationId);
-        dest.writeInt(this.imageResource);
+        dest.writeString(this.imageUrl);
         dest.writeString(this.name);
         dest.writeInt(this.capacity);
         dest.writeString(this.details);
@@ -99,7 +99,7 @@ public class Facility implements Parcelable {
     public void readFromParcel(Parcel source) {
         this.id = source.readString();
         this.locationId = source.readString();
-        this.imageResource = source.readInt();
+        this.imageUrl = source.readString();
         this.name = source.readString();
         this.capacity = source.readInt();
         this.details = source.readString();
@@ -109,7 +109,7 @@ public class Facility implements Parcelable {
     protected Facility(Parcel in) {
         this.id = in.readString();
         this.locationId = in.readString();
-        this.imageResource = in.readInt();
+        this.imageUrl = in.readString();
         this.name = in.readString();
         this.capacity = in.readInt();
         this.details = in.readString();

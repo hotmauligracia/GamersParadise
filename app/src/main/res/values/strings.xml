@@ -115,7 +115,21 @@
     <string name="lokasi_tidak_tersedia">Lokasi Tidak Tersedia</string>
     <string name="harap_menyetujui_syarat_dan_ketentuan">Harap menyetujui Syarat dan Ketentuan serta Kebijakan Privasi aplikasi.</string>
     <string name="kata_sandi_tidak_sama">Kata sandi tidak sama.</string>
-    <string name="error_field_kosong">Tidak boleh ada field yang kosong</string>
+    <string name="error_field_kosong">Harap isi semua kolom</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="yakin_hapus_menu">Yakin Hapus Menu?</string>
+    <string name="menu_yang_sudah_dihapus_tidak_dapat_dikembalikan_lagi">Menu yang sudah dihapus tidak dapat dikembalikan lagi</string>
+    <string name="christmas_package">CHRISTMAS PACKAGE</string>
+    <string name="_20_12_2023_08_00">20–12–2023 08:00</string>
+    <string name="sampai">-</string>
+    <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
+    <string name="tambah_fasilitas">Tambah Fasilitas</string>
+    <string name="fasilitas_tidak_tersedia">Fasilitas tidak tersedia</string>
+    <string name="harga_per_jam">Harga Per Jam</string>
+    <string name="masukkan_harga_reservasi_fasilitas_per_jam_di_sini">Masukkan harga reservasi fasilitas per jam di sini</string>
+    <string name="rp">Rp</string>
     <string name="judul_notifikasi">Reservasi Dibatalkan</string>
     <string name="cth_notifikasi">Reservasi Anda dibatalkan oleh Admin karena tidak hadir tanpa konfirmasi keterlambatan.</string>
 </resources>

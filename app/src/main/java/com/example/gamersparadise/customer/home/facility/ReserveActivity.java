@@ -24,7 +24,6 @@ public class ReserveActivity extends AppCompatActivity {
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         setSupportActionBar(topAppBar);
-
         getSupportActionBar().setTitle(null);
 
         ImageView backButton = findViewById(R.id.toolbar_back_icon);

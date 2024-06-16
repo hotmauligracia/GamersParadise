@@ -19,7 +19,6 @@ import com.example.gamersparadise.R;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edtEmail, edtPassword;
-    private Button btnLogin;
     private Authentication auth;
 
     @Override
@@ -29,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
         edtEmail = findViewById(R.id.edt_email);
         edtPassword = findViewById(R.id.edt_password);
-        btnLogin = findViewById(R.id.btn_login);
+        Button btnLogin = findViewById(R.id.btn_login);
 
         auth = new Authentication();
 
@@ -65,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onGoogleLoginClick(View view) {
+        Toast.makeText(this, R.string.coming_soon, Toast.LENGTH_SHORT).show();
     }
 
     public void onRegisterClick(View view) {

@@ -22,29 +22,28 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/judul_card"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_confirm_title"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:text="Yakin Hapus Menu?"
+            android:text="@string/yakin_hapus_menu"
             style="@style/label_large_prominent"
             android:layout_marginTop="32dp"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="@id/ic_error"
             app:layout_constraintStart_toStartOf="@id/ic_error"
             app:layout_constraintTop_toTopOf="@id/ic_error"/>
 
         <TextView
-            android:id="@+id/title_card"
+            android:id="@+id/tv_confirm_message"
             style="@style/label_regular"
-            android:layout_width="wrap_content"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="24dp"
-          android:layout_marginEnd="24dp"
-            android:text="Menu yang sudah dihapus tidak bisa \n dikembalikan lagi"
+            android:layout_margin="24dp"
+            android:text="@string/menu_yang_sudah_dihapus_tidak_dapat_dikembalikan_lagi"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/judul_card"
-            app:layout_constraintStart_toStartOf="@id/judul_card"
-            app:layout_constraintTop_toTopOf="@id/judul_card" />
+            app:layout_constraintEnd_toEndOf="@id/tv_confirm_title"
+            app:layout_constraintStart_toStartOf="@id/tv_confirm_title"
+            app:layout_constraintTop_toTopOf="@id/tv_confirm_title" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -55,35 +54,30 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_card">
+            app:layout_constraintTop_toBottomOf="@+id/tv_confirm_message">
 
             <Button
-                android:id="@+id/btn_ya"
+                android:id="@+id/btn_confirm_ya"
                 style="@style/label_medium_prominent"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/button_secondary"
-                android:text="Ya"
-                android:textColor="@color/orange"
-                 />
+                android:text="@string/ya"
+                android:textColor="@color/orange" />
 
             <Button
-                android:id="@+id/btn_tidak"
+                android:id="@+id/btn_confirm_tidak"
                 style="@style/label_medium_prominent"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/button"
-                android:text="Tidak"
-                android:textColor="@color/white"
-                 />
-
+                android:text="@string/tidak"
+                android:textColor="@color/white" />
 
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>
