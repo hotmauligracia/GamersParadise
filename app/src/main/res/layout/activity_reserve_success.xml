@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_back_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:gravity="start"
+            android:textColor="@color/orange"
+            android:layout_marginStart="16dp"/>
+
+
+    </LinearLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="77dp">
+    <ImageView
+        android:id="@+id/ic_sukses"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sukses"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
+        app:layout_constraintTop_toBottomOf="@id/ic_sukses"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_headline"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="Anda berhasil melakukan reservasi di Gamer’s Paradise"
+        android:textColor="@color/gray_normal"
+        style="@style/body_large"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/btn_reserve"
+        style="@style/button_outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:layout_marginTop="97dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_add_orange" />
+
+        <TextView
+            style="@style/label_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Buat Reservasi Lain"
+            android:textColor="@color/gray_normal"
+             />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_detail_reserve"
+        style="@style/button"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button"
+        android:text="Lihat Detail Reservasi"
+        app:layout_constraintTop_toBottomOf="@id/btn_reserve"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</LinearLayout>

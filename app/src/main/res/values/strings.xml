@@ -155,4 +155,6 @@
     <string name="media_sosial_gamer_s_paradise">Media Sosial Gamer\'s Paradise</string>
     <string name="tentang_pengembang">Tentang Pengembang</string>
     <string name="log_out">Log Out</string>
+    <string name="judul_notifikasi">Reservasi Dibatalkan</string>
+    <string name="cth_notifikasi">Reservasi Anda dibatalkan oleh Admin karena tidak hadir tanpa konfirmasi keterlambatan.</string>
 </resources>
