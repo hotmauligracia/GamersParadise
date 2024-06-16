@@ -127,4 +127,7 @@
     <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
     <string name="tambah_fasilitas">Tambah Fasilitas</string>
     <string name="fasilitas_tidak_tersedia">Fasilitas tidak tersedia</string>
+    <string name="harga_per_jam">Harga Per Jam</string>
+    <string name="masukkan_harga_reservasi_fasilitas_per_jam_di_sini">Masukkan harga reservasi fasilitas per jam di sini</string>
+    <string name="rp">Rp</string>
 </resources>

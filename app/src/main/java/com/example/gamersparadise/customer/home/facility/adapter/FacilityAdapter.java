@@ -10,10 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.gamersparadise.R;
 import com.example.gamersparadise.data.Facility;
 
 import java.util.List;
+import java.util.Locale;
 
 public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.FacilityViewHolder> {
     private final List<Facility> facilities;
@@ -37,8 +39,15 @@ public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.Facili
         holder.name.setText(facility.getName());
         holder.capacity.setText(String.valueOf(facility.getCapacity()));
         holder.details.setText(facility.getDetails());
-        holder.price.setText(String.format("$%.2f", facility.getPrice()));
-        holder.image.setImageResource(facility.getImageResource());
+        holder.price.setText(String.format(Locale.US,"$%.2f", facility.getPrice()));
+
+        if (facility.getImageUrl() != null && !facility.getImageUrl().isEmpty()) {
+            Glide.with(context)
+                    .load(facility.getImageUrl())
+                    .into(holder.image);
+        } else {
+            holder.image.setImageResource(R.drawable.default_image);
+        }
     }
 
     @Override
