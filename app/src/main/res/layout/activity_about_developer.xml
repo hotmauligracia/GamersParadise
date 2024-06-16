@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/about_developer">
+
+    <LinearLayout
+        android:id="@+id/topbar_abt_dev"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_back_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            android:gravity="start"
+            android:textColor="@color/orange"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Tentang Pengembang"
+            style="@style/title_medium"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_abt_dev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+    <!--zahra-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/zahra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+    <ImageView
+        android:id="@+id/developer1_img"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_zahra"
+        tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/developer1_img"
+            android:layout_marginStart="18dp">
+    <!--nama-->
+    <TableLayout
+        android:id="@+id/tbl_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dev_name1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text="Nama" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_name_detail1"
+                style="@style/label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineSpacingExtra="1sp"
+                android:maxLines="2"
+                android:text="Azzahra Najma Bahid"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+        </TableRow>
+    </TableLayout>
+    <!--nim-->
+    <TableLayout
+        android:id="@+id/tbl_nim1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tbl_name1"
+        android:layout_marginStart="8dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dev_nim1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text="NIM" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_nim_detail1"
+                style="@style/label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineSpacingExtra="1sp"
+                android:maxLines="2"
+                android:text="2110512001"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+        </TableRow>
+    </TableLayout>
+    <!--instagram-->
+    <TableLayout
+        android:id="@+id/tbl_ig1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tbl_nim1"
+
+        android:layout_marginStart="8dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dev_ig1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text="Instagram" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_ig_detail1"
+                style="@style/label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineSpacingExtra="1sp"
+                android:maxLines="2"
+                android:text="azzahranb"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+        </TableRow>
+    </TableLayout>
+    <!--Linkedin-->
+    <TableLayout
+        android:id="@+id/tbl_linkedin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tbl_ig1"
+        android:layout_marginStart="8dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dev_linkedin1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text="Linkedin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/label_small"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_linkedin_detail1"
+                style="@style/label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:lineSpacingExtra="1sp"
+                android:maxLines="2"
+                android:text="azzahra najma"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+        </TableRow>
+    </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--nia-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/zahra"
+        app:layout_constraintStart_toStartOf="@id/zahra"
+        android:layout_marginTop="24dp">
+        <ImageView
+            android:id="@+id/developer2_img"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_nia"
+            tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/developer2_img"
+            android:layout_marginStart="18dp">
+        <!--nama-->
+        <TableLayout
+            android:id="@+id/tbl_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_name2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Nama" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_name_detail2"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Khaliza Fania"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--nim-->
+        <TableLayout
+            android:id="@+id/tbl_nim2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_name2"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_nim2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="NIM" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_nim_detail2"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="2110512020"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--instagram-->
+        <TableLayout
+            android:id="@+id/tbl_ig2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_nim2"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_ig2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Instagram" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_ig_detail2"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="khalizafania"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--Linkedin-->
+        <TableLayout
+            android:id="@+id/tbl_linkedin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_ig2"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_linkedin2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Linkedin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_linkedin_detail2"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Khaliza Fania"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--balqis-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/balqis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nia"
+        app:layout_constraintStart_toStartOf="@id/nia"
+        android:layout_marginTop="24dp">
+        <ImageView
+            android:id="@+id/developer3_img"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_balqis"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/developer3_img"
+            android:layout_marginStart="18dp">
+        <!--nama-->
+        <TableLayout
+            android:id="@+id/tbl_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_name3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Nama" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_name_detail3"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Amalia Balqis"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--nim-->
+        <TableLayout
+            android:id="@+id/tbl_nim3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_name3"
+
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_nim3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="NIM" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_nim_detail3"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="2110512035"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--instagram-->
+        <TableLayout
+            android:id="@+id/tbl_ig3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_nim3"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_ig3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Instagram" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_ig_detail3"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="amlbalqis"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--Linkedin-->
+        <TableLayout
+            android:id="@+id/tbl_linkedin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_ig3"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_linkedin3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Linkedin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_linkedin_detail3"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Amalia Balqis"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Gracia-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gracia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/balqis"
+        app:layout_constraintStart_toStartOf="@id/balqis"
+        android:layout_marginTop="24dp">
+        <ImageView
+            android:id="@+id/developer4_img"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_gracia"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/developer4_img"
+            android:layout_marginStart="18dp">
+        <!--nama-->
+        <TableLayout
+            android:id="@+id/tbl_name4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_name4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Nama" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_name_detail4"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Gracia Hotmauli"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--nim-->
+        <TableLayout
+            android:id="@+id/tbl_nim4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_name4"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_nim4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="NIM" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_nim_detail4"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="2110512039"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--instagram-->
+        <TableLayout
+            android:id="@+id/tbl_ig4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_nim4"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_ig4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Instagram" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_ig_detail4"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="hotmauligracia"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        <!--Linkedin-->
+        <TableLayout
+            android:id="@+id/tbl_linkedin4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tbl_ig4"
+            android:layout_marginStart="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="127dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dev_linkedin4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text="Linkedin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/label_small"
+                    android:text=":" />
+
+                <TextView
+                    android:id="@+id/tv_linkedin_detail4"
+                    style="@style/label_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:lineSpacingExtra="1sp"
+                    android:maxLines="2"
+                    android:text="Gracia Hotmauli"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+            </TableRow>
+        </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
