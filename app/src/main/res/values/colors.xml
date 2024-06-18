@@ -16,4 +16,6 @@
     <color name="semi_transparent_background">#2C2C2C1A</color>
     <color name="dark_blue">#212B5F</color>
     <color name="grayish_white">#F2F2F2</color>
+    <color name="gray150">#828282</color>
+
 </resources>
