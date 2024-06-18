@@ -90,6 +90,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".customer.profile.AboutDeveloper" />
+        <activity android:name=".customer.home.notification.NotificationActivity"></activity>
+
 
 
         <meta-data

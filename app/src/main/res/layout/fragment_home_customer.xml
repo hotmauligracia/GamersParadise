@@ -71,13 +71,13 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/image_profile"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         app:srcCompat="@drawable/img_profile" />
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/image_notif"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         app:srcCompat="@drawable/ic_notification" />
