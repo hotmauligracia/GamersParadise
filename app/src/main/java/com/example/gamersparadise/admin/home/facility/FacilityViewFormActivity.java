@@ -63,6 +63,10 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         edtFacilityPrice = findViewById(R.id.edt_facility_price);
         edtFacilityDetails = findViewById(R.id.edt_facility_details);
 
+        setSupportActionBar(topAppBar);
+        getSupportActionBar().setTitle(null);
+        backButton.setOnClickListener(v -> onBackPressed());
+
         Intent intent = getIntent();
         locationId = intent.getStringExtra("locationId");
 
@@ -76,10 +80,6 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         } else {
             Log.e(TAG, "Intent or facility extra is null");
         }
-
-        setSupportActionBar(topAppBar);
-        getSupportActionBar().setTitle(null);
-        backButton.setOnClickListener(v -> onBackPressed());
 
         btnUploadImg.setOnClickListener(v -> openImagePicker());
         btnCancelUploadImg.setOnClickListener(v -> cancelImageUpload());

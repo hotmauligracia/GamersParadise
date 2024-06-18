@@ -157,4 +157,23 @@
     <string name="log_out">Log Out</string>
     <string name="judul_notifikasi">Reservasi Dibatalkan</string>
     <string name="cth_notifikasi">Reservasi Anda dibatalkan oleh Admin karena tidak hadir tanpa konfirmasi keterlambatan.</string>
+    <string name="buat_promo_baru">Buat Promo Baru</string>
+    <string name="nama_promo">Nama Promo</string>
+    <string name="isi_nama_promo_di_sini">Isi nama promo di sini</string>
+    <string name="pilih_tipe_promo">Pilih Tipe Promo</string>
+    <string name="isi_persentase_promo_di_sini">Isi persentase promo di sini</string>
+    <string name="percent">%</string>
+    <string name="besar_promo">Besar Promo</string>
+    <string name="isi_nominal_promo_di_sini">Isi nominal promo di sini</string>
+    <string name="waktu_mulai">Waktu Mulai</string>
+    <string name="waktu_berakhir">Waktu Berakhir</string>
+    <string name="persentase_promo">Persentase Promo</string>
+    <string name="kode_promo">Kode Promo</string>
+    <string name="isi_kode_promo_di_sini">Isi kode promo di sini</string>
+    <string name="minimal_order">Minimal Order</string>
+    <string name="isi_syarat_minimal_order_untuk_mendapatkan_promo">Isi syarat minimal order untuk mendapatkan promo</string>
+    <string name="deskripsi_promo">Deskripsi Promo</string>
+    <string name="isi_deskripsi_promo_di_sini">Isi deskripsi promo di sini</string>
+    <string name="pilih_waktu_mulai_promosi">Pilih waktu mulai promosi</string>
+    <string name="pilih_waktu_akhir_promosi">Pilih waktu akhir promosi</string>
 </resources>

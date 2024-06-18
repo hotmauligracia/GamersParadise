@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class Menu implements Parcelable {
     private String id;
     private String locationId;
-    private int imageResource;
+    private String imageUrl;
     private String name;
     private String description;
     private int menuTypeId;
@@ -16,13 +16,14 @@ public class Menu implements Parcelable {
     public Menu() {
     }
 
-    public Menu(String locationId, int imageResource, String name, String description, int menuTypeId, float price) {
+    public Menu(String locationId, String imageUrl, String name, String description, int menuTypeId, float price, boolean isInStock) {
         this.locationId = locationId;
-        this.imageResource = imageResource;
+        this.imageUrl = imageUrl;
         this.name = name;
         this.description = description;
         this.menuTypeId = menuTypeId;
         this.price = price;
+        this.isInStock = isInStock;
     }
 
     public String getId() {
@@ -41,12 +42,12 @@ public class Menu implements Parcelable {
         this.locationId = locationId;
     }
 
-    public int getImageResource() {
-        return imageResource;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -98,7 +99,7 @@ public class Menu implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.locationId);
-        dest.writeInt(this.imageResource);
+        dest.writeString(this.imageUrl);
         dest.writeString(this.name);
         dest.writeString(this.description);
         dest.writeInt(this.menuTypeId);
@@ -109,7 +110,7 @@ public class Menu implements Parcelable {
     public void readFromParcel(Parcel source) {
         this.id = source.readString();
         this.locationId = source.readString();
-        this.imageResource = source.readInt();
+        this.imageUrl = source.readString();
         this.name = source.readString();
         this.description = source.readString();
         this.menuTypeId = source.readInt();
@@ -120,7 +121,7 @@ public class Menu implements Parcelable {
     protected Menu(Parcel in) {
         this.id = in.readString();
         this.locationId = in.readString();
-        this.imageResource = in.readInt();
+        this.imageUrl = in.readString();
         this.name = in.readString();
         this.description = in.readString();
         this.menuTypeId = in.readInt();
