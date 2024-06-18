@@ -32,6 +32,7 @@ import java.util.Map;
 public class FacilityViewFormActivity extends AppCompatActivity {
 
     private static final String TAG = "FacilityViewFormActivity";
+
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private View cardFacilityImg;
@@ -43,6 +44,8 @@ public class FacilityViewFormActivity extends AppCompatActivity {
     private Uri selectedImageUri;
     private String locationId;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +55,13 @@ public class FacilityViewFormActivity extends AppCompatActivity {
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
+
         ImageButton btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         Button btnSave = findViewById(R.id.btn_save);
 
         cardFacilityImg = findViewById(R.id.card_facility_img);
         btnUploadImg = findViewById(R.id.btn_upload_img);
+
         uploadedImgView = findViewById(R.id.uploaded_img_view);
         edtFacilityName = findViewById(R.id.edt_facility_name);
         edtFacilityCapacity = findViewById(R.id.edt_facility_capacity);
@@ -81,8 +86,10 @@ public class FacilityViewFormActivity extends AppCompatActivity {
             Log.e(TAG, "Intent or facility extra is null");
         }
 
+
         btnUploadImg.setOnClickListener(v -> openImagePicker());
         btnCancelUploadImg.setOnClickListener(v -> cancelImageUpload());
+
 
         btnSave.setOnClickListener(v -> {
             if (validateInputs()) {
@@ -108,8 +115,10 @@ public class FacilityViewFormActivity extends AppCompatActivity {
             selectedImageUri = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImageUri);
+
                 uploadedImgView.setImageBitmap(bitmap);
                 updateImageUI();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -196,7 +205,9 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         if (imageUrl != null) {
             data.put("imageUrl", imageUrl);
         }
+
         data.put("locationId", locationId);
+
 
         if (facility == null) {
             auth.addDocumentData("locations/" + locationId + "/facilities", data, new Authentication.FirebaseDocumentAddCallback() {
