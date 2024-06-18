@@ -1,6 +1,6 @@
 package com.example.gamersparadise.data;
 
-import com.google.type.DateTime;
+import java.time.LocalDateTime;
 
 public class Reservation {
     private String id;
@@ -8,13 +8,27 @@ public class Reservation {
     private String facilityId;
     private String customerName;
     private String customerPhone;
-    private DateTime reservationTime;
+    private LocalDateTime reservationTime;
     private String promotionId;
     private String totalPrice;
     private boolean isLate;
     private String status;
-    private DateTime createdAt;
-    private DateTime updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Reservation(String userId, String facilityId, String customerName, String customerPhone, LocalDateTime reservationTime, String promotionId, String totalPrice, boolean isLate, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.userId = userId;
+        this.facilityId = facilityId;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+        this.reservationTime = reservationTime;
+        this.promotionId = promotionId;
+        this.totalPrice = totalPrice;
+        this.isLate = isLate;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 
     public String getId() {
         return id;
@@ -56,11 +70,11 @@ public class Reservation {
         this.customerPhone = customerPhone;
     }
 
-    public DateTime getReservationTime() {
+    public LocalDateTime getReservationTime() {
         return reservationTime;
     }
 
-    public void setReservationTime(DateTime reservationTime) {
+    public void setReservationTime(LocalDateTime reservationTime) {
         this.reservationTime = reservationTime;
     }
 
@@ -96,19 +110,19 @@ public class Reservation {
         this.status = status;
     }
 
-    public DateTime getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(DateTime createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public DateTime getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(DateTime updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

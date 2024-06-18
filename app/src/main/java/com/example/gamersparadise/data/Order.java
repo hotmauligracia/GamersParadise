@@ -1,7 +1,6 @@
 package com.example.gamersparadise.data;
 
-import com.google.type.DateTime;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Order {
@@ -12,8 +11,19 @@ public class Order {
     private String promotionId;
     private String totalPrice;
     private String status;
-    private DateTime createdAt;
-    private DateTime updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Order(String userId, String reservationId, ArrayList<String> menuId, String promotionId, String totalPrice, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.userId = userId;
+        this.reservationId = reservationId;
+        this.menuId = menuId;
+        this.promotionId = promotionId;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 
     public String getId() {
         return id;
@@ -71,19 +81,19 @@ public class Order {
         this.status = status;
     }
 
-    public DateTime getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(DateTime createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public DateTime getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(DateTime updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }
