@@ -44,8 +44,6 @@ public class FacilityViewFormActivity extends AppCompatActivity {
     private Uri selectedImageUri;
     private String locationId;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,10 +84,8 @@ public class FacilityViewFormActivity extends AppCompatActivity {
             Log.e(TAG, "Intent or facility extra is null");
         }
 
-
         btnUploadImg.setOnClickListener(v -> openImagePicker());
         btnCancelUploadImg.setOnClickListener(v -> cancelImageUpload());
-
 
         btnSave.setOnClickListener(v -> {
             if (validateInputs()) {

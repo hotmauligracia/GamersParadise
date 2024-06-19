@@ -267,6 +267,7 @@
                     style="@style/label_regular"
                     android:background="@android:color/transparent"
                     android:inputType="number" />
+
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -290,7 +291,6 @@
             android:paddingBottom="16dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -459,8 +459,7 @@
                 android:background="@drawable/button"
                 android:text="@string/simpan"
                 android:textColor="@color/white" />
-
-
+          
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
