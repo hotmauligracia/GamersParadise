@@ -34,8 +34,10 @@ public class FacilityViewActivity extends AppCompatActivity {
     private List<Facility> facilityList;
     private Authentication auth;
     private ArrayAdapter<String> spinnerAdapter;
+
     private Spinner spinnerLokasi;
     private View illustFasilitas, deletionConfirmationPopup;
+
     private Button btnNewFacility;
     private String locationId;
 
@@ -93,13 +95,17 @@ public class FacilityViewActivity extends AppCompatActivity {
                     rvFacilityView.setVisibility(View.GONE);
                 } else {
                     String selectedLocation = (String) parent.getItemAtPosition(position);
+
                     locationId = locationList.get(position - 1).getId();
+
 
                     fetchFacilityData(selectedLocation);
 
                     btnNewFacility.setOnClickListener(v -> {
                         Intent createFacility = new Intent(FacilityViewActivity.this, FacilityViewFormActivity.class);
+
                         createFacility.putExtra("locationId", locationId);
+
                         startActivityForResult(createFacility, REQUEST_CODE_NEW_FACILITY);
                     });
                 }
@@ -119,9 +125,11 @@ public class FacilityViewActivity extends AppCompatActivity {
         if ((requestCode == REQUEST_CODE_NEW_FACILITY || requestCode == REQUEST_CODE_EDIT_FACILITY)
                 && resultCode == RESULT_OK) {
             int selectedPosition = spinnerLokasi.getSelectedItemPosition();
+
             if (selectedPosition > 0) {
                 locationId = locationList.get(selectedPosition - 1).getId();
                 String selectedLocation = (String) spinnerLokasi.getSelectedItem();
+
                 fetchFacilityData(selectedLocation);
             }
         }
@@ -159,7 +167,9 @@ public class FacilityViewActivity extends AppCompatActivity {
     }
 
     private void fetchFacilityData(String locationName) {
+
         String locationId = null;
+
         for (Location location : locationList) {
             if (location.getName().equals(locationName)) {
                 locationId = location.getId();
@@ -174,6 +184,8 @@ public class FacilityViewActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Facility facility = document.toObject(Facility.class);
                         facility.setId(document.getId());
+
+
                         facilityList.add(facility);
                     }
                     adapter.notifyDataSetChanged();
@@ -224,7 +236,9 @@ public class FacilityViewActivity extends AppCompatActivity {
 
     private void deleteFacilityDocument(Facility facility) {
         if (facility != null && facility.getId() != null) {
+
             auth.deleteDocumentData("locations/" + facility.getLocationId() + "/facilities", facility.getId(), new Authentication.FirebaseDocumentDeleteCallback() {
+
                 @Override
                 public void onSuccess() {
                     facilityList.remove(facility);

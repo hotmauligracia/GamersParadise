@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.history.DetailRiwayatSelesaiActivity">
+    tools:context=".DetailRiwayatSelesaiActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -76,6 +76,7 @@
                     android:textColor="@color/gray150"
                     android:layout_marginEnd="12dp"/>
 
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -132,7 +133,9 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
+
                             android:layout_marginEnd="4dp"
+
                             android:backgroundTint="@color/gray150"
                             android:src="@drawable/ic_person" />
 
@@ -142,6 +145,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/_6_orang"
+
                             android:textColor="@color/gray150" />
                     </LinearLayout>
                 </LinearLayout>
@@ -266,12 +270,14 @@
                         android:textColor="@color/gray150"
                         android:text="@string/pc_gaming_arena_x_2_jam"/>
 
+
                     <TextView
                         android:id="@+id/CO_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
+
                         android:text="@string/legend_cheese_burger_x_1"/>
 
                     <TextView
@@ -281,6 +287,7 @@
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
                         android:text="@string/diskon_voucher"/>
+
 
                     <TextView
                         android:id="@+id/total"

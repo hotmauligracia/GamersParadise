@@ -50,6 +50,7 @@ tools:context=".ProfileActivity"
             android:textAlignment="center"
             android:textColor="@color/black"/>
 
+
         <TextView
             style="@style/label_regular"
             android:layout_width="match_parent"
@@ -72,6 +73,7 @@ tools:context=".ProfileActivity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="@string/media_sosial_gamer_s_paradise"
+
                 android:layout_marginBottom="12dp"/>
 
             <Button
@@ -80,6 +82,7 @@ tools:context=".ProfileActivity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="@string/tentang_pengembang"
+
                 android:layout_marginBottom="12dp"/>
 
             <Button
@@ -88,6 +91,7 @@ tools:context=".ProfileActivity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="@string/log_out" />
+
         </LinearLayout>
 
     </LinearLayout>
