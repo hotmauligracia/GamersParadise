@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="16dp"
@@ -10,140 +9,109 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!--wrap judul&waktu -->
         <LinearLayout
+            android:id="@+id/judul_waktu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!--konten atas-->
-            <LinearLayout
-                android:id="@+id/content"
+            <!--judul promo-->
+            <TextView
+                android:id="@+id/tv_promotion_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                tools:ignore="MissingConstraints">
+                android:text="@string/christmas_package"
+                style="@style/label_medium_prominent" />
 
-                <!--wrap judul&waktu -->
-                <LinearLayout
-                    android:id="@+id/judul_waktu"
-                    android:layout_width="0dp"
+            <!--waktu-->
+            <LinearLayout
+                android:id="@+id/waktu_promo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp" >
+
+                <TextView
+                    android:id="@+id/tv_promotion_start_time"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray_normal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="MissingConstraints"
-                    android:layout_weight="1">
+                    android:text="@string/_20_12_2023_08_00"/>
 
-                    <!--judul promo-->
-                    <TextView
-                        android:id="@+id/tv_confirm_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/christmas_package"
-                        style="@style/label_medium_prominent"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    style="@style/label_regular"
+                    android:textColor="@color/gray_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/sampai_dengan" />
 
-                    <!--waktu-->
-                    <LinearLayout
-                        android:id="@+id/waktu_promo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="@id/tv_confirm_title"
-                        app:layout_constraintStart_toStartOf="@id/tv_confirm_title"
-                        app:layout_constraintTop_toTopOf="@id/tv_confirm_title">
-                        <TextView
-                            android:id="@+id/tv_confirm_message"
-                            style="@style/label_regular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="12dp"
-                            android:layout_marginStart="16dp"
-                            android:text="@string/_20_12_2023_08_00"/>
-
-                        <TextView
-                            android:id="@+id/title_card2"
-                            style="@style/label_regular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="12dp"
-                            android:layout_marginStart="5dp"
-                            android:text="@string/sampai"
-                            app:layout_constraintStart_toEndOf="@id/tv_confirm_message"/>
-
-                        <TextView
-                            android:id="@+id/title_card3"
-                            style="@style/label_regular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="12dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="24dp"
-                            android:text="@string/_31_12_2023_08_00"
-                            app:layout_constraintStart_toEndOf="@id/title_card2"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="61dp"
-
-                    android:src="@drawable/poster_promo" />
+                <TextView
+                    android:id="@+id/tv_promotion_end_time"
+                    style="@style/label_regular"
+                    android:textColor="@color/gray_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/_31_12_2023_08_00" />
 
             </LinearLayout>
-
-
-            <!--button-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="14dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/content">
-
-                <Button
-                    android:id="@+id/btn_ubah"
-                    style="@style/label_medium_prominent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_secondary"
-                    android:text="@string/ubah"
-                    android:textColor="@color/orange" />
-
-                <Button
-                    android:id="@+id/btn_hapus"
-                    style="@style/label_medium_prominent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_secondary"
-                    android:text="@string/hapus"
-                    android:textColor="@color/orange" />
-
-
-            </LinearLayout>
-
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_promotion_status"
+            style="@style/label_medium_prominent"
+            android:textColor="@color/orange600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/judul_waktu"
+            android:text="@string/sedang_berjalan" />
 
+        <ImageView
+            android:id="@+id/img_promotion_view"
+            android:layout_width="49dp"
+            android:layout_height="61dp"
+            android:src="@drawable/poster_promo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
+        <!--button-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/img_promotion_view"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btn_edit_promotion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ubah"
+                style="@style/secondary_button"/>
+
+            <Button
+                android:id="@+id/btn_delete_promotion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="19dp"
+                android:text="@string/hapus"
+                style="@style/secondary_button"/>
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
