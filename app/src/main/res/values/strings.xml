@@ -123,7 +123,7 @@
     <string name="menu_yang_sudah_dihapus_tidak_dapat_dikembalikan_lagi">Menu yang sudah dihapus tidak dapat dikembalikan lagi</string>
     <string name="christmas_package">CHRISTMAS PACKAGE</string>
     <string name="_20_12_2023_08_00">20–12–2023 08:00</string>
-    <string name="sampai">-</string>
+    <string name="sampai_dengan">s.d.</string>
     <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
     <string name="tambah_fasilitas">Tambah Fasilitas</string>
     <string name="fasilitas_tidak_tersedia">Fasilitas tidak tersedia</string>
@@ -160,7 +160,7 @@
     <string name="buat_promo_baru">Buat Promo Baru</string>
     <string name="nama_promo">Nama Promo</string>
     <string name="isi_nama_promo_di_sini">Isi nama promo di sini</string>
-    <string name="pilih_tipe_promo">Pilih Tipe Promo</string>
+    <string name="tipe_promo">Tipe Promo</string>
     <string name="isi_persentase_promo_di_sini">Isi persentase promo di sini</string>
     <string name="percent">%</string>
     <string name="besar_promo">Besar Promo</string>
@@ -176,4 +176,9 @@
     <string name="isi_deskripsi_promo_di_sini">Isi deskripsi promo di sini</string>
     <string name="pilih_waktu_mulai_promosi">Pilih waktu mulai promosi</string>
     <string name="pilih_waktu_akhir_promosi">Pilih waktu akhir promosi</string>
+    <string name="sedang_berjalan">Sedang Berjalan</string>
+    <string name="buat_promo_diskon_baru">Buat Promo Diskon Baru</string>
+    <string name="tidak_ada_promo_tersedia">Tidak ada promo tersedia</string>
+    <string name="akan_berjalan">Akan Berjalan</string>
+    <string name="telah_berakhir">Telah Berakhir</string>
 </resources>

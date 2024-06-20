@@ -84,13 +84,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/illust_fasilitas"
-        app:layout_constraintTop_toBottomOf="@id/pilih_lokasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pilih_lokasi"
         android:visibility="gone">
 
         <ImageView

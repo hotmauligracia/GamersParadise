@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Promotion implements Parcelable {
     private String id;
@@ -12,12 +13,15 @@ public class Promotion implements Parcelable {
     private int promotionTypeId;
     private float nominal;
     private float minimumOrder;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private String startTime;
+    private String endTime;
     private String imageUrl;
     private String description;
 
-    public Promotion(String name, String code, LocalDateTime startTime, LocalDateTime endTime, int promotionTypeId, float nominal, float minimumOrder, String imageUrl, String description) {
+    public Promotion() {
+    }
+
+    public Promotion(String name, String code, String startTime, String endTime, int promotionTypeId, float nominal, float minimumOrder, String imageUrl, String description) {
         this.name = name;
         this.code = code;
         this.startTime = startTime;
@@ -53,20 +57,40 @@ public class Promotion implements Parcelable {
         this.code = code;
     }
 
-    public LocalDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public LocalDateTime getStartTimeAsLocalDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return LocalDateTime.parse(this.startTime, formatter);
+    }
+
+    public void setStartTimeAsLocalDateTime(LocalDateTime startTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        this.startTime = startTime.format(formatter);
+    }
+
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public LocalDateTime getEndTimeAsLocalDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return LocalDateTime.parse(this.endTime, formatter);
+    }
+
+    public void setEndTimeAsLocalDateTime(LocalDateTime endTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        this.endTime = endTime.format(formatter);
     }
 
     public int getPromotionTypeId() {
@@ -132,8 +156,8 @@ public class Promotion implements Parcelable {
         this.id = source.readString();
         this.name = source.readString();
         this.code = source.readString();
-        this.startTime = (LocalDateTime) source.readSerializable();
-        this.endTime = (LocalDateTime) source.readSerializable();
+        this.startTime = source.readString();
+        this.endTime = source.readString();
         this.promotionTypeId = source.readInt();
         this.nominal = source.readFloat();
         this.minimumOrder = source.readFloat();
@@ -145,8 +169,8 @@ public class Promotion implements Parcelable {
         this.id = in.readString();
         this.name = in.readString();
         this.code = in.readString();
-        this.startTime = (LocalDateTime) in.readSerializable();
-        this.endTime = (LocalDateTime) in.readSerializable();
+        this.startTime = in.readString();
+        this.endTime = in.readString();
         this.promotionTypeId = in.readInt();
         this.nominal = in.readFloat();
         this.minimumOrder = in.readFloat();

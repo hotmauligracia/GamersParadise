@@ -36,7 +36,7 @@ public class FacilityViewFormActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private View cardFacilityImg;
-    private ImageButton btnUploadImg;
+    private ImageButton btnUploadImg, btnCancelUploadImg;
     private ImageView uploadedImgView;
     private EditText edtFacilityName, edtFacilityCapacity, edtFacilityPrice, edtFacilityDetails;
     private Authentication auth;
@@ -53,13 +53,11 @@ public class FacilityViewFormActivity extends AppCompatActivity {
 
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
-
-        ImageButton btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         Button btnSave = findViewById(R.id.btn_save);
 
         cardFacilityImg = findViewById(R.id.card_facility_img);
         btnUploadImg = findViewById(R.id.btn_upload_img);
-
+        btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         uploadedImgView = findViewById(R.id.uploaded_img_view);
         edtFacilityName = findViewById(R.id.edt_facility_name);
         edtFacilityCapacity = findViewById(R.id.edt_facility_capacity);
@@ -83,9 +81,6 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         } else {
             Log.e(TAG, "Intent or facility extra is null");
         }
-
-        btnUploadImg.setOnClickListener(v -> openImagePicker());
-        btnCancelUploadImg.setOnClickListener(v -> cancelImageUpload());
 
         btnSave.setOnClickListener(v -> {
             if (validateInputs()) {
@@ -130,9 +125,11 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         if (selectedImageUri == null && (facility == null || facility.getImageUrl() == null)) {
             cardFacilityImg.setVisibility(View.GONE);
             btnUploadImg.setVisibility(View.VISIBLE);
+            btnUploadImg.setOnClickListener(v -> openImagePicker());
         } else {
             cardFacilityImg.setVisibility(View.VISIBLE);
             btnUploadImg.setVisibility(View.GONE);
+            btnCancelUploadImg.setOnClickListener(v -> cancelImageUpload());
             if (selectedImageUri != null) {
                 uploadedImgView.setImageURI(selectedImageUri);
             } else if (facility != null && facility.getImageUrl() != null) {
