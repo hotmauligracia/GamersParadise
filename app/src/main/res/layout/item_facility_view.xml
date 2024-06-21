@@ -17,7 +17,6 @@
         android:layout_marginStart="4dp"
         android:text="@string/pc_gaming_arena"
         android:textAppearance="@style/label_large_prominent"
-        android:textColor="@color/black"
         android:lineSpacingExtra="2sp"
         android:maxLines="1" />
 

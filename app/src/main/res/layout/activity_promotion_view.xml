@@ -36,7 +36,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/promosi"
                 style="@style/body_large"
-                android:textColor="@color/black"
                 android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -114,18 +113,15 @@
 
         <Button
             android:id="@+id/btn_new_promotion"
-            style="@style/label_medium"
+            style="@style/button"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button"
             android:text="@string/buat_promo_diskon_baru"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

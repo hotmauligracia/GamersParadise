@@ -5,78 +5,94 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayish_white"
     tools:context=".admin.home.menu.MenuViewActivity">
 
-    <LinearLayout
-        android:id="@+id/topbar_resto"
+    <!--top bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/toolbar_back_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_arrow_back"
-            android:gravity="start"
-            android:textColor="@color/orange"
-            android:layout_marginStart="16dp"/>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="textStart"
-            android:text="Makanan &amp; Minuman"
-            style="@style/title_medium"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_menu_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/makanan_dan_minuman"
+                style="@style/body_large"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="1sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:id="@+id/status_resto"
+        android:id="@+id/pilih_lokasi"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/topbar_resto"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/status_admin">
+        android:background="@color/white">
 
-        <TextView
+        <Spinner
+            android:id="@+id/spinner_lokasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Menu"
-            style="@style/label_large_prominent"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginBottom="9dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/orange">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@id/top_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16.5dp" />
+
+        <LinearLayout
+            android:id="@+id/status_menu"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu"
+                style="@style/label_large_prominent"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/orange"
+                android:background="@drawable/status_admin"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/illust_resto"
-        app:layout_constraintTop_toBottomOf="@id/status_resto"
+        android:id="@+id/illust_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pilih_lokasi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:visibility="gone">
 
         <ImageView
-            android:id="@+id/image_illust_resto"
+            android:id="@+id/image_illust_menu"
             android:layout_width="wrap_content"
             android:layout_height="141dp"
             android:src="@drawable/not_found"
@@ -85,12 +101,12 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/text_illust_resto"
+            android:id="@+id/text_illust_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu Tidak Tersedia"
+            android:text="@string/menu_tidak_tersedia"
             style="@style/label_regular"
-            app:layout_constraintTop_toBottomOf="@id/image_illust_resto"
+            app:layout_constraintTop_toBottomOf="@id/image_illust_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"
@@ -98,32 +114,52 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/button_bawah"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pilih_lokasi"
+        tools:listitem="@layout/item_menu_view"/>
+
+    <Button
+        android:id="@+id/btn_new_menu"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/buat_menu_baru"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- confirm pop up -->
+    <LinearLayout
+        android:id="@+id/deletion_confirmation_popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/semi_transparent_background"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone">
 
-        <Button
-            android:id="@+id/btn_menu_baru"
-            style="@style/label_medium"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/button"
-            android:text="Buat Menu Baru"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="match_parent">
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <include layout="@layout/deletion_confirmation_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

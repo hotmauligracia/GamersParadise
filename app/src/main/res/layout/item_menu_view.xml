@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="19dp"
+    android:layout_marginBottom="7dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_menu_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="6dp"
+        android:text="@string/nasi_goreng_special"
+        android:textAppearance="@style/label_large_prominent"
+        android:lineSpacingExtra="2sp"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_menu_type_view"
+        style="@style/label_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_menu_name_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="6dp"
+        android:lineSpacingExtra="1sp"
+        android:maxLines="1"
+        android:text="@string/makanan"
+        android:textColor="@color/gray_normal"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_menu_price_view"
+        style="@style/label_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_menu_type_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="7dp"
+        android:lineSpacingExtra="1sp"
+        android:maxLines="2"
+        android:text="@string/rp50_000"
+        tools:ignore="TextContrastCheck,TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/img_menu_view"
+        android:layout_width="87dp"
+        android:layout_height="63dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_burger" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/img_menu_view"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_edit_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ubah"
+            style="@style/secondary_button"/>
+
+        <Button
+            android:id="@+id/btn_delete_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="@string/hapus"
+            style="@style/secondary_button"/>
+
+        <Button
+            android:id="@+id/btn_stock_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="@string/stok_habis"
+            style="@style/button_outline"/>
+
+        <Button
+            android:id="@+id/btn_stock_ready"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="@string/stok_ada"
+            style="@style/button"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

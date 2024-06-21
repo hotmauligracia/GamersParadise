@@ -28,16 +28,15 @@ public class FacilityViewActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_NEW_FACILITY = 1;
     public static final int REQUEST_CODE_EDIT_FACILITY = 2;
+
     private RecyclerView rvFacilityView;
     private FacilityViewAdapter adapter;
     private List<Location> locationList;
     private List<Facility> facilityList;
     private Authentication auth;
     private ArrayAdapter<String> spinnerAdapter;
-
     private Spinner spinnerLokasi;
     private View illustFasilitas, deletionConfirmationPopup;
-
     private Button btnNewFacility;
     private String locationId;
 
@@ -95,15 +94,12 @@ public class FacilityViewActivity extends AppCompatActivity {
                     rvFacilityView.setVisibility(View.GONE);
                 } else {
                     String selectedLocation = (String) parent.getItemAtPosition(position);
-
                     locationId = locationList.get(position - 1).getId();
                     fetchFacilityData(selectedLocation);
 
                     btnNewFacility.setOnClickListener(v -> {
                         Intent createFacility = new Intent(FacilityViewActivity.this, FacilityViewFormActivity.class);
-
                         createFacility.putExtra("locationId", locationId);
-
                         startActivityForResult(createFacility, REQUEST_CODE_NEW_FACILITY);
                     });
                 }
@@ -182,8 +178,6 @@ public class FacilityViewActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Facility facility = document.toObject(Facility.class);
                         facility.setId(document.getId());
-
-
                         facilityList.add(facility);
                     }
                     adapter.notifyDataSetChanged();
