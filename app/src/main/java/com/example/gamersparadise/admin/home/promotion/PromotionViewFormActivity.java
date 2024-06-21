@@ -70,6 +70,8 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         View cardWaktuPromoBerakhir = findViewById(R.id.card_waktu_promo_berakhir);
 
         cardPromotionImg = findViewById(R.id.card_promotion_img);
+        View cardWaktuPromoMulai = findViewById(R.id.card_waktu_promo_mulai);
+        View cardWaktuPromoBerakhir = findViewById(R.id.card_waktu_promo_berakhir);
         btnUploadImg = findViewById(R.id.btn_upload_img);
         btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         uploadedImgView = findViewById(R.id.uploaded_img_view);
@@ -282,14 +284,14 @@ public class PromotionViewFormActivity extends AppCompatActivity {
             inputDiscPercentage.setVisibility(View.GONE);
             inputDiscMinus.setVisibility(View.VISIBLE);
         }
-
+      
         edtPromotionMinOrder.setText(String.valueOf(promotion.getMinimumOrder()));
         edtPromotionStartTime.setText(promotion.getStartTime());
         edtPromotionEndTime.setText(promotion.getEndTime());
         edtPromotionDesc.setText(promotion.getDescription());
 
         setSpinnerSelection(promotion.getPromotionTypeId());
-
+      
         updateImageUI();
     }
 
