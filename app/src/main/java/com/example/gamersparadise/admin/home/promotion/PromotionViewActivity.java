@@ -1,5 +1,7 @@
 package com.example.gamersparadise.admin.home.promotion;
 
+import static com.example.gamersparadise.data.Promotion.dateTimeFormatter;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +23,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,12 +91,22 @@ public class PromotionViewActivity extends AppCompatActivity {
                     Promotion promotion = document.toObject(Promotion.class);
                     promotion.setId(document.getId());
 
-                    promotion.setStartTimeAsLocalDateTime
-                            (LocalDateTime.parse(document.getString("startTime"),
-                                    DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")));
-                    promotion.setEndTimeAsLocalDateTime
-                            (LocalDateTime.parse(document.getString("endTime"),
-                                    DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")));
+                    String startTimeStr = document.getString("startTime");
+                    String endTimeStr = document.getString("endTime");
+                    if (startTimeStr != null && endTimeStr != null) {
+                        promotion.setStartTimeAsLocalDateTime(LocalDateTime.parse(startTimeStr, dateTimeFormatter));
+                        promotion.setEndTimeAsLocalDateTime(LocalDateTime.parse(endTimeStr, dateTimeFormatter));
+                    }
+
+                    Double nominalValue = document.getDouble("nominal");
+                    if (nominalValue != null) {
+                        promotion.setNominal(nominalValue.floatValue());
+                    }
+
+                    Double minOrderValue = document.getDouble("minimumOrder");
+                    if (minOrderValue != null) {
+                        promotion.setMinimumOrder(minOrderValue.floatValue());
+                    }
 
                     promotionList.add(promotion);
                 }
