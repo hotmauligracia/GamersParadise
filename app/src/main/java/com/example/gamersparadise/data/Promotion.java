@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Promotion implements Parcelable {
+    public static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
     private String id;
     private String name;
     private String code;
@@ -66,13 +68,11 @@ public class Promotion implements Parcelable {
     }
 
     public LocalDateTime getStartTimeAsLocalDateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        return LocalDateTime.parse(this.startTime, formatter);
+        return LocalDateTime.parse(this.startTime, dateTimeFormatter);
     }
 
     public void setStartTimeAsLocalDateTime(LocalDateTime startTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        this.startTime = startTime.format(formatter);
+        this.startTime = startTime.format(dateTimeFormatter);
     }
 
     public String getEndTime() {
@@ -84,13 +84,11 @@ public class Promotion implements Parcelable {
     }
 
     public LocalDateTime getEndTimeAsLocalDateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        return LocalDateTime.parse(this.endTime, formatter);
+        return LocalDateTime.parse(this.endTime, dateTimeFormatter);
     }
 
     public void setEndTimeAsLocalDateTime(LocalDateTime endTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        this.endTime = endTime.format(formatter);
+        this.endTime = endTime.format(dateTimeFormatter);
     }
 
     public int getPromotionTypeId() {
@@ -143,8 +141,8 @@ public class Promotion implements Parcelable {
         dest.writeString(this.id);
         dest.writeString(this.name);
         dest.writeString(this.code);
-        dest.writeSerializable(this.startTime);
-        dest.writeSerializable(this.endTime);
+        dest.writeString(this.startTime);
+        dest.writeString(this.endTime);
         dest.writeInt(this.promotionTypeId);
         dest.writeFloat(this.nominal);
         dest.writeFloat(this.minimumOrder);

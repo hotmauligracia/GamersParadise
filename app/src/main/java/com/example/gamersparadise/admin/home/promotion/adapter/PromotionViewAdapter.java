@@ -1,5 +1,7 @@
 package com.example.gamersparadise.admin.home.promotion.adapter;
 
+import static com.example.gamersparadise.data.Promotion.dateTimeFormatter;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +20,6 @@ import com.example.gamersparadise.admin.home.promotion.PromotionViewFormActivity
 import com.example.gamersparadise.data.Promotion;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PromotionViewAdapter extends RecyclerView.Adapter<PromotionViewAdapter.PromotionViewHolder> {
@@ -46,12 +47,11 @@ public class PromotionViewAdapter extends RecyclerView.Adapter<PromotionViewAdap
 
         holder.tvPromotionName.setText(promotion.getName());
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         LocalDateTime startTime = promotion.getStartTimeAsLocalDateTime();
         LocalDateTime endTime = promotion.getEndTimeAsLocalDateTime();
 
-        holder.tvPromotionStartTime.setText(startTime.format(formatter));
-        holder.tvPromotionEndTime.setText(endTime.format(formatter));
+        holder.tvPromotionStartTime.setText(startTime.format(dateTimeFormatter));
+        holder.tvPromotionEndTime.setText(endTime.format(dateTimeFormatter));
 
         Glide.with(context)
                 .load(promotion.getImageUrl())

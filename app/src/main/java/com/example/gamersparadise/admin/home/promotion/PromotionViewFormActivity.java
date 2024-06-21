@@ -2,6 +2,8 @@ package com.example.gamersparadise.admin.home.promotion;
 
 import static android.view.View.GONE;
 
+import static com.example.gamersparadise.data.Promotion.dateTimeFormatter;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -32,7 +34,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.ZoneId;
 import java.util.*;
 
 public class PromotionViewFormActivity extends AppCompatActivity {
@@ -64,10 +66,10 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
         Button btnSave = findViewById(R.id.btn_save);
-
-        cardPromotionImg = findViewById(R.id.card_promotion_img);
         View cardWaktuPromoMulai = findViewById(R.id.card_waktu_promo_mulai);
         View cardWaktuPromoBerakhir = findViewById(R.id.card_waktu_promo_berakhir);
+
+        cardPromotionImg = findViewById(R.id.card_promotion_img);
         btnUploadImg = findViewById(R.id.btn_upload_img);
         btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         uploadedImgView = findViewById(R.id.uploaded_img_view);
@@ -133,8 +135,23 @@ public class PromotionViewFormActivity extends AppCompatActivity {
             }
         });
 
-        cardWaktuPromoMulai.setOnClickListener(v -> showDateTimePicker(edtPromotionStartTime));
-        cardWaktuPromoBerakhir.setOnClickListener(v -> showDateTimePicker(edtPromotionEndTime));
+        cardWaktuPromoMulai.setOnClickListener(v -> {
+            if (TextUtils.isEmpty(edtPromotionEndTime.getText().toString())) {
+                showDateTimePicker(edtPromotionStartTime);
+            } else {
+                LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), dateTimeFormatter);
+                showDateTimePickerWithConstraints(edtPromotionStartTime, null, endTime);
+            }
+        });
+
+        cardWaktuPromoBerakhir.setOnClickListener(v -> {
+            if (TextUtils.isEmpty(edtPromotionStartTime.getText().toString())) {
+                showDateTimePicker(edtPromotionEndTime);
+            } else {
+                LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), dateTimeFormatter);
+                showDateTimePickerWithConstraints(edtPromotionEndTime, startTime, null);
+            }
+        });
 
         btnSave.setOnClickListener(v -> {
             if (validateInputs()) {
@@ -207,43 +224,71 @@ public class PromotionViewFormActivity extends AppCompatActivity {
 
     private void showDateTimePicker(EditText editText) {
         Calendar calendar = Calendar.getInstance();
-        new DatePickerDialog(PromotionViewFormActivity.this,
+
+        if (!TextUtils.isEmpty(editText.getText().toString())) {
+            LocalDateTime dateTime = LocalDateTime.parse(editText.getText().toString(), dateTimeFormatter);
+            calendar.set(Calendar.YEAR, dateTime.getYear());
+            calendar.set(Calendar.MONTH, dateTime.getMonthValue() - 1); // Month is 0-based in Calendar
+            calendar.set(Calendar.DAY_OF_MONTH, dateTime.getDayOfMonth());
+            calendar.set(Calendar.HOUR_OF_DAY, dateTime.getHour());
+            calendar.set(Calendar.MINUTE, dateTime.getMinute());
+        }
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(PromotionViewFormActivity.this,
                 (view, year, month, dayOfMonth) -> {
-            calendar.set(year, month, dayOfMonth);
-            new TimePickerDialog(PromotionViewFormActivity.this,
-                    (timeView, hourOfDay, minute) -> {
-                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                calendar.set(Calendar.MINUTE, minute);
-                LocalDateTime localDateTime = LocalDateTime.of(
-                        calendar.get(Calendar.YEAR),
-                        calendar.get(Calendar.MONTH) + 1, // Month is 0-based in Calendar
-                        calendar.get(Calendar.DAY_OF_MONTH),
-                        calendar.get(Calendar.HOUR_OF_DAY),
-                        calendar.get(Calendar.MINUTE)
-                );
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-                editText.setText(localDateTime.format(formatter));
-            },
-                    calendar.get(Calendar.HOUR_OF_DAY),
-                    calendar.get(Calendar.MINUTE),
-                    true)
-                    .show();
-        },
+                    calendar.set(year, month, dayOfMonth);
+                    new TimePickerDialog(PromotionViewFormActivity.this,
+                            (timeView, hourOfDay, minute) -> {
+                                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                                calendar.set(Calendar.MINUTE, minute);
+                                LocalDateTime localDateTime = LocalDateTime.of(
+                                        calendar.get(Calendar.YEAR),
+                                        calendar.get(Calendar.MONTH) + 1,
+                                        calendar.get(Calendar.DAY_OF_MONTH),
+                                        calendar.get(Calendar.HOUR_OF_DAY),
+                                        calendar.get(Calendar.MINUTE)
+                                );
+                                editText.setText(localDateTime.format(dateTimeFormatter));
+                            },
+                            calendar.get(Calendar.HOUR_OF_DAY),
+                            calendar.get(Calendar.MINUTE),
+                            true).show();
+                },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH))
-                .show();
+                calendar.get(Calendar.DAY_OF_MONTH));
+
+        if (editText == edtPromotionStartTime && !TextUtils.isEmpty(edtPromotionEndTime.getText().toString())) {
+            LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), dateTimeFormatter);
+            datePickerDialog.getDatePicker().setMaxDate(endTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        } else if (editText == edtPromotionEndTime && !TextUtils.isEmpty(edtPromotionStartTime.getText().toString())) {
+            LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), dateTimeFormatter);
+            datePickerDialog.getDatePicker().setMinDate(startTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        }
+
+        datePickerDialog.show();
     }
 
     private void populateForm(Promotion promotion) {
         edtPromotionName.setText(promotion.getName());
         edtPromotionCode.setText(promotion.getCode());
-        edtPromotionPercentage.setText(promotion.getNominal() != 0 ? String.valueOf(promotion.getNominal()) : "");
-        edtPromotionMinus.setText(promotion.getNominal() != 0 ? String.valueOf(promotion.getNominal()) : "");
+
+        if (promotion.getPromotionTypeId() == 1) {
+            edtPromotionPercentage.setText(String.valueOf(promotion.getNominal()));
+            inputDiscPercentage.setVisibility(View.VISIBLE);
+            inputDiscMinus.setVisibility(View.GONE);
+        } else if (promotion.getPromotionTypeId() == 2) {
+            edtPromotionMinus.setText(String.valueOf(promotion.getNominal()));
+            inputDiscPercentage.setVisibility(View.GONE);
+            inputDiscMinus.setVisibility(View.VISIBLE);
+        }
+
         edtPromotionMinOrder.setText(String.valueOf(promotion.getMinimumOrder()));
         edtPromotionStartTime.setText(promotion.getStartTime());
         edtPromotionEndTime.setText(promotion.getEndTime());
         edtPromotionDesc.setText(promotion.getDescription());
+
+        setSpinnerSelection(promotion.getPromotionTypeId());
 
         updateImageUI();
     }
@@ -321,8 +366,8 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         data.put("nominal", promotionNominal);
         data.put("minimumOrder", Float.parseFloat(edtPromotionMinOrder.getText().toString()));
 
-        LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
-        LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
+        LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), dateTimeFormatter);
+        LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), dateTimeFormatter);
         data.put("startTime", startTime);
         data.put("endTime", endTime);
         data.put("description", edtPromotionDesc.getText().toString());
@@ -348,8 +393,8 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         data.put("nominal", promotionNominal);
         data.put("minimumOrder", Float.parseFloat(edtPromotionMinOrder.getText().toString()));
 
-        LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
-        LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
+        LocalDateTime startTime = LocalDateTime.parse(edtPromotionStartTime.getText().toString(), dateTimeFormatter);
+        LocalDateTime endTime = LocalDateTime.parse(edtPromotionEndTime.getText().toString(), dateTimeFormatter);
         data.put("startTime", startTime);
         data.put("endTime", endTime);
         data.put("description", edtPromotionDesc.getText().toString());
@@ -411,5 +456,51 @@ public class PromotionViewFormActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void showDateTimePickerWithConstraints(EditText editText, @Nullable LocalDateTime minDate, @Nullable LocalDateTime maxDate) {
+        Calendar calendar = Calendar.getInstance();
+
+        if (!TextUtils.isEmpty(editText.getText().toString())) {
+            LocalDateTime dateTime = LocalDateTime.parse(editText.getText().toString(), dateTimeFormatter);
+            calendar.set(Calendar.YEAR, dateTime.getYear());
+            calendar.set(Calendar.MONTH, dateTime.getMonthValue() - 1);
+            calendar.set(Calendar.DAY_OF_MONTH, dateTime.getDayOfMonth());
+            calendar.set(Calendar.HOUR_OF_DAY, dateTime.getHour());
+            calendar.set(Calendar.MINUTE, dateTime.getMinute());
+        }
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(PromotionViewFormActivity.this,
+                (view, year, month, dayOfMonth) -> {
+                    calendar.set(year, month, dayOfMonth);
+                    new TimePickerDialog(PromotionViewFormActivity.this,
+                            (timeView, hourOfDay, minute) -> {
+                                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                                calendar.set(Calendar.MINUTE, minute);
+                                LocalDateTime localDateTime = LocalDateTime.of(
+                                        calendar.get(Calendar.YEAR),
+                                        calendar.get(Calendar.MONTH) + 1,
+                                        calendar.get(Calendar.DAY_OF_MONTH),
+                                        calendar.get(Calendar.HOUR_OF_DAY),
+                                        calendar.get(Calendar.MINUTE)
+                                );
+                                editText.setText(localDateTime.format(dateTimeFormatter));
+                            },
+                            calendar.get(Calendar.HOUR_OF_DAY),
+                            calendar.get(Calendar.MINUTE),
+                            true).show();
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH));
+
+        if (minDate != null) {
+            datePickerDialog.getDatePicker().setMinDate(minDate.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        }
+        if (maxDate != null) {
+            datePickerDialog.getDatePicker().setMaxDate(maxDate.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        }
+
+        datePickerDialog.show();
     }
 }
