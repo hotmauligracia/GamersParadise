@@ -181,4 +181,19 @@
     <string name="tidak_ada_promo_tersedia">Tidak ada promo tersedia</string>
     <string name="akan_berjalan">Akan Berjalan</string>
     <string name="telah_berakhir">Telah Berakhir</string>
+    <string name="makanan_dan_minuman"><![CDATA[Makanan & Minuman]]></string>
+    <string name="menu_tidak_tersedia">Menu Tidak Tersedia</string>
+    <string name="buat_menu_baru">Buat Menu Baru</string>
+    <string name="nasi_goreng_special">Nasi Goreng Special</string>
+    <string name="makanan">Makanan</string>
+    <string name="rp50_000">Rp50.000</string>
+    <string name="stok_habis">Stok Habis</string>
+    <string name="stok_ada">Stok Ada</string>
+    <string name="nama_menu">Nama Menu</string>
+    <string name="masukkan_nama_menu_di_sini">Masukkan nama menu di sini</string>
+    <string name="deskripsi_menu">Deskripsi Menu</string>
+    <string name="masukkan_deskripsi_menu_di_sini">Masukkan deskripsi menu di sini</string>
+    <string name="tipe_menu">Tipe Menu</string>
+    <string name="harga">Harga</string>
+    <string name="masukkan_harga_menu_di_sini">Masukkan harga menu di sini</string>
 </resources>

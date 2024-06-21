@@ -35,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tambah_lokasi"
                 style="@style/body_large"
-                android:textColor="@color/black"
                 android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -69,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/nama_cabang"
                     style="@style/label_regular"
-                    android:textColor="@color/black"
                     android:layout_marginEnd="4dp"/>
 
                 <ImageView
@@ -141,7 +139,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/provinsi"
                     style="@style/label_regular"
-                    android:textColor="@color/black"
                     android:layout_marginEnd="4dp"/>
 
                 <ImageView
@@ -194,7 +191,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kota"
                     style="@style/label_regular"
-                    android:textColor="@color/black"
                     android:layout_marginEnd="4dp"/>
 
                 <ImageView
@@ -247,7 +243,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kecamatan"
                     style="@style/label_regular"
-                    android:textColor="@color/black"
                     android:layout_marginEnd="4dp"/>
 
                 <ImageView
@@ -300,7 +295,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kode_pos"
                     style="@style/label_regular"
-                    android:textColor="@color/black"
                     android:layout_marginEnd="4dp"/>
 
                 <ImageView
@@ -413,16 +407,12 @@
 
             <Button
                 android:id="@+id/btn_save"
-                style="@style/label_medium"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/button"
-                android:text="@string/simpan"
-                android:textColor="@color/white" />
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="16dp"
+                style="@style/button"
+                android:text="@string/simpan" />
 
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

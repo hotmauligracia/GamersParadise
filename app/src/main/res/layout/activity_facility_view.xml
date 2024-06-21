@@ -36,7 +36,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/fasilitas"
                 style="@style/body_large"
-                android:textColor="@color/black"
                 android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -66,8 +65,7 @@
             android:id="@+id/status_fasilitas"
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:orientation="horizontal"
-            android:background="@color/white">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
@@ -125,14 +123,12 @@
 
     <Button
         android:id="@+id/btn_new_facility"
-        style="@style/label_medium"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/button"
+        style="@style/button"
         android:text="@string/tambah_fasilitas"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
