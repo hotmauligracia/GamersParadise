@@ -70,8 +70,6 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         View cardWaktuPromoBerakhir = findViewById(R.id.card_waktu_promo_berakhir);
 
         cardPromotionImg = findViewById(R.id.card_promotion_img);
-        View cardWaktuPromoMulai = findViewById(R.id.card_waktu_promo_mulai);
-        View cardWaktuPromoBerakhir = findViewById(R.id.card_waktu_promo_berakhir);
         btnUploadImg = findViewById(R.id.btn_upload_img);
         btnCancelUploadImg = findViewById(R.id.btn_cancel_upload_img);
         uploadedImgView = findViewById(R.id.uploaded_img_view);
@@ -103,11 +101,11 @@ public class PromotionViewFormActivity extends AppCompatActivity {
             Log.e(TAG, "Intent or promotion extra is null");
         }
 
-        ArrayList<String> promosi = new ArrayList<>();
-        promosi.add("Pilih tipe promo di sini");
+        ArrayList<String> tipePromosi = new ArrayList<>();
+        tipePromosi.add("Pilih tipe promo di sini");
 
         spinnerAdapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, promosi) {
+                this, android.R.layout.simple_spinner_item, tipePromosi) {
             @Override
             public boolean isEnabled(int position) {
                 return position != 0;
@@ -291,7 +289,6 @@ public class PromotionViewFormActivity extends AppCompatActivity {
         edtPromotionDesc.setText(promotion.getDescription());
 
         setSpinnerSelection(promotion.getPromotionTypeId());
-      
         updateImageUI();
     }
 

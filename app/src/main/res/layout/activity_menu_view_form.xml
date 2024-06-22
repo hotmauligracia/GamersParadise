@@ -87,7 +87,7 @@
                 android:layout_marginTop="15dp" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_facility_img"
+                android:id="@+id/card_menu_img"
                 android:layout_width="103dp"
                 android:layout_height="84dp"
                 app:cardCornerRadius="8dp"
