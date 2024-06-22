@@ -90,7 +90,8 @@
             android:layout_weight="1"
             android:layout_marginStart="16dp"
             android:text="@string/stok_habis"
-            style="@style/button_outline"/>
+            style="@style/secondary_button"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/btn_stock_ready"
