@@ -1,8 +1,9 @@
 [versions]
 agp = "8.3.2"
+appcompatV7 = "28.0.0"
 compiler = "4.11.0"
 firebaseAuth = "23.0.0"
-firebaseBom = "33.1.0"
+firebaseBom = "33.1.1"
 firebaseFirestore = "25.0.0"
 glide = "4.12.0"
 googleServices = "4.4.2"
@@ -20,6 +21,7 @@ firebaseDatabase = "21.0.0"
 googleGmsGoogleServices = "4.4.2"
 
 [libraries]
+appcompat-v7 = { module = "com.android.support:appcompat-v7", version.ref = "appcompatV7" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth = { module = "com.google.firebase:firebase-auth" }
@@ -38,6 +40,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 material-v1120 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+recyclerview-v7 = { module = "com.android.support:recyclerview-v7", version.ref = "appcompatV7" }
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
