@@ -32,7 +32,6 @@ import java.util.Map;
 public class FacilityViewFormActivity extends AppCompatActivity {
 
     private static final String TAG = "FacilityViewFormActivity";
-
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private View cardFacilityImg;
@@ -200,7 +199,6 @@ public class FacilityViewFormActivity extends AppCompatActivity {
         }
 
         data.put("locationId", locationId);
-
 
         if (facility == null) {
             auth.addDocumentData("locations/" + locationId + "/facilities", data, new Authentication.FirebaseDocumentAddCallback() {
