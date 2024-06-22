@@ -243,7 +243,7 @@ public class MenuViewFormActivity extends AppCompatActivity {
         data.put("description", edtMenuDesc.getText().toString());
         data.put("menuTypeId", menuTypeId);
         data.put("price", Float.parseFloat(edtMenuPrice.getText().toString()));
-        data.put("isInStock", true);
+        data.put("isInStock", false);
 
         if (selectedImageUri != null) {
             uploadImageAndSaveMenu(data);

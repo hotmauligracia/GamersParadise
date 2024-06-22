@@ -2,6 +2,7 @@ package com.example.gamersparadise.admin.home.menu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -17,6 +18,7 @@ import com.example.gamersparadise.data.Location;
 import com.example.gamersparadise.data.Menu;
 import com.example.gamersparadise.data.MenuType;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
@@ -193,6 +195,10 @@ public class MenuViewActivity extends AppCompatActivity {
         }
 
         if (locationId != null) {
+            menuList.clear();
+            adapter.notifyDataSetChanged();
+            updateVisibility();
+
             auth.fetchCollectionData("locations/" + locationId + "/menus", new Authentication.FirebaseCollectionCallback() {
                 @Override
                 public void onSuccess(QuerySnapshot querySnapshot) {
@@ -200,11 +206,8 @@ public class MenuViewActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Menu menu = document.toObject(Menu.class);
                         menu.setId(document.getId());
-                        menuList.add(menu);
+                        fetchMenuIsInStock(menu);
                     }
-                    adapter.setMenuTypeList(menuTypeList);
-                    adapter.notifyDataSetChanged();
-                    updateVisibility();
                 }
 
                 @Override
@@ -213,6 +216,32 @@ public class MenuViewActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void fetchMenuIsInStock(Menu menu) {
+        Log.d("MenuViewActivity", "Fetching document data for menu: " + menu.getId());
+        auth.fetchDocumentData("locations/" + menu.getLocationId() + "/menus/" + menu.getId(), new Authentication.FirebaseDocumentCallback() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("MenuViewActivity", "Document snapshot data: " + documentSnapshot.getData());
+                Boolean isInStock = documentSnapshot.getBoolean("isInStock");
+                if (isInStock != null) {
+                    Log.d("MenuViewActivity", "isInStock: " + isInStock);
+                    menu.setInStock(isInStock);
+                } else {
+                    Log.d("MenuViewActivity", "isInStock is null, setting default false");
+                    menu.setInStock(false);
+                }
+                menuList.add(menu);
+                adapter.notifyDataSetChanged();
+                updateVisibility();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(MenuViewActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void updateVisibility() {
