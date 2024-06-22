@@ -141,4 +141,22 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
             btnStockReady = itemView.findViewById(R.id.btn_stock_ready);
         }
     }
+
+    private void updateStockStatus(Menu menu, boolean isInStock, MenuViewHolder holder) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("isInStock", isInStock);
+
+        auth.updateDocumentData("locations/" + menu.getLocationId() + "/menus", menu.getId(), data, new Authentication.FirebaseDocumentCallback() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                menu.setInStock(isInStock);
+                updateStockButtonsVisibility(holder, isInStock);
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(context, "Failed to update stock status: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
