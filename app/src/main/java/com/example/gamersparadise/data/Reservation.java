@@ -1,6 +1,8 @@
 package com.example.gamersparadise.data;
 
-import java.time.LocalDateTime;
+import java.text.NumberFormat;
+
+import java.util.Locale;
 
 public class Reservation {
     private String id;
@@ -8,15 +10,15 @@ public class Reservation {
     private String facilityId;
     private String customerName;
     private String customerPhone;
-    private LocalDateTime reservationTime;
+    private String reservationTime;
     private String promotionId;
-    private String totalPrice;
+    private float totalPrice;
     private boolean isLate;
     private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
-    public Reservation(String userId, String facilityId, String customerName, String customerPhone, LocalDateTime reservationTime, String promotionId, String totalPrice, boolean isLate, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Reservation(String userId, String facilityId, String customerName, String customerPhone, String reservationTime, String promotionId, float totalPrice, boolean isLate, String status, String createdAt, String updatedAt) {
         this.userId = userId;
         this.facilityId = facilityId;
         this.customerName = customerName;
@@ -70,11 +72,11 @@ public class Reservation {
         this.customerPhone = customerPhone;
     }
 
-    public LocalDateTime getReservationTime() {
+    public String getReservationTime() {
         return reservationTime;
     }
 
-    public void setReservationTime(LocalDateTime reservationTime) {
+    public void setReservationTime(String reservationTime) {
         this.reservationTime = reservationTime;
     }
 
@@ -86,12 +88,17 @@ public class Reservation {
         this.promotionId = promotionId;
     }
 
-    public String getTotalPrice() {
+    public float getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getFormattedTotalPrice() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        return formatter.format(totalPrice);
     }
 
     public boolean isLate() {
@@ -110,19 +117,19 @@ public class Reservation {
         this.status = status;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

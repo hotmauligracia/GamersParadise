@@ -3,8 +3,10 @@ package com.example.gamersparadise.data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Promotion implements Parcelable {
     public static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -107,12 +109,22 @@ public class Promotion implements Parcelable {
         this.nominal = nominal;
     }
 
+    public String getFormattedNominal() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        return formatter.format(this.nominal);
+    }
+
     public float getMinimumOrder() {
         return minimumOrder;
     }
 
     public void setMinimumOrder(float minimumOrder) {
         this.minimumOrder = minimumOrder;
+    }
+
+    public String getFormattedMinimumOrder() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        return formatter.format(this.minimumOrder);
     }
 
     public String getImageUrl() {

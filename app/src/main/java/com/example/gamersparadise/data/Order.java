@@ -1,8 +1,9 @@
 package com.example.gamersparadise.data;
 
-import java.time.LocalDateTime;
+import java.text.NumberFormat;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Order {
     private String id;
@@ -10,12 +11,12 @@ public class Order {
     private String reservationId;
     private ArrayList<String> menuId;
     private String promotionId;
-    private String totalPrice;
+    private float totalPrice;
     private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
-    public Order(String userId, String reservationId, ArrayList<String> menuId, String promotionId, String totalPrice, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Order(String userId, String reservationId, ArrayList<String> menuId, String promotionId, float totalPrice, String status, String createdAt, String updatedAt) {
         this.userId = userId;
         this.reservationId = reservationId;
         this.menuId = menuId;
@@ -66,12 +67,17 @@ public class Order {
         this.promotionId = promotionId;
     }
 
-    public String getTotalPrice() {
+    public float getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getFormattedTotalPrice() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        return formatter.format(totalPrice);
     }
 
     public String getStatus() {
@@ -82,19 +88,19 @@ public class Order {
         this.status = status;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

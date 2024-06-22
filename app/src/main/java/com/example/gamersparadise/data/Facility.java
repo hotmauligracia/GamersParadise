@@ -3,6 +3,9 @@ package com.example.gamersparadise.data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Facility implements Parcelable {
     private String id;
     private String locationId;
@@ -78,6 +81,11 @@ public class Facility implements Parcelable {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public String getFormattedPrice() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        return formatter.format(this.price);
     }
 
     @Override
