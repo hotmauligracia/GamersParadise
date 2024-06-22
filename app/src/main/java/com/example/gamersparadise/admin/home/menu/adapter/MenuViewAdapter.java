@@ -12,21 +12,34 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
 import com.example.gamersparadise.admin.home.menu.MenuViewActivity;
 import com.example.gamersparadise.admin.home.menu.MenuViewFormActivity;
 import com.example.gamersparadise.data.Menu;
+import com.example.gamersparadise.data.MenuType;
+import com.google.firebase.firestore.DocumentSnapshot;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuViewHolder> {
 
     private final Context context;
     private final List<Menu> menuList;
+    private List<MenuType> menuTypeList;
+    private final Authentication auth = new Authentication();
 
     public MenuViewAdapter(Context context, List<Menu> menuList) {
         this.context = context;
         this.menuList = menuList;
+        this.menuTypeList = new ArrayList<>();
+    }
+
+    public void setMenuTypeList(List<MenuType> menuTypeList) {
+        this.menuTypeList = menuTypeList;
     }
 
     @NonNull
@@ -43,8 +56,14 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
         Menu menu = menuList.get(position);
 
         holder.tvMenuNameView.setText(menu.getName());
-        holder.tvMenuTypeView.setText(menu.getMenuTypeId());
-        holder.tvMenuPriceView.setText(String.valueOf(menu.getPrice()));
+        holder.tvMenuPriceView.setText(String.format("Rp%s", menu.getPrice()));
+
+        for (MenuType menuType : menuTypeList) {
+            if (menuType.getId() == menu.getMenuTypeId()) {
+                holder.tvMenuTypeView.setText(menuType.getName());
+                break;
+            }
+        }
 
         Glide.with(context)
                 .load(menu.getImageUrl())
@@ -64,6 +83,14 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
                 ((MenuViewActivity) context).showDeletionConfirmationPopup(menu);
             }
         });
+
+        updateStockButtonsVisibility(holder, menu.isInStock());
+
+        holder.btnStockEmpty.setOnClickListener(v ->
+                updateStockStatus(menu, false, holder));
+
+        holder.btnStockReady.setOnClickListener(v ->
+                updateStockStatus(menu, true, holder));
     }
 
     @Override
@@ -74,7 +101,7 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
     public static class MenuViewHolder extends RecyclerView.ViewHolder {
         TextView tvMenuNameView, tvMenuTypeView, tvMenuPriceView;
         ImageView imgMenuView;
-        Button btnEditMenu, btnDeleteMenu;
+        Button btnEditMenu, btnDeleteMenu, btnStockEmpty, btnStockReady;
 
         public MenuViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,6 +111,36 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
             imgMenuView = itemView.findViewById(R.id.img_menu_view);
             btnEditMenu = itemView.findViewById(R.id.btn_edit_menu);
             btnDeleteMenu = itemView.findViewById(R.id.btn_delete_menu);
+            btnStockEmpty = itemView.findViewById(R.id.btn_stock_empty);
+            btnStockReady = itemView.findViewById(R.id.btn_stock_ready);
         }
+    }
+
+    private void updateStockButtonsVisibility(MenuViewHolder holder, boolean isInStock) {
+        if (isInStock) {
+            holder.btnStockEmpty.setVisibility(View.VISIBLE);
+            holder.btnStockReady.setVisibility(View.GONE);
+        } else {
+            holder.btnStockEmpty.setVisibility(View.GONE);
+            holder.btnStockReady.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void updateStockStatus(Menu menu, boolean isInStock, MenuViewHolder holder) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("isInStock", isInStock);
+
+        auth.updateDocumentData("locations/" + menu.getLocationId() + "/menus", menu.getId(), data, new Authentication.FirebaseDocumentCallback() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                menu.setInStock(isInStock);
+                updateStockButtonsVisibility(holder, isInStock);
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(context, "Failed to update stock status: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

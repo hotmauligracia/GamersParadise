@@ -15,6 +15,7 @@ import com.example.gamersparadise.R;
 import com.example.gamersparadise.admin.home.menu.adapter.MenuViewAdapter;
 import com.example.gamersparadise.data.Location;
 import com.example.gamersparadise.data.Menu;
+import com.example.gamersparadise.data.MenuType;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,6 +33,7 @@ public class MenuViewActivity extends AppCompatActivity {
     private MenuViewAdapter adapter;
     private List<Location> locationList;
     private List<Menu> menuList;
+    private List<MenuType> menuTypeList;
     private Authentication auth;
     private ArrayAdapter<String> spinnerAdapter;
     private Spinner spinnerLokasi;
@@ -109,7 +111,8 @@ public class MenuViewActivity extends AppCompatActivity {
             }
         });
 
-        fetchLocationData();
+        menuTypeList = new ArrayList<>();
+        fetchMenuTypeData();
     }
 
     @Override
@@ -159,6 +162,26 @@ public class MenuViewActivity extends AppCompatActivity {
         spinnerAdapter.notifyDataSetChanged();
     }
 
+    private void fetchMenuTypeData() {
+        auth.fetchCollectionData("menuTypes", new Authentication.FirebaseCollectionCallback() {
+            @Override
+            public void onSuccess(QuerySnapshot querySnapshot) {
+                menuTypeList.clear();
+                for (QueryDocumentSnapshot document : querySnapshot) {
+                    MenuType menuType = document.toObject(MenuType.class);
+                    menuType.setId(Integer.parseInt(document.getId()));
+                    menuTypeList.add(menuType);
+                }
+                fetchLocationData();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(MenuViewActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void fetchMenuData(String locationName) {
         locationId = null;
 
@@ -179,6 +202,7 @@ public class MenuViewActivity extends AppCompatActivity {
                         menu.setId(document.getId());
                         menuList.add(menu);
                     }
+                    adapter.setMenuTypeList(menuTypeList);
                     adapter.notifyDataSetChanged();
                     updateVisibility();
                 }
