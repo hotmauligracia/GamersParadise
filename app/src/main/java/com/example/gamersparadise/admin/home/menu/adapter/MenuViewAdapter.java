@@ -3,6 +3,7 @@ package com.example.gamersparadise.admin.home.menu.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +47,7 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
     @Override
     public MenuViewAdapter.MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_menu_view,
-                        parent, false);
+                .inflate(R.layout.item_menu_view, parent, false);
         return new MenuViewAdapter.MenuViewHolder(view);
     }
 
@@ -93,6 +93,32 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
                 updateStockStatus(menu, true, holder));
     }
 
+    private void updateStockButtonsVisibility(MenuViewHolder holder, boolean isInStock) {
+        Log.d("MenuViewAdapter", "Updating stock button visibility: isInStock = " + isInStock);
+        holder.btnStockEmpty.setVisibility(isInStock ? View.VISIBLE : View.GONE);
+        holder.btnStockReady.setVisibility(isInStock ? View.GONE : View.VISIBLE);
+    }
+
+    private void updateStockStatus(Menu menu, boolean isInStock, MenuViewHolder holder) {
+        Log.d("MenuViewAdapter", "Updating stock status: " + isInStock);
+        Map<String, Object> data = new HashMap<>();
+        data.put("isInStock", isInStock);
+
+        auth.updateDocumentData("locations/" + menu.getLocationId() + "/menus", menu.getId(), data, new Authentication.FirebaseDocumentCallback() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Toast.makeText(context, "Status stok berhasil diperbarui", Toast.LENGTH_SHORT).show();
+                menu.setInStock(isInStock);
+                updateStockButtonsVisibility(holder, isInStock);
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(context, "Gagal memperbarui status stok: " + errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     public int getItemCount() {
         return menuList.size();
@@ -113,16 +139,6 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
             btnDeleteMenu = itemView.findViewById(R.id.btn_delete_menu);
             btnStockEmpty = itemView.findViewById(R.id.btn_stock_empty);
             btnStockReady = itemView.findViewById(R.id.btn_stock_ready);
-        }
-    }
-
-    private void updateStockButtonsVisibility(MenuViewHolder holder, boolean isInStock) {
-        if (isInStock) {
-            holder.btnStockEmpty.setVisibility(View.VISIBLE);
-            holder.btnStockReady.setVisibility(View.GONE);
-        } else {
-            holder.btnStockEmpty.setVisibility(View.GONE);
-            holder.btnStockReady.setVisibility(View.VISIBLE);
         }
     }
 

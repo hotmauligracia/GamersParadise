@@ -163,6 +163,15 @@ public class Authentication {
                 .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
     }
 
+    public void fetchDocumentData(String documentPath, FirebaseDocumentCallback callback) {
+        db.document(documentPath).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) callback.onSuccess(documentSnapshot);
+                    else callback.onFailure("Document does not exist");
+                })
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+    }
+
     public void addDocumentData(String collectionName, Map<String, Object> data, final FirebaseDocumentAddCallback callback) {
         CollectionReference collectionReference = db.collection(collectionName);
         collectionReference.add(data)
