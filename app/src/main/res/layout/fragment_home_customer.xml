@@ -9,10 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp">
+        android:padding="16dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,12 +29,11 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tv_welcome"
                         style="@style/label_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hai_username"
-                        android:textColor="@color/black"
                         android:textSize="22sp" />
 
                     <LinearLayout
@@ -54,14 +50,14 @@
                             app:srcCompat="@drawable/ic_location" />
 
                         <Spinner
-                            android:id="@+id/locationSpinner"
+                            android:id="@+id/spinner_lokasi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/location_array"
                             android:prompt="@string/pilih_lokasi"
                             android:textColor="@color/gray_normal" />
-                    </LinearLayout>
 
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -81,8 +77,8 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         app:srcCompat="@drawable/ic_notification" />
-                </LinearLayout>
 
+                </LinearLayout>
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,7 +87,7 @@
                 android:layout_marginTop="24dp">
 
                 <ImageView
-                    android:id="@+id/img_banner"
+                    android:id="@+id/img_promotion_cardview"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="fitXY"
@@ -102,8 +98,8 @@
                     app:srcCompat="@drawable/img_banner_promo" />
 
                 <Button
-                    app:layout_constraintBottom_toBottomOf="@id/img_banner"
-                    app:layout_constraintEnd_toEndOf="@id/img_banner"
+                    app:layout_constraintBottom_toBottomOf="@id/img_promotion_cardview"
+                    app:layout_constraintEnd_toEndOf="@id/img_promotion_cardview"
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="12dp"
                     android:id="@+id/btn_promo"
@@ -116,8 +112,8 @@
                     android:text="@string/pakai_promo"
                     android:textColor="@color/white"
                     tools:layout_editor_absoluteX="248dp"
-                    tools:layout_editor_absoluteY="120dp"
-                    />
+                    tools:layout_editor_absoluteY="120dp" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -135,7 +131,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/fasilitas"
-                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -152,12 +147,14 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_facility_home_customer"
-                android:layout_weight="1"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_facility_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_facility_cardview"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,7 +171,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/menu"
-                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -191,12 +187,15 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/menu_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_menu_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_menu_cardview"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>
