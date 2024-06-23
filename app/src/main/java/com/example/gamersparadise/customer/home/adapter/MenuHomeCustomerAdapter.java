@@ -1,6 +1,7 @@
 package com.example.gamersparadise.customer.home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.customer.home.menu.ViewMenuActivity;
 import com.example.gamersparadise.data.Menu;
 
 import java.util.List;
@@ -45,6 +47,12 @@ public class MenuHomeCustomerAdapter extends RecyclerView.Adapter<MenuHomeCustom
 
         holder.tvMenuNameCardview.setText(menu.getName());
         holder.tvMenuPriceCardview.setText(menu.getFormattedPrice());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(context, ViewMenuActivity.class);
+            menuIntent.putExtra("menu", menu);
+            context.startActivity(menuIntent);
+        });
     }
 
     @Override

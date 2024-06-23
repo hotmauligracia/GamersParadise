@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/makanan_dan_minuman"
-                style="@style/body_large"
+                style="@style/title_medium"
                 android:textColor="@color/black"
                 android:lineSpacingExtra="1sp" />
 

@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tambah_menu"
-                style="@style/body_large"
+                style="@style/title_medium"
                 android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
