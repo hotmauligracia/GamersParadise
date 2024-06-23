@@ -1,6 +1,7 @@
 package com.example.gamersparadise.customer.home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.customer.home.facility.ViewFacilityActivity;
 import com.example.gamersparadise.data.Facility;
 
 import java.util.List;
@@ -47,6 +49,12 @@ public class FacilityHomeCustomerAdapter extends RecyclerView.Adapter<FacilityHo
         holder.tvFacilityCapacityCardview.setText(String.valueOf(facility.getCapacity()));
         holder.tvFacilityNameCardview.setText(facility.getName());
         holder.tvFacilityPriceCardview.setText(String.format("%s/jam", facility.getFormattedPrice()));
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent facilityIntent = new Intent(context, ViewFacilityActivity.class);
+            facilityIntent.putExtra("facility", facility);
+            context.startActivity(facilityIntent);
+        });
     }
 
     @Override

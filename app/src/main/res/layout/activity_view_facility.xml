@@ -7,10 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".customer.home.facility.ViewFacilityActivity">
 
+    <!--top bar-->
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_app_bar"
@@ -23,14 +26,16 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="start"
-                android:layout_marginRight="8dp"
-                android:src="@drawable/ic_arrow_back" />
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
 
             <TextView
+                android:id="@+id/tv_buat_promo_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fasilitas"
-                style="@style/title_medium" />
+                android:text="@string/detail_fasilitas"
+                style="@style/title_medium"
+                android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -43,6 +48,7 @@
         tools:layout_editor_absoluteY="264dp">
 
         <ImageView
+            android:id="@+id/img_view_facility"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_marginTop="64dp"
@@ -65,11 +71,11 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_view_facility_name"
                     style="@style/label_large_prominent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="VIP 1"
-                    android:textColor="@color/black" />
+                    android:text="@string/vip_1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,29 +86,30 @@
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:layout_marginRight="4dp"
+                        android:layout_marginEnd="4dp"
                         android:backgroundTint="@color/gray_normal"
                         android:src="@drawable/ic_person"/>
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tv_view_facility_capacity"
                         style="@style/label_regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="6 orang"
+                        android:text="@string/_6_orang"
                         android:textColor="@color/gray_normal" />
-                </LinearLayout>
 
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_view_facility_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Rp80.000/jam"
+                android:text="@string/rp80_000_jam"
                 style="@style/label_large_prominent"
                 android:textColor="@color/orange"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -114,12 +121,11 @@
 
             <TextView
                 style="@style/label_large_prominent"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Fasilitas"
-                android:textColor="@color/black" />
+                android:text="@string/fasilitas" />
 
             <Button
                 android:id="@+id/btn_arrow"
@@ -131,8 +137,9 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_view_facility_details"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="4dp"
             android:text="@string/facility_content"
             android:layout_marginStart="16dp"
@@ -140,11 +147,12 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/btn_pesan_fasilitas"
+            android:id="@+id/btn_to_reserve"
             style="@style/button"
-            android:text="Pesan Sekarang"
+            android:text="@string/pesan_sekarang"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

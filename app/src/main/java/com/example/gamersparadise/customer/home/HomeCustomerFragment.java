@@ -40,7 +40,7 @@ public class HomeCustomerFragment extends Fragment {
 
     private ViewPager2 vpPromotionHomeCust;
     private PromotionHomeCustomerAdapter promotionAdapter;
-    private View illustNoDataFetched;
+    private View illustNoDataFetched, facilityHomeCust, menuHomeCust;
     private RecyclerView rvFacilityHomeCust;
     private FacilityHomeCustomerAdapter facilityAdapter;
     private RecyclerView rvMenuHomeCust;
@@ -71,6 +71,8 @@ public class HomeCustomerFragment extends Fragment {
 
         vpPromotionHomeCust = view.findViewById(R.id.vp_promotion_home_cust);
         illustNoDataFetched = view.findViewById(R.id.illust_no_data_fetched);
+        facilityHomeCust = view.findViewById(R.id.facility_home_cust);
+        menuHomeCust = view.findViewById(R.id.menu_home_cust);
         rvFacilityHomeCust = view.findViewById(R.id.rv_facility_home_cust);
         rvMenuHomeCust = view.findViewById(R.id.rv_menu_home_cust);
         spinnerLokasi = view.findViewById(R.id.spinner_lokasi);
@@ -86,8 +88,11 @@ public class HomeCustomerFragment extends Fragment {
         menuList = new ArrayList<>();
 
         btnProfileHomeCust.setOnClickListener(v -> {
-            Intent profileIntent = new Intent(getContext(), ProfileFragment.class);
-            startActivity(profileIntent);
+            ProfileFragment profileFragment = new ProfileFragment();
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fl_fragment_customer, profileFragment)
+                    .addToBackStack(null)
+                    .commit();
         });
 
         btnNotificationHomeCust.setOnClickListener(v -> {
@@ -108,7 +113,7 @@ public class HomeCustomerFragment extends Fragment {
         lokasi.add("Pilih Lokasi");
 
         spinnerAdapter = new ArrayAdapter<String>(
-                getContext(), android.R.layout.simple_spinner_item, lokasi) {
+                requireContext(), android.R.layout.simple_spinner_item, lokasi) {
             @Override
             public boolean isEnabled(int position) {
                 return position != 0;
@@ -123,8 +128,8 @@ public class HomeCustomerFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
                     illustNoDataFetched.setVisibility(View.VISIBLE);
-                    rvFacilityHomeCust.setVisibility(View.GONE);
-                    rvMenuHomeCust.setVisibility(View.GONE);
+                    facilityHomeCust.setVisibility(View.GONE);
+                    menuHomeCust.setVisibility(View.GONE);
                 } else {
                     String selectedLocation = (String) parent.getItemAtPosition(position);
                     locationId = locationList.get(position - 1).getId();
@@ -166,6 +171,7 @@ public class HomeCustomerFragment extends Fragment {
                         facilityList.add(facility);
                     }
                     facilityAdapter.notifyDataSetChanged();
+                    updateVisibility();
                 }
 
                 @Override
@@ -186,6 +192,7 @@ public class HomeCustomerFragment extends Fragment {
                         menuList.add(menu);
                     }
                     menuAdapter.notifyDataSetChanged();
+                    updateVisibility();
                 }
 
                 @Override
@@ -200,7 +207,7 @@ public class HomeCustomerFragment extends Fragment {
         auth.fetchCollectionData("promotions", new Authentication.FirebaseCollectionCallback() {
             @Override
             public void onSuccess(QuerySnapshot querySnapshot) {
-                List<Promotion> promotionList = new ArrayList<>();
+                promotionList.clear();
                 for (QueryDocumentSnapshot document : querySnapshot) {
                     Promotion promotion = document.toObject(Promotion.class);
                     promotion.setId(document.getId());
@@ -217,22 +224,39 @@ public class HomeCustomerFragment extends Fragment {
     }
 
     private void setupCarousel(List<Promotion> promotionList) {
+        promotionAdapter = new PromotionHomeCustomerAdapter(getContext(), promotionList);
         vpPromotionHomeCust.setAdapter(promotionAdapter);
 
         promotionAdapter.setOnItemClickListener(promotion -> {
             Intent promotionIntent = new Intent(getContext(), PromotionActivity.class);
-            promotionIntent.putExtra("promotionId", promotion.getId());
+            promotionIntent.putExtra("promotion", promotion);
             startActivity(promotionIntent);
         });
     }
 
+    private void updateVisibility() {
+        if (facilityList.isEmpty() && menuList.isEmpty()) {
+            illustNoDataFetched.setVisibility(View.VISIBLE);
+            facilityHomeCust.setVisibility(View.GONE);
+            menuHomeCust.setVisibility(View.GONE);
+        } else {
+            illustNoDataFetched.setVisibility(View.GONE);
+            if (!facilityList.isEmpty()) {
+                facilityHomeCust.setVisibility(View.VISIBLE);
+            }
+            if (!menuList.isEmpty()) {
+                menuHomeCust.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
     public void onFacilitiesClick(View view) {
-        Intent reservasi = new Intent(requireContext(), FacilityActivity.class);
-        startActivity(reservasi);
+        Intent facilityIntent = new Intent(requireContext(), FacilityActivity.class);
+        startActivity(facilityIntent);
     }
 
     public void onMenuClick(View view) {
-        Intent menu = new Intent(requireContext(), MenuActivity.class);
-        startActivity(menu);
+        Intent menuIntent = new Intent(requireContext(), MenuActivity.class);
+        startActivity(menuIntent);
     }
 }

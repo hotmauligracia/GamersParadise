@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".customer.home.menu.ViewMenuActivity">
+
+    <!--top bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_buat_promo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_menu"
+                style="@style/title_medium"
+                android:lineSpacingExtra="1sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/view_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="264dp">
+
+        <ImageView
+            android:id="@+id/img_view_menu"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/img_burger"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_view_menu_name"
+                    style="@style/label_large_prominent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nasi_goreng_special" />
+
+                <TextView
+                    android:id="@+id/tv_view_menu_desc"
+                    style="@style/label_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_menu"
+                    android:textColor="@color/gray_normal" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_view_menu_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/rp50_000"
+                style="@style/label_large_prominent"
+                android:textColor="@color/orange"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/label_medium_prominent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/catatan" />
+
+        <RelativeLayout
+            android:id="@+id/tf_order_note"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:padding="16dp">
+
+            <View
+                android:id="@+id/rect_tf_order_note"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rectangle_tf" />
+
+            <EditText
+                android:id="@+id/edt_order_note"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignStart="@id/rect_tf_order_note"
+                android:layout_alignEnd="@id/rect_tf_order_note"
+                android:layout_alignTop="@id/rect_tf_order_note"
+                android:layout_alignBottom="@id/rect_tf_order_note"
+                android:gravity="top"
+                android:hint="@string/tambahkan_catatan_terkait_pesanan_anda_di_sini"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="13dp"
+                style="@style/label_regular"
+                android:background="@android:color/transparent"
+                android:inputType="text" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_menu"
+        android:layout_marginTop="27dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btn_minus_count_order"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/button_minus_gray"/>
+
+        <TextView
+            android:id="@+id/tv_count_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:text="@string/_1"
+            style="@style/headline_large"/>
+
+        <ImageButton
+            android:id="@+id/btn_plus_count_order"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/button_plus_orange"/>
+
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        style="@style/button"
+        android:text="@string/tambah_pesanan"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

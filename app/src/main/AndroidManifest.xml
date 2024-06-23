@@ -15,6 +15,9 @@
         android:theme="@style/Theme.GamersParadise"
         tools:targetApi="31">
         <activity
+            android:name=".customer.home.menu.ViewMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.orders.OrderDetailsActivity"
             android:exported="false" />
         <activity
@@ -90,7 +93,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".customer.profile.AboutDeveloper" />
-
 
         <meta-data
             android:name="preloaded_fonts"
