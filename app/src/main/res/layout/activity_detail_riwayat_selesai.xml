@@ -23,13 +23,13 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="start"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_arrow_back" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Detail Riwayat"
+                android:text="@string/detail_riwayat"
                 style="@style/title_medium" />
 
         </com.google.android.material.appbar.MaterialToolbar>
@@ -71,10 +71,11 @@
                     android:id="@+id/history_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3 April 2024"
+                    android:text="@string/_3_april_2024"
                     style="@style/label_small"
                     android:textColor="@color/gray150"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginEnd="12dp"/>
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
@@ -90,14 +91,14 @@
                             android:id="@+id/ic_time"
                             android:layout_width="18dp"
                             android:layout_height="18dp"
-                            android:layout_marginRight="4dp"
+                            android:layout_marginEnd="4dp"
                             app:srcCompat="@drawable/ic_time" />
 
                         <TextView
                             android:id="@+id/history_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15:00 - 17:00 WIB"
+                            android:text="@string/_15_00_17_00_wib"
                             style="@style/label_small"
                             android:textColor="@color/gray150"/>
                     </LinearLayout>
@@ -120,7 +121,7 @@
                         style="@style/label_large_prominent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="VIP 1"
+                        android:text="@string/vip_1"
                         android:textColor="@color/black" />
 
                     <LinearLayout
@@ -132,7 +133,9 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:layout_marginRight="4dp"
+
+                            android:layout_marginEnd="4dp"
+
                             android:backgroundTint="@color/gray150"
                             android:src="@drawable/ic_person" />
 
@@ -141,7 +144,8 @@
                             style="@style/label_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="6 orang"
+                            android:text="@string/_6_orang"
+
                             android:textColor="@color/gray150" />
                     </LinearLayout>
                 </LinearLayout>
@@ -152,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="Rp80.000/jam"
+                    android:text="@string/rp80_000_jam"
                     android:textColor="@color/orange" />
             </LinearLayout>
         </LinearLayout>
@@ -167,11 +171,11 @@
 
             <TextView
                 style="@style/label_large_prominent"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Fasilitas"
+                android:text="@string/fasilitas"
                 android:textColor="@color/black" />
 
             <Button
@@ -196,7 +200,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_large_prominent"
                 android:textColor="@color/black"
-                android:text="Detail Pemesan"
+                android:text="@string/detail_pemesan"
                 android:layout_marginBottom="16dp"/>
 
             <TextView
@@ -205,7 +209,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_regular"
                 android:textColor="@color/black"
-                android:text="Amalia Balqis"/>
+                android:text="@string/amalia_balqis"/>
 
             <TextView
                 android:id="@+id/no_pemesan"
@@ -213,7 +217,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_regular"
                 android:textColor="@color/black"
-                android:text="082134512395"/>
+                android:text="@string/_082134512395"/>
 
             <TextView
                 android:id="@+id/email_pemesan"
@@ -221,7 +225,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_regular"
                 android:textColor="@color/black"
-                android:text="qiqis.balqis@gmail.com"/>
+                android:text="@string/qiqis_balqis_gmail_com"/>
         </LinearLayout>
 
         <ImageView
@@ -243,16 +247,17 @@
                 android:layout_height="wrap_content"
                 style="@style/label_large_prominent"
                 android:textColor="@color/black"
-                android:text="Detail Pembayaran"
+                android:text="@string/detail_pembayaran"
                 android:layout_marginBottom="16dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="1">
@@ -263,7 +268,8 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="PC Gaming Arena x 2 jam"/>
+                        android:text="@string/pc_gaming_arena_x_2_jam"/>
+
 
                     <TextView
                         android:id="@+id/CO_2"
@@ -271,7 +277,8 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="Legend Cheese Burger x 1"/>
+
+                        android:text="@string/legend_cheese_burger_x_1"/>
 
                     <TextView
                         android:id="@+id/disc"
@@ -279,17 +286,18 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="Diskon Voucher"/>
+                        android:text="@string/diskon_voucher"/>
+
 
                     <TextView
                         android:id="@+id/total"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:textColor="@color/black"
-                        style="@style/label_regular"
-                        android:textStyle="bold"
-                        android:text="Total"
-                        android:layout_weight="1"/>
+                        style="@style/label_medium"
+                        android:text="@string/total"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -303,7 +311,7 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="Rp160.000"
+                        android:text="@string/rp160_000"
                         android:textAlignment="textEnd"/>
 
                     <TextView
@@ -312,7 +320,7 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="Rp60.000"
+                        android:text="@string/rp60_000"
                         android:textAlignment="textEnd"/>
 
                     <TextView
@@ -321,7 +329,7 @@
                         android:layout_height="wrap_content"
                         style="@style/label_regular"
                         android:textColor="@color/gray150"
-                        android:text="- Rp2.000"
+                        android:text="@string/rp2_000"
                         android:textAlignment="textEnd"/>
 
                     <TextView
@@ -329,9 +337,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        style="@style/label_regular"
-                        android:textStyle="bold"
-                        android:text="Rp218.000"
+                        style="@style/label_medium"
+                        android:text="@string/rp218_000"
                         android:textAlignment="textEnd"/>
                 </LinearLayout>
             </LinearLayout>
@@ -350,11 +357,11 @@
 
                 <TextView
                     android:id="@+id/metode_bayar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray150"
                     style="@style/label_regular"
-                    android:text="Bayar tunai"
+                    android:text="@string/bayar_tunai"
                     android:layout_weight="1"/>
 
                 <TextView
@@ -363,7 +370,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray150"
                     style="@style/label_regular"
-                    android:text="Rp218.000"
+                    android:text="@string/rp218_000"
                     android:textAlignment="textEnd"/>
             </LinearLayout>
         </LinearLayout>
@@ -381,9 +388,9 @@
             <Button
                 android:id="@+id/btn_unduh_tiket"
                 style="@style/button"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="32dp"
-                android:text="Pesan Kembali"
+                android:text="@string/pesan_kembali"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>

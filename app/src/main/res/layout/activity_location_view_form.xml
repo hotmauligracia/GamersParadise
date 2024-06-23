@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayish_white"
+    tools:context=".admin.home.location.LocationViewFormActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_tambah_lokasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tambah_lokasi"
+                style="@style/body_large"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="1sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-1dp">
+
+        <LinearLayout
+            android:id="@+id/location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama_cabang"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:id="@+id/mandatory_nm"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_location_name"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_location_name"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_name"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@id/rect_tf_location_name"
+                    android:layout_alignEnd="@id/rect_tf_location_name"
+                    android:layout_alignTop="@id/rect_tf_location_name"
+                    android:layout_alignBottom="@id/rect_tf_location_name"
+                    android:hint="@string/isi_nama_cabang"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_location_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp">
+
+        <LinearLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/provinsi"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_province"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_province"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_province"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_province"
+                    android:layout_alignEnd="@+id/rect_tf_province"
+                    android:layout_alignTop="@+id/rect_tf_province"
+                    android:layout_alignBottom="@+id/rect_tf_province"
+                    android:hint="@string/isi_nama_provinsi"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kota"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_city"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_city"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_city"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_city"
+                    android:layout_alignEnd="@+id/rect_tf_city"
+                    android:layout_alignTop="@+id/rect_tf_city"
+                    android:layout_alignBottom="@+id/rect_tf_city"
+                    android:hint="@string/isi_nama_kota"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kecamatan"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_subdistrict"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_subdistrict"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_subdistrict"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_subdistrict"
+                    android:layout_alignEnd="@+id/rect_tf_subdistrict"
+                    android:layout_alignTop="@+id/rect_tf_subdistrict"
+                    android:layout_alignBottom="@+id/rect_tf_subdistrict"
+                    android:hint="@string/isi_nama_kecamatan"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kode_pos"
+                    style="@style/label_regular"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_zip_code"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_zip_code"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_zip_code"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_zip_code"
+                    android:layout_alignEnd="@+id/rect_tf_zip_code"
+                    android:layout_alignTop="@+id/rect_tf_zip_code"
+                    android:layout_alignBottom="@+id/rect_tf_zip_code"
+                    android:hint="@string/isi_nama_kode_pos"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jalan"
+                    style="@style/label_regular"
+                    android:layout_marginEnd="4dp"/>
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:src="@drawable/mandatory" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tf_street"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="11dp">
+
+                <View
+                    android:id="@+id/rect_tf_street"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rectangle_tf" />
+
+                <EditText
+                    android:id="@+id/edt_location_street"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignStart="@+id/rect_tf_street"
+                    android:layout_alignEnd="@+id/rect_tf_street"
+                    android:layout_alignTop="@+id/rect_tf_street"
+                    android:layout_alignBottom="@+id/rect_tf_street"
+                    android:hint="@string/isi_nama_jalan"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="13dp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btn_save"
+                style="@style/label_medium"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button"
+                android:text="@string/simpan"
+                android:textColor="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

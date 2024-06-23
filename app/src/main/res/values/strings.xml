@@ -2,7 +2,7 @@
     <string name="app_name">GamersParadise</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="lengkapi_detail_anda_untuk_masuk">Lengkapi detail Anda untuk masuk</string>
-    <string name="nama_pengguna_atau_alamat_email">Nama Pengguna atau Alamat Email</string>
+    <string name="alamat_email">Alamat Email</string>
     <string name="kata_sandi">Kata Sandi</string>
     <string name="masuk">Masuk</string>
     <string name="masuk_dengan_google">Masuk dengan Google</string>
@@ -12,16 +12,18 @@
     <string name="mendaftar_untuk_memulai">Mendaftar untuk memulai</string>
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="nama_pengguna">Nama Pengguna</string>
-    <string name="alamat_email">Alamat Email</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
     <string name="saya_telah_membaca">Saya telah membaca dan menyetujui Syarat dan Ketentuan dan Kebijakan Privasi</string>
     <string name="register">Daftar</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
+    <string name="button">Hapus</string>
+
+    <!--    Dropdown Home-->
     <string-array name="tipeMenu">
         <item>Makanan</item>
         <item>Minuman</item>
     </string-array>
-    <string-array name="Lokasi">
+    <string-array name="lokasi">
         <item>Kebayoran Baru</item>
         <item>Gandaria City</item>
     </string-array>
@@ -32,13 +34,13 @@
     <string name="cabang">CABANG</string>
     <string name="kebayoran_baru">Kebayoran Baru</string>
     <string name="reservasi">Reservasi</string>
-    <string name="nama">Nama *</string>
-    <string name="no_telepon">No. Telepon *</string>
+    <string name="nama">Nama</string>
+    <string name="no_telepon">No. Telepon</string>
     <string name="nomor_telepon_whatsapp">Nomor Telepon/WhatsApp</string>
     <string name="fasilitas_yang_dipilih">Fasilitas yang Dipilih</string>
-    <string name="pilih_tanggal">Pilih Tanggal *</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
     <string name="dd_mm_yyy">DD-MM-YYY</string>
-    <string name="pilih_sesi_jam">Pilih Sesi Jam *</string>
+    <string name="pilih_sesi_jam">Pilih Sesi Jam</string>
     <string name="_10_00_11_00">10.00–11.00</string>
     <string name="pakai_promo">Pakai Sekarang</string>
     <string-array name="location_array">
@@ -56,9 +58,7 @@
         3. Voucher hanya dapat digunakan satu kali
     </string>
     <string name="btn_promo_view">Pakai Voucher</string>
-
     <string name="uname">"@aml.balkis"</string>
-
     <string name="facility_content">
         * PS5\n
         * Nintendo Switch\n
@@ -75,4 +75,104 @@
     <string name="pilih_riwayat">All</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="keluar">KELUAR</string>
+    <string name="hai_username">Hai, username!</string>
+    <string name="fasilitas">Fasilitas</string>
+    <string name="lihat_semua">Lihat semua</string>
+    <string name="menu">Menu</string>
+    <string name="promosi">Promosi</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="makanan_minuman"><![CDATA[MAKANAN & MINUMAN]]></string>
+    <string name="tambah_menu">Tambah Menu</string>
+    <string name="unggah_foto">Unggah Foto</string>
+    <string name="nama_fasilitas">Nama Fasilitas</string>
+    <string name="masukkan_nama_fasilitas_disini">Masukkan nama fasilitas di sini</string>
+    <string name="kapasitas">Kapasitas</string>
+    <string name="masukkan_kapasitas_fasilitas_di_sini">Masukkan kapasitas fasilitas di sini</string>
+    <string name="detail_fasilitas">Detail Fasilitas</string>
+    <string name="masukan_detail_fasilitas_di_sini">Masukan detail fasilitas di sini</string>
+    <string name="tambahkan">Tambahkan</string>
+    <string name="tambah_lokasi">Tambah Lokasi</string>
+    <string name="cth_alamat">Jl. KH. Ahmad Dahlan Kby. No.32, RT.3/RW.3, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</string>
+    <string name="ubah">Ubah</string>
+    <string name="hapus">Hapus</string>
+    <string name="nama_cabang">Nama Cabang</string>
+    <string name="isi_nama_cabang">Isi nama cabang</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="isi_nama_provinsi">Isi nama provinsi</string>
+    <string name="kota">Kota</string>
+    <string name="isi_nama_kota">Isi nama kota</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="isi_nama_kecamatan">Isi nama kecamatan</string>
+    <string name="kode_pos">Kode Pos</string>
+    <string name="isi_nama_kode_pos">Isi nama kode pos</string>
+    <string name="isi_nama_jalan">Isi nama jalan</string>
+    <string name="simpan">Simpan</string>
+    <string name="jalan">Jalan</string>
+    <string name="buat_lokasi_baru">Buat Lokasi Baru</string>
+    <string name="daftar_lokasi">Daftar Lokasi</string>
+    <string name="lokasi_tidak_tersedia">Lokasi Tidak Tersedia</string>
+    <string name="harap_menyetujui_syarat_dan_ketentuan">Harap menyetujui Syarat dan Ketentuan serta Kebijakan Privasi aplikasi.</string>
+    <string name="kata_sandi_tidak_sama">Kata sandi tidak sama.</string>
+    <string name="error_field_kosong">Harap isi semua kolom</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="yakin_hapus_menu">Yakin Hapus Menu?</string>
+    <string name="menu_yang_sudah_dihapus_tidak_dapat_dikembalikan_lagi">Menu yang sudah dihapus tidak dapat dikembalikan lagi</string>
+    <string name="christmas_package">CHRISTMAS PACKAGE</string>
+    <string name="_20_12_2023_08_00">20–12–2023 08:00</string>
+    <string name="sampai">-</string>
+    <string name="_31_12_2023_08_00">31–12–2023 08:00</string>
+    <string name="tambah_fasilitas">Tambah Fasilitas</string>
+    <string name="fasilitas_tidak_tersedia">Fasilitas tidak tersedia</string>
+    <string name="harga_per_jam">Harga Per Jam</string>
+    <string name="masukkan_harga_reservasi_fasilitas_per_jam_di_sini">Masukkan harga reservasi fasilitas per jam di sini</string>
+    <string name="rp">Rp</string>
+    <string name="detail_riwayat">Detail Riwayat</string>
+    <string name="_3_april_2024">3 April 2024</string>
+    <string name="_15_00_17_00_wib">15:00 – 17:00 WIB</string>
+    <string name="vip_1">VIP 1</string>
+    <string name="_6_orang">6 orang</string>
+    <string name="rp80_000_jam">Rp80.000/jam</string>
+    <string name="detail_pemesan">Detail Pemesan</string>
+    <string name="amalia_balqis">Amalia Balqis</string>
+    <string name="_082134512395">082134512395</string>
+    <string name="qiqis_balqis_gmail_com">qiqis.balqis@gmail.com</string>
+    <string name="detail_pembayaran">Detail Pembayaran</string>
+    <string name="pc_gaming_arena_x_2_jam">PC Gaming Arena x 2 jam</string>
+    <string name="legend_cheese_burger_x_1">Legend Cheese Burger x 1</string>
+    <string name="diskon_voucher">Diskon Voucher</string>
+    <string name="total">Total</string>
+    <string name="rp160_000">Rp160.000</string>
+    <string name="rp60_000">Rp60.000</string>
+    <string name="rp2_000">- Rp2.000</string>
+    <string name="rp218_000">Rp218.000</string>
+    <string name="bayar_tunai">Bayar tunai</string>
+    <string name="pesan_kembali">Pesan Kembali</string>
+    <string name="profile">Profile</string>
+    <string name="media_sosial_gamer_s_paradise">Media Sosial Gamer\'s Paradise</string>
+    <string name="tentang_pengembang">Tentang Pengembang</string>
+    <string name="log_out">Log Out</string>
+    <string name="judul_notifikasi">Reservasi Dibatalkan</string>
+    <string name="cth_notifikasi">Reservasi Anda dibatalkan oleh Admin karena tidak hadir tanpa konfirmasi keterlambatan.</string>
+    <string name="buat_promo_baru">Buat Promo Baru</string>
+    <string name="nama_promo">Nama Promo</string>
+    <string name="isi_nama_promo_di_sini">Isi nama promo di sini</string>
+    <string name="pilih_tipe_promo">Pilih Tipe Promo</string>
+    <string name="isi_persentase_promo_di_sini">Isi persentase promo di sini</string>
+    <string name="percent">%</string>
+    <string name="besar_promo">Besar Promo</string>
+    <string name="isi_nominal_promo_di_sini">Isi nominal promo di sini</string>
+    <string name="waktu_mulai">Waktu Mulai</string>
+    <string name="waktu_berakhir">Waktu Berakhir</string>
+    <string name="persentase_promo">Persentase Promo</string>
+    <string name="kode_promo">Kode Promo</string>
+    <string name="isi_kode_promo_di_sini">Isi kode promo di sini</string>
+    <string name="minimal_order">Minimal Order</string>
+    <string name="isi_syarat_minimal_order_untuk_mendapatkan_promo">Isi syarat minimal order untuk mendapatkan promo</string>
+    <string name="deskripsi_promo">Deskripsi Promo</string>
+    <string name="isi_deskripsi_promo_di_sini">Isi deskripsi promo di sini</string>
+    <string name="pilih_waktu_mulai_promosi">Pilih waktu mulai promosi</string>
+    <string name="pilih_waktu_akhir_promosi">Pilih waktu akhir promosi</string>
 </resources>

@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gamersparadise.login.LoginActivity;
+import com.example.gamersparadise.onboarding.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

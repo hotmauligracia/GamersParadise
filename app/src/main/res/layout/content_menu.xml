@@ -5,11 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="20dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_menu"
+    <RelativeLayout
+        android:id="@+id/menu_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="67dp"
-        tools:listitem="@layout/menu_item"/>
+        android:onClick="onMenuItemClick" >
+
+        <include layout="@layout/item_menu" />
+
+    </RelativeLayout>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_view_menu"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="67dp"-->
+<!--        tools:listitem="@layout/menu_item"/>-->
 
 </ScrollView>
