@@ -141,11 +141,43 @@ public class HomeCustomerFragment extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+        fetchLocationData();
 
         tvAllFacility.setOnClickListener(this::onFacilitiesClick);
         tvAllMenu.setOnClickListener(this::onMenuClick);
 
         return view;
+    }
+
+    private void fetchLocationData() {
+        auth.fetchCollectionData("locations", new Authentication.FirebaseCollectionCallback() {
+            @Override
+            public void onSuccess(QuerySnapshot querySnapshot) {
+                locationList.clear();
+                for (QueryDocumentSnapshot document : querySnapshot) {
+                    Location location = document.toObject(Location.class);
+                    location.setId(document.getId());
+                    locationList.add(location);
+                }
+                updateLocationSpinner();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateLocationSpinner() {
+        List<String> lokasiNames = new ArrayList<>();
+        lokasiNames.add("Pilih Lokasi");
+        for (Location location : locationList) {
+            lokasiNames.add(location.getName());
+        }
+        spinnerAdapter.clear();
+        spinnerAdapter.addAll(lokasiNames);
+        spinnerAdapter.notifyDataSetChanged();
     }
 
     private void fetchFacilityAndMenuData(String locationName) {
