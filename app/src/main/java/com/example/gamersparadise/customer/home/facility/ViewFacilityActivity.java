@@ -15,7 +15,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_facility);
 
-        Button btnPesanFasilitas = findViewById(R.id.btn_pesan_fasilitas);
+        Button btnPesanFasilitas = findViewById(R.id.btn_to_reserve);
         btnPesanFasilitas.setOnClickListener(v -> {
             Intent reservasi2Activity = new Intent(ViewFacilityActivity.this, ReserveActivity.class);
             startActivity(reservasi2Activity);
