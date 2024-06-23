@@ -243,7 +243,7 @@ public class HomeCustomerFragment extends Fragment {
                 for (QueryDocumentSnapshot document : querySnapshot) {
                     Promotion promotion = document.toObject(Promotion.class);
                     promotion.setId(document.getId());
-                    promotionList.add(promotion);
+                    if (promotion.getStatus().equals("Sedang Berjalan")) promotionList.add(promotion);
                 }
                 setupCarousel(promotionList);
             }

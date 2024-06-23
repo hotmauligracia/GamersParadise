@@ -81,11 +81,18 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vp_promotion_home_cust"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="24dp" />
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:layoutDescription="@xml/motion_scene">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_promotion_home_cust"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="24dp" />
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/illust_no_data_fetched"
