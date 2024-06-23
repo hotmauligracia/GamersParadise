@@ -93,6 +93,17 @@ public class Promotion implements Parcelable {
         this.endTime = endTime.format(dateTimeFormatter);
     }
 
+    public String getStatus() {
+        LocalDateTime now = LocalDateTime.now();
+        if (now.isAfter(this.getStartTimeAsLocalDateTime()) && now.isBefore(this.getEndTimeAsLocalDateTime())) {
+            return "Sedang Berjalan";
+        } else if (now.isBefore(this.getStartTimeAsLocalDateTime())) {
+            return "Akan Berjalan";
+        } else {
+            return "Telah Berakhir";
+        }
+    }
+
     public int getPromotionTypeId() {
         return promotionTypeId;
     }

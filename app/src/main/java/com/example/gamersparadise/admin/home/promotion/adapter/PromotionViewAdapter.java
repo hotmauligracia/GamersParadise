@@ -71,17 +71,12 @@ public class PromotionViewAdapter extends RecyclerView.Adapter<PromotionViewAdap
             }
         });
 
-        LocalDateTime now = LocalDateTime.now();
-        if (now.isAfter(startTime) && now.isBefore(endTime)) {
-            holder.tvPromotionStatus.setText(R.string.sedang_berjalan);
+        if (promotion.getStatus().equals("Sedang Berjalan")) {
             holder.tvPromotionStatus.setTextColor(context.getResources().getColor(R.color.orange600));
-        } else if (now.isBefore(startTime)) {
-            holder.tvPromotionStatus.setText(R.string.akan_berjalan);
-            holder.tvPromotionStatus.setTextColor(context.getResources().getColor(R.color.gray_normal));
         } else {
-            holder.tvPromotionStatus.setText(R.string.telah_berakhir);
             holder.tvPromotionStatus.setTextColor(context.getResources().getColor(R.color.gray_normal));
         }
+        holder.tvPromotionStatus.setText(promotion.getStatus());
     }
 
     @Override
