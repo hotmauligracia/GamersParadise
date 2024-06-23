@@ -3,7 +3,6 @@ package com.example.gamersparadise.admin.home.menu.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,13 +93,11 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
     }
 
     private void updateStockButtonsVisibility(MenuViewHolder holder, boolean isInStock) {
-        Log.d("MenuViewAdapter", "Updating stock button visibility: isInStock = " + isInStock);
         holder.btnStockEmpty.setVisibility(isInStock ? View.VISIBLE : View.GONE);
         holder.btnStockReady.setVisibility(isInStock ? View.GONE : View.VISIBLE);
     }
 
     private void updateStockStatus(Menu menu, boolean isInStock, MenuViewHolder holder) {
-        Log.d("MenuViewAdapter", "Updating stock status: " + isInStock);
         Map<String, Object> data = new HashMap<>();
         data.put("isInStock", isInStock);
 
