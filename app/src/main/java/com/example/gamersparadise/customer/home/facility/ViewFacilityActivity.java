@@ -62,7 +62,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
     private void displayFacilityDetails(Facility facility) {
         Glide.with(this).load(facility.getImageUrl()).into(imgViewFacility);
         tvViewFacilityName.setText(facility.getName());
-        tvViewFacilityCapacity.setText(String.valueOf(facility.getCapacity()));
+        tvViewFacilityCapacity.setText(String.format("%s orang", facility.getCapacity()));
         tvViewFacilityPrice.setText(String.format("%s/jam", facility.getFormattedPrice()));
         tvViewFacilityDetails.setText(facility.getDetails());
     }

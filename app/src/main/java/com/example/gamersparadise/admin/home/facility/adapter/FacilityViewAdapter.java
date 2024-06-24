@@ -20,7 +20,7 @@ import com.example.gamersparadise.data.Facility;
 import java.util.List;
 import java.util.Locale;
 
-public class FacilityViewAdapter extends RecyclerView.Adapter<FacilityViewAdapter.FacilityViewHolder> {
+public class FacilityViewAdapter extends RecyclerView.Adapter<FacilityViewAdapter.FacilityViewViewHolder> {
 
     private final Context context;
     private final List<Facility> facilityList;
@@ -32,15 +32,15 @@ public class FacilityViewAdapter extends RecyclerView.Adapter<FacilityViewAdapte
 
     @NonNull
     @Override
-    public FacilityViewAdapter.FacilityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FacilityViewAdapter.FacilityViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_facility_view,
                         parent, false);
-        return new FacilityViewAdapter.FacilityViewHolder(view);
+        return new FacilityViewAdapter.FacilityViewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FacilityViewAdapter.FacilityViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FacilityViewAdapter.FacilityViewViewHolder holder, int position) {
         Facility facility = facilityList.get(position);
 
         holder.tvFacilityNameView.setText(facility.getName());
@@ -72,12 +72,12 @@ public class FacilityViewAdapter extends RecyclerView.Adapter<FacilityViewAdapte
         return facilityList.size();
     }
 
-    public static class FacilityViewHolder extends RecyclerView.ViewHolder {
+    public static class FacilityViewViewHolder extends RecyclerView.ViewHolder {
         TextView tvFacilityNameView, tvFacilityCapacityView, tvFacilityDetailsView;
         ImageView imgFacilityView;
         Button btnEditFacility, btnDeleteFacility;
 
-        public FacilityViewHolder(@NonNull View itemView) {
+        public FacilityViewViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvFacilityNameView = itemView.findViewById(R.id.tv_facility_name_view);

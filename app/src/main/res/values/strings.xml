@@ -205,4 +205,12 @@
     <string name="tambah_pesanan">Tambah Pesanan</string>
     <string name="anda_tidak_sedang_dalam_masa_reservasi">Anda tidak sedang dalam masa reservasi</string>
     <string name="detail_promosi">Detail Promosi</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="legend_cheese_burger">Legend Cheese Burger</string>
+    <string name="burger_sapi_dengan_saus_keju">Burger sapi dengan saus keju</string>
+    <string name="tambah">Tambah</string>
+    <string name="tambahkan_kode_promosi_atau_voucher_di_sini">Tambahkan kode promosi atau voucher di sini</string>
+    <string name="total_pembayaran">Total Pembayaran</string>
+    <string name="pesan">Pesan</string>
 </resources>
