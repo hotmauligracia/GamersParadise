@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer.home.facility.ReserveActivity">
 
+    <!--top bar-->
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_app_bar"
@@ -26,19 +30,283 @@
                 android:layout_marginEnd="18dp"/>
 
             <TextView
-                android:id="@+id/tv_reservasi"
+                android:id="@+id/tv_reservasi_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reservasi"
-                style="@style/body_large"
-                android:textColor="@color/black"
+                style="@style/title_medium"
                 android:lineSpacingExtra="1sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_reserve" />
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar_reservasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <include layout="@layout/bottom_bar_reserve"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/nama"
+                style="@style/label_medium"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory" />
+
+            <RelativeLayout
+                android:id="@+id/tf_name"
+                style="@style/text_field"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="13dp"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/nama_lengkap"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tf_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="22dp"
+                android:text="@string/no_telepon"
+                style="@style/label_medium"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+            <RelativeLayout
+                android:id="@+id/tf_phone"
+                style="@style/text_field"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="13dp"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/nomor_telepon_whatsapp"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:inputType="phone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_facility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tf_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="22dp"
+                android:text="@string/fasilitas_yang_dipilih"
+                style="@style/label_medium"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+            <RelativeLayout
+                android:id="@+id/field_facility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_facility"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp">
+
+                <include layout="@layout/item_facility" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/field_facility"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:text="@string/pilih_tanggal"
+                style="@style/label_medium"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+            <RelativeLayout
+                android:id="@+id/tf_date"
+                style="@style/text_field"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/edt_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_date_picker"
+                    style="@style/label_regular"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/dd_mm_yyy"
+                    android:gravity="center"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tf_date"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="22dp"
+                android:text="@string/pilih_sesi_jam"
+                style="@style/label_medium"
+                android:drawablePadding="4dp"
+                app:drawableEndCompat="@drawable/ic_mandatory"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_time_slot"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_bar_reservasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/promotion_bar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/orange100"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10.5dp">
+
+            <ImageView
+                android:id="@+id/img_discount"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/ic_discount"
+                app:tint="@color/orange600"/>
+
+            <TextView
+                android:id="@+id/tv_discount"
+                style="@style/label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_toEndOf="@id/img_discount"
+                android:text="@string/tambahkan_kode_promosi_atau_voucher_di_sini"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"/>
+
+            <ImageButton
+                android:id="@+id/btn_see_promotion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_next" />
+
+            <TextView
+                android:id="@+id/tv_delete_promotion"
+                style="@style/delete_promotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onDeletePromotionClick"
+                android:text="@string/hapus"
+                android:textAllCaps="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reserve_bar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="12.5dp">
+
+            <LinearLayout
+                android:id="@+id/total_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_total_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_pembayaran"
+                    style="@style/label_small"
+                    android:textColor="@color/gray_normal" />
+
+                <TextView
+                    android:id="@+id/tv_payment_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rp160_000"
+                    style="@style/label_large_prominent"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="203dp"
+                android:layout_height="40dp"
+                android:text="@string/pesan"
+                android:background="@drawable/button"
+                style="@style/button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

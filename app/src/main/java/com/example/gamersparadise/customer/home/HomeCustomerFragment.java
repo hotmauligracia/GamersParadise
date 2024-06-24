@@ -41,9 +41,7 @@ public class HomeCustomerFragment extends Fragment {
     private ViewPager2 vpPromotionHomeCust;
     private PromotionHomeCustomerAdapter promotionAdapter;
     private View illustNoDataFetched, facilityHomeCust, menuHomeCust;
-    private RecyclerView rvFacilityHomeCust;
     private FacilityHomeCustomerAdapter facilityAdapter;
-    private RecyclerView rvMenuHomeCust;
     private MenuHomeCustomerAdapter menuAdapter;
     private List<Location> locationList;
     private List<Promotion> promotionList;
@@ -51,9 +49,7 @@ public class HomeCustomerFragment extends Fragment {
     private List<Menu> menuList;
     private Authentication auth;
     private ArrayAdapter<String> spinnerAdapter;
-    private Spinner spinnerLokasi;
     private String locationId;
-    private ImageButton btnProfileHomeCust, btnNotificationHomeCust;
 
     public HomeCustomerFragment() {
     }
@@ -68,16 +64,16 @@ public class HomeCustomerFragment extends Fragment {
         TextView tvUsername = view.findViewById(R.id.tv_welcome);
         TextView tvAllFacility = view.findViewById(R.id.tv_all_facility);
         TextView tvAllMenu = view.findViewById(R.id.tv_all_menu);
+        Spinner spinnerLokasi = view.findViewById(R.id.spinner_lokasi);
+        ImageButton btnProfileHomeCust = view.findViewById(R.id.btn_profile_home_cust);
+        ImageButton btnNotificationHomeCust = view.findViewById(R.id.btn_notification_home_cust);
+        RecyclerView rvFacilityHomeCust = view.findViewById(R.id.rv_facility_home_cust);
+        RecyclerView rvMenuHomeCust = view.findViewById(R.id.rv_menu_home_cust);
 
         vpPromotionHomeCust = view.findViewById(R.id.vp_promotion_home_cust);
         illustNoDataFetched = view.findViewById(R.id.illust_no_data_fetched);
         facilityHomeCust = view.findViewById(R.id.facility_home_cust);
         menuHomeCust = view.findViewById(R.id.menu_home_cust);
-        rvFacilityHomeCust = view.findViewById(R.id.rv_facility_home_cust);
-        rvMenuHomeCust = view.findViewById(R.id.rv_menu_home_cust);
-        spinnerLokasi = view.findViewById(R.id.spinner_lokasi);
-        btnProfileHomeCust = view.findViewById(R.id.btn_profile_home_cust);
-        btnNotificationHomeCust = view.findViewById(R.id.btn_notification_home_cust);
 
         String username = auth.getCurrentUser().getDisplayName();
         tvUsername.setText(String.format("Hai, %s", username));
@@ -221,7 +217,7 @@ public class HomeCustomerFragment extends Fragment {
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Menu menu = document.toObject(Menu.class);
                         menu.setId(document.getId());
-                        menuList.add(menu);
+                        if (menu.isInStock()) menuList.add(menu);
                     }
                     menuAdapter.notifyDataSetChanged();
                     updateVisibility();
@@ -243,7 +239,8 @@ public class HomeCustomerFragment extends Fragment {
                 for (QueryDocumentSnapshot document : querySnapshot) {
                     Promotion promotion = document.toObject(Promotion.class);
                     promotion.setId(document.getId());
-                    if (promotion.getStatus().equals("Sedang Berjalan")) promotionList.add(promotion);
+                    if (promotion.getStatus().equals("Sedang Berjalan"))
+                        promotionList.add(promotion);
                 }
                 setupCarousel(promotionList);
             }
@@ -284,11 +281,13 @@ public class HomeCustomerFragment extends Fragment {
 
     public void onFacilitiesClick(View view) {
         Intent facilityIntent = new Intent(requireContext(), FacilityActivity.class);
+        facilityIntent.putExtra("locationId", locationId);
         startActivity(facilityIntent);
     }
 
     public void onMenuClick(View view) {
         Intent menuIntent = new Intent(requireContext(), MenuActivity.class);
+        menuIntent.putExtra("locationId", locationId);
         startActivity(menuIntent);
     }
 }

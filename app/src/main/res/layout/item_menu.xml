@@ -5,7 +5,8 @@
     android:id="@+id/menu_list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/card_list">
+    style="@style/card_list"
+    android:layout_marginBottom="12dp">
 
     <ImageView
         android:id="@+id/img_menu"
@@ -23,7 +24,7 @@
         app:layout_constraintTop_toTopOf="@id/menu_list_item"
         app:layout_constraintStart_toEndOf="@id/img_menu"
         android:layout_marginStart="8dp"
-        android:text="Legend Cheese Burger"
+        android:text="@string/legend_cheese_burger"
         android:textAppearance="@style/label_large_prominent"
         android:textColor="@color/black"
         android:lineSpacingExtra="2sp"
@@ -39,7 +40,7 @@
         android:layout_marginStart="8dp"
         android:lineSpacingExtra="1sp"
         android:maxLines="2"
-        android:text="Burger sapi dengan saus keju"
+        android:text="@string/burger_sapi_dengan_saus_keju"
         android:textColor="@color/gray_normal"
         tools:ignore="TextContrastCheck,TextSizeCheck" />
 
@@ -51,7 +52,7 @@
         app:layout_constraintStart_toEndOf="@id/img_menu"
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
-        android:text="Rp60.000"
+        android:text="@string/rp60_000"
         style="@style/label_large_prominent"/>
 
     <Button
@@ -59,7 +60,7 @@
         style="@style/button_outline"
         android:layout_width="65dp"
         android:layout_height="20dp"
-        android:text="Tambah"
+        android:text="@string/tambah"
         android:textAppearance="@style/label_small"
         app:layout_constraintBottom_toBottomOf="@id/menu_list_item"
         app:layout_constraintEnd_toEndOf="@id/menu_list_item"
