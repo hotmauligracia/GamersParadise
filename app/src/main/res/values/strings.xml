@@ -204,4 +204,5 @@
     <string name="tambahkan_catatan_terkait_pesanan_anda_di_sini">Tambahkan catatan terkait pesanan anda di sini</string>
     <string name="tambah_pesanan">Tambah Pesanan</string>
     <string name="anda_tidak_sedang_dalam_masa_reservasi">Anda tidak sedang dalam masa reservasi</string>
+    <string name="detail_promosi">Detail Promosi</string>
 </resources>

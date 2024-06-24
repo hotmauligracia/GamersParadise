@@ -28,7 +28,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
       
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
-        Button btnPesanFasilitas = findViewById(R.id.btn_to_reserve);
+        Button btnToReserve = findViewById(R.id.btn_to_reserve);
 
         imgViewFacility = findViewById(R.id.img_view_facility);
         tvViewFacilityName = findViewById(R.id.tv_view_facility_name);
@@ -53,7 +53,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
             Log.e(TAG, "Intent or facility extra is null");
         }
 
-        btnPesanFasilitas.setOnClickListener(v -> {
+        btnToReserve.setOnClickListener(v -> {
             Intent reserveActivity = new Intent(ViewFacilityActivity.this, ReserveActivity.class);
             startActivity(reserveActivity);
         });

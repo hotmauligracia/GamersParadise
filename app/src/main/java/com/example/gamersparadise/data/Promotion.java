@@ -121,8 +121,12 @@ public class Promotion implements Parcelable {
     }
 
     public String getFormattedNominal() {
-        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
-        return formatter.format(this.nominal);
+        if (this.promotionTypeId == 1) {
+            return this.nominal + "%";
+        } else {
+            NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+            return formatter.format(this.nominal);
+        }
     }
 
     public float getMinimumOrder() {

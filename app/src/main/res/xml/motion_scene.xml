@@ -4,7 +4,7 @@
     <Transition
         motion:constraintSetStart="@id/start"
         motion:constraintSetEnd="@id/end"
-        motion:duration="3000">
+        motion:duration="1000">
         <OnSwipe
             motion:touchAnchorId="@id/vp_promotion_home_cust"
             motion:touchAnchorSide="left"

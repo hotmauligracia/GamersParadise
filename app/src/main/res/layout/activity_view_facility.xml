@@ -30,7 +30,7 @@
                 android:layout_marginEnd="18dp"/>
 
             <TextView
-                android:id="@+id/tv_buat_promo_title"
+                android:id="@+id/tv_detail_fasilitas_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_fasilitas"
