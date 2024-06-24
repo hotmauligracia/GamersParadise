@@ -18,7 +18,7 @@
         android:src="@drawable/img_menu1" />
 
     <TextView
-        android:id="@+id/tv_menu"
+        android:id="@+id/tv_menu_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/menu_list_item"
@@ -35,7 +35,7 @@
         style="@style/label_small"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_menu"
+        app:layout_constraintTop_toBottomOf="@id/tv_menu_name"
         app:layout_constraintStart_toEndOf="@id/img_menu"
         android:layout_marginStart="8dp"
         android:lineSpacingExtra="1sp"
@@ -45,7 +45,7 @@
         tools:ignore="TextContrastCheck,TextSizeCheck" />
 
     <TextView
-        android:id="@+id/tv_price"
+        android:id="@+id/tv_menu_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tv_menu_desc"

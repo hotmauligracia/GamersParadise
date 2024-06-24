@@ -43,13 +43,11 @@ public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.Facili
         holder.details.setText(facility.getDetails());
         holder.price.setText(facility.getFormattedPrice());
 
-        if (facility.getImageUrl() != null && !facility.getImageUrl().isEmpty()) {
-            Glide.with(context)
-                    .load(facility.getImageUrl())
-                    .into(holder.image);
-        } else {
-            holder.image.setImageResource(R.drawable.default_image);
-        }
+        Glide.with(context)
+                .load(facility.getImageUrl())
+                .centerCrop()
+                .placeholder(R.drawable.default_image)
+                .into(holder.image);
 
         holder.itemView.setOnClickListener(v -> {
             Intent facilityIntent = new Intent(context, ViewFacilityActivity.class);

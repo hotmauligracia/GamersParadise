@@ -1,8 +1,13 @@
 package com.example.gamersparadise.data;
 
+import java.text.DateFormat;
 import java.text.NumberFormat;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class Reservation {
     private String id;
@@ -15,10 +20,13 @@ public class Reservation {
     private float totalPrice;
     private boolean isLate;
     private String status;
-    private String createdAt;
-    private String updatedAt;
+    private long createdAt;
+    private long updatedAt;
 
-    public Reservation(String userId, String facilityId, String customerName, String customerPhone, String reservationTime, String promotionId, float totalPrice, boolean isLate, String status, String createdAt, String updatedAt) {
+    public Reservation() {
+    }
+
+    public Reservation(String userId, String facilityId, String customerName, String customerPhone, String reservationTime, String promotionId, float totalPrice, boolean isLate, String status, long createdAt, long updatedAt) {
         this.userId = userId;
         this.facilityId = facilityId;
         this.customerName = customerName;
@@ -30,6 +38,26 @@ public class Reservation {
         this.status = status;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public List<String> getTimeSlots() {
+        return Arrays.asList(reservationTime.split(", "));
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", userId);
+        map.put("facilityId", facilityId);
+        map.put("customerName", customerName);
+        map.put("customerPhone", customerPhone);
+        map.put("reservationTime", reservationTime);
+        map.put("promotionId", promotionId);
+        map.put("totalPrice", totalPrice);
+        map.put("isLate", isLate);
+        map.put("status", status);
+        map.put("createdAt", createdAt);
+        map.put("updatedAt", updatedAt);
+        return map;
     }
 
     public String getId() {
@@ -80,6 +108,11 @@ public class Reservation {
         this.reservationTime = reservationTime;
     }
 
+    public String getFormattedReservationTime() {
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, new Locale("id", "ID"));
+        return dateFormat.format(reservationTime);
+    }
+
     public String getPromotionId() {
         return promotionId;
     }
@@ -117,19 +150,19 @@ public class Reservation {
         this.status = status;
     }
 
-    public String getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public long getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(long updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

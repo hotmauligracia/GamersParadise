@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuViewHolder> {
+public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuViewViewHolder> {
 
     private final Context context;
     private final List<Menu> menuList;
@@ -44,14 +44,14 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
 
     @NonNull
     @Override
-    public MenuViewAdapter.MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MenuViewAdapter.MenuViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_menu_view, parent, false);
-        return new MenuViewAdapter.MenuViewHolder(view);
+        return new MenuViewAdapter.MenuViewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuViewAdapter.MenuViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MenuViewAdapter.MenuViewViewHolder holder, int position) {
         Menu menu = menuList.get(position);
 
         holder.tvMenuNameView.setText(menu.getName());
@@ -92,12 +92,12 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
                 updateStockStatus(menu, true, holder));
     }
 
-    private void updateStockButtonsVisibility(MenuViewHolder holder, boolean isInStock) {
+    private void updateStockButtonsVisibility(MenuViewViewHolder holder, boolean isInStock) {
         holder.btnStockEmpty.setVisibility(isInStock ? View.VISIBLE : View.GONE);
         holder.btnStockReady.setVisibility(isInStock ? View.GONE : View.VISIBLE);
     }
 
-    private void updateStockStatus(Menu menu, boolean isInStock, MenuViewHolder holder) {
+    private void updateStockStatus(Menu menu, boolean isInStock, MenuViewViewHolder holder) {
         Map<String, Object> data = new HashMap<>();
         data.put("isInStock", isInStock);
 
@@ -121,12 +121,12 @@ public class MenuViewAdapter extends RecyclerView.Adapter<MenuViewAdapter.MenuVi
         return menuList.size();
     }
 
-    public static class MenuViewHolder extends RecyclerView.ViewHolder {
+    public static class MenuViewViewHolder extends RecyclerView.ViewHolder {
         TextView tvMenuNameView, tvMenuTypeView, tvMenuPriceView;
         ImageView imgMenuView;
         Button btnEditMenu, btnDeleteMenu, btnStockEmpty, btnStockReady;
 
-        public MenuViewHolder(@NonNull View itemView) {
+        public MenuViewViewHolder(@NonNull View itemView) {
             super(itemView);
             tvMenuNameView = itemView.findViewById(R.id.tv_menu_name_view);
             tvMenuTypeView = itemView.findViewById(R.id.tv_menu_type_view);

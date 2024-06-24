@@ -298,14 +298,15 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_order"
+                android:id="@+id/btn_reserve"
                 android:layout_width="203dp"
                 android:layout_height="40dp"
                 android:text="@string/pesan"
                 android:background="@drawable/button"
                 style="@style/button"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="onReserveClick"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
