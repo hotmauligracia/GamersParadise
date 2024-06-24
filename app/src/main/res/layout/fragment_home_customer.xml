@@ -8,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:baselineAligned="false">
+                android:baselineAligned="false"
+                android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -30,11 +30,11 @@
 
                     <TextView
                         android:id="@+id/tv_welcome"
-                        style="@style/label_medium"
+                        style="@style/title_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hai_username"
-                        android:textSize="22sp" />
+                        android:textColor="@color/black" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -76,7 +76,8 @@
                         android:id="@+id/btn_notification_home_cust"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:background="@drawable/ic_notification" />
+                        android:background="@drawable/ic_notification"
+                        android:layout_marginStart="9dp"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -130,30 +131,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="24dp">
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="16dp">
 
                     <TextView
                         android:id="@+id/tv_fasilitas"
                         style="@style/label_large_prominent"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/fasilitas"
-                        android:textSize="15sp" />
+                        android:text="@string/fasilitas" />
 
                     <TextView
                         android:id="@+id/tv_all_facility"
-                        style="@style/label_small"
-                        android:layout_width="128dp"
+                        style="@style/label_regular"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="@string/lihat_semua"
                         android:textColor="@color/orange"
                         android:focusable="true"
@@ -178,31 +179,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="24dp">
+                android:layout_marginTop="22dp"
+                android:layout_marginStart="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="16dp">
 
                     <TextView
                         android:id="@+id/tv_menu"
                         style="@style/label_large_prominent"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/menu"
-                        android:textSize="15sp" />
+                        android:text="@string/makanan_dan_minuman" />
 
                     <TextView
                         android:id="@+id/tv_all_menu"
-                        style="@style/label_small"
-                        android:layout_width="128dp"
+                        style="@style/label_regular"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="@string/lihat_semua"
                         android:textColor="@color/orange"
                         android:focusable="true"

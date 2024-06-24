@@ -97,6 +97,57 @@
                 android:textColor="@color/orange"/>
 
         </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_reservation_needed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="@color/orange100"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_error"
+                app:tint="@color/orange600" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/anda_tidak_sedang_dalam_masa_reservasi"
+                style="@style/label_small"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reservasi"
+                android:textAllCaps="true"
+                style="@style/label_small_bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/order_details_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/view_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
 
         <TextView
             style="@style/label_medium_prominent"
@@ -139,36 +190,35 @@
                 android:inputType="text" />
 
         </RelativeLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view_menu"
-        android:layout_marginTop="27dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/btn_minus_count_order"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/button_minus_gray"/>
-
-        <TextView
-            android:id="@+id/tv_count_order"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:text="@string/_1"
-            style="@style/headline_large"/>
+            android:layout_marginTop="27dp"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageButton
-            android:id="@+id/btn_plus_count_order"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/button_plus_orange"/>
+            <ImageButton
+                android:id="@+id/btn_minus_count_order"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/button_minus_gray"/>
 
+            <TextView
+                android:id="@+id/tv_count_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/_1"
+                style="@style/headline_large"/>
+
+            <ImageButton
+                android:id="@+id/btn_plus_count_order"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/button_plus_orange"/>
+
+        </LinearLayout>
     </LinearLayout>
     
     <Button
