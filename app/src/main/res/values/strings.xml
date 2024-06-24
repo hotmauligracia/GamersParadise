@@ -213,4 +213,7 @@
     <string name="tambahkan_kode_promosi_atau_voucher_di_sini">Tambahkan kode promosi atau voucher di sini</string>
     <string name="total_pembayaran">Total Pembayaran</string>
     <string name="pesan">Pesan</string>
+    <string name="desc_voc">Diskon sampai 15% dengan minimum pembelian Rp400.000</string>
+    <string name="time_promo">Berlaku hingga 31 Maret 2024</string>
+    <string name="desc_promo2">Tambah Rp240.000 lagi untuk pakai voucher ini</string>
 </resources>

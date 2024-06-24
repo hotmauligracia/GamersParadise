@@ -1,10 +1,12 @@
 package com.example.gamersparadise.customer.home.facility;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +30,15 @@ public class ReserveActivity extends AppCompatActivity {
 
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
         backButton.setOnClickListener(v -> onBackPressed());
+
+        RelativeLayout promotionBar = findViewById(R.id.promotion_bar);
+        promotionBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReserveActivity.this, VoucherFacilityActivity.class);
+                startActivity(intent);
+            }
+        });
 
         edtDate = findViewById(R.id.edt_date);
         edtDate.setOnClickListener(v -> showDatePickerDialog());
