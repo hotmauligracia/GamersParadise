@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main">
+    android:id="@+id/main"
+    android:background="@color/white">
 
     <!--top bar-->
     <androidx.cardview.widget.CardView
@@ -43,6 +44,14 @@
                 android:layout_weight="1"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <include
+        layout="@layout/item_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_notifikasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 

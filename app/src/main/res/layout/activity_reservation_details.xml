@@ -230,6 +230,7 @@
                 android:letterSpacing="0.01"
                 android:text="VIP1"
                 android:layout_marginTop="5dp"
+                android:layout_marginStart="12dp"
                 android:textColor="#868686"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -238,6 +239,7 @@
                 android:id="@+id/personvip"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
+                android:layout_marginStart="12dp"
                 android:layout_below="@+id/ruangvip"
                 android:layout_toEndOf="@+id/gambarvip1"
                 android:src="@drawable/ic_person" />
@@ -259,6 +261,7 @@
                 android:id="@+id/devicevip1"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
+                android:layout_marginStart="12dp"
                 android:layout_below="@+id/personvip"
                 android:layout_toEndOf="@+id/gambarvip1"
                 android:src="@drawable/ic_devices" />
