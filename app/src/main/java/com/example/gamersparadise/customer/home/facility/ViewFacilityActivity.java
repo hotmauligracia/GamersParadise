@@ -18,6 +18,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
 
     private static final String TAG = "ViewFacilityActivity";
 
+    private Facility facility;
     private ImageView imgViewFacility;
     private TextView tvViewFacilityName, tvViewFacilityCapacity, tvViewFacilityPrice, tvViewFacilityDetails;
 
@@ -43,7 +44,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         if (intent.hasExtra("facility")) {
-            Facility facility = intent.getParcelableExtra("facility");
+            facility = intent.getParcelableExtra("facility");
             if (facility != null) {
                 displayFacilityDetails(facility);
             } else {
@@ -55,6 +56,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
 
         btnToReserve.setOnClickListener(v -> {
             Intent reserveActivity = new Intent(ViewFacilityActivity.this, ReserveActivity.class);
+            reserveActivity.putExtra("facility", facility);
             startActivity(reserveActivity);
         });
     }

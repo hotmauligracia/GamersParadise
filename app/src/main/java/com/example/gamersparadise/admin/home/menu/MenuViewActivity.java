@@ -219,17 +219,13 @@ public class MenuViewActivity extends AppCompatActivity {
     }
 
     private void fetchMenuIsInStock(Menu menu) {
-        Log.d("MenuViewActivity", "Fetching document data for menu: " + menu.getId());
         auth.fetchDocumentData("locations/" + menu.getLocationId() + "/menus/" + menu.getId(), new Authentication.FirebaseDocumentCallback() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Log.d("MenuViewActivity", "Document snapshot data: " + documentSnapshot.getData());
                 Boolean isInStock = documentSnapshot.getBoolean("isInStock");
                 if (isInStock != null) {
-                    Log.d("MenuViewActivity", "isInStock: " + isInStock);
                     menu.setInStock(isInStock);
                 } else {
-                    Log.d("MenuViewActivity", "isInStock is null, setting default false");
                     menu.setInStock(false);
                 }
                 menuList.add(menu);

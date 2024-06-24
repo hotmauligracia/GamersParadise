@@ -18,6 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.gamersparadise.Authentication;
 import com.example.gamersparadise.R;
+import com.example.gamersparadise.admin.home.menu.MenuViewActivity;
 import com.example.gamersparadise.customer.home.adapter.FacilityHomeCustomerAdapter;
 import com.example.gamersparadise.customer.home.adapter.MenuHomeCustomerAdapter;
 import com.example.gamersparadise.customer.home.adapter.PromotionHomeCustomerAdapter;
@@ -30,6 +31,7 @@ import com.example.gamersparadise.data.Facility;
 import com.example.gamersparadise.data.Location;
 import com.example.gamersparadise.data.Menu;
 import com.example.gamersparadise.data.Promotion;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -217,7 +219,7 @@ public class HomeCustomerFragment extends Fragment {
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Menu menu = document.toObject(Menu.class);
                         menu.setId(document.getId());
-                        if (menu.isInStock()) menuList.add(menu);
+                        fetchMenuIsInStock(menu);
                     }
                     menuAdapter.notifyDataSetChanged();
                     updateVisibility();
@@ -229,6 +231,28 @@ public class HomeCustomerFragment extends Fragment {
                 }
             });
         }
+    }
+
+    private void fetchMenuIsInStock(Menu menu) {
+        auth.fetchDocumentData("locations/" + menu.getLocationId() + "/menus/" + menu.getId(), new Authentication.FirebaseDocumentCallback() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Boolean isInStock = documentSnapshot.getBoolean("isInStock");
+                if (isInStock != null) {
+                    menu.setInStock(isInStock);
+                } else {
+                    menu.setInStock(false);
+                }
+                menuList.add(menu);
+                menuAdapter.notifyDataSetChanged();
+                updateVisibility();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void fetchPromotionData() {
