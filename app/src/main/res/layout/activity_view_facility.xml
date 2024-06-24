@@ -128,7 +128,7 @@
             android:text="@string/facility_content"
             android:layout_marginHorizontal="16dp"
             android:textColor="@color/gray_normal"/>
-
+      
     </LinearLayout>
 
     <Button

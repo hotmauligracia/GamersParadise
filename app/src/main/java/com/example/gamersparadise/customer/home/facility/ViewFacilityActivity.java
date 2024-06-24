@@ -25,7 +25,7 @@ public class ViewFacilityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_facility);
-
+      
         MaterialToolbar topAppBar = findViewById(R.id.top_app_bar);
         ImageView backButton = findViewById(R.id.toolbar_back_icon);
         Button btnPesanFasilitas = findViewById(R.id.btn_to_reserve);
