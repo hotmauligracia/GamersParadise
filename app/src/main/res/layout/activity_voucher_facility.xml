@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--top bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/toolbar_back_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="18dp" />
+
+            <TextView
+                android:id="@+id/tv_menu_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promosi &amp; Voucher"
+                style="@style/title_medium"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="1sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wrap_voucher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        android:layout_marginTop="8dp">
+
+        <View
+            android:id="@+id/rect_tf_voucher"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:background="@drawable/rectangle_tf"
+            app:layout_constraintBottom_toBottomOf="@id/wrap_voucher"
+            app:layout_constraintTop_toTopOf="@id/wrap_voucher" />
+
+        <EditText
+            android:id="@+id/edt_voucher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan kode promosi"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="13dp"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            style="@style/label_regular"
+            app:layout_constraintStart_toStartOf="@id/rect_tf_voucher"
+            app:layout_constraintEnd_toEndOf="@id/rect_tf_voucher"
+            app:layout_constraintTop_toTopOf="@id/rect_tf_voucher"
+            app:layout_constraintBottom_toBottomOf="@id/rect_tf_voucher" />
+
+        <Button
+            android:layout_width="64dp"
+            android:layout_height="30dp"
+            android:text="Pakai"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_voucher"
+            style="@style/label_regular"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/rect_tf_voucher"
+            app:layout_constraintBottom_toBottomOf="@id/wrap_voucher"
+            app:layout_constraintTop_toTopOf="@id/wrap_voucher" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/item_voucher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/wrap_voucher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Button Bawah -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="16dp"
+                style="@style/button"
+                android:text="Terapkan" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
