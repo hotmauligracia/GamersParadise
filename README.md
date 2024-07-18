@@ -4,4 +4,4 @@ GamersParadise is an integrated solution designed for internet café businesses 
 
 Users can easily order food and beverages through a user-friendly interface, speeding up service and reducing errors. The application also automates room availability checks and reservation management, allowing admins to focus on strategic tasks.
 
-Additionally, Gamers Paradise provides comprehensive reports on reservation history, sales, and user data, facilitating faster report creation and insightful business analysis. This application not only improves customer experience but also boosts operational efficiency and business insights.
+Additionally, GamersParadise provides comprehensive reports on reservation history, sales, and user data, facilitating faster report creation and insightful business analysis. This application not only improves customer experience but also boosts operational efficiency and business insights.
