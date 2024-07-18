@@ -141,7 +141,8 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:gravity="center"
-                        android:src="@drawable/ic_location" />
+                        android:src="@drawable/ic_location"
+                        android:tint="@color/white"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -232,7 +233,8 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:gravity="center"
-                        android:src="@drawable/ic_location" />
+                        android:src="@drawable/ic_food"
+                        android:tint="@color/white"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

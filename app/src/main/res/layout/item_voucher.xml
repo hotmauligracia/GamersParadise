@@ -8,7 +8,6 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="8dp"
         app:cardUseCompatPadding="true"
@@ -76,8 +75,7 @@
                     android:src="@drawable/ic_clock_orange2"
                     tools:ignore="MissingConstraints"
                     app:layout_constraintBottom_toBottomOf="@id/tv_promotion_status"
-                    app:layout_constraintTop_toTopOf="@id/tv_promotion_status"
-                    android:contentDescription="TODO" />
+                    app:layout_constraintTop_toTopOf="@id/tv_promotion_status" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,7 +93,5 @@
                 android:background="@drawable/bg_promo"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

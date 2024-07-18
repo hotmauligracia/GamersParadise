@@ -15,6 +15,7 @@ public class Promotion implements Parcelable {
     private String name;
     private String code;
     private int promotionTypeId;
+    private int promotionCategoryId;
     private float nominal;
     private float minimumOrder;
     private String startTime;
@@ -25,12 +26,13 @@ public class Promotion implements Parcelable {
     public Promotion() {
     }
 
-    public Promotion(String name, String code, String startTime, String endTime, int promotionTypeId, float nominal, float minimumOrder, String imageUrl, String description) {
+    public Promotion(String name, String code, String startTime, String endTime, int promotionTypeId, int promotionCategoryId, float nominal, float minimumOrder, String imageUrl, String description) {
         this.name = name;
         this.code = code;
         this.startTime = startTime;
         this.endTime = endTime;
         this.promotionTypeId = promotionTypeId;
+        this.promotionCategoryId = promotionCategoryId;
         this.nominal = nominal;
         this.minimumOrder = minimumOrder;
         this.imageUrl = imageUrl;
@@ -112,6 +114,14 @@ public class Promotion implements Parcelable {
         this.promotionTypeId = promotionTypeId;
     }
 
+    public int getPromotionCategoryId() {
+        return promotionCategoryId;
+    }
+
+    public void setPromotionCategoryId(int promotionCategoryId) {
+        this.promotionCategoryId = promotionCategoryId;
+    }
+
     public float getNominal() {
         return nominal;
     }
@@ -171,6 +181,7 @@ public class Promotion implements Parcelable {
         dest.writeString(this.startTime);
         dest.writeString(this.endTime);
         dest.writeInt(this.promotionTypeId);
+        dest.writeInt(this.promotionCategoryId);
         dest.writeFloat(this.nominal);
         dest.writeFloat(this.minimumOrder);
         dest.writeString(this.imageUrl);
@@ -184,6 +195,7 @@ public class Promotion implements Parcelable {
         this.startTime = source.readString();
         this.endTime = source.readString();
         this.promotionTypeId = source.readInt();
+        this.promotionCategoryId = source.readInt();
         this.nominal = source.readFloat();
         this.minimumOrder = source.readFloat();
         this.imageUrl = source.readString();
@@ -197,6 +209,7 @@ public class Promotion implements Parcelable {
         this.startTime = in.readString();
         this.endTime = in.readString();
         this.promotionTypeId = in.readInt();
+        this.promotionCategoryId = in.readInt();
         this.nominal = in.readFloat();
         this.minimumOrder = in.readFloat();
         this.imageUrl = in.readString();
